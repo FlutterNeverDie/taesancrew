@@ -2,7 +2,9 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`mx-auto max-w-6xl px-4 md:px-6 ${className}`}>{children}</div>;
+  // className에 max-w-*가 있으면 기본 폭(6xl) 대신 그걸 쓴다
+  const width = /\bmax-w-/.test(className) ? "" : "max-w-6xl";
+  return <div className={`mx-auto px-4 md:px-6 ${width} ${className}`}>{children}</div>;
 }
 
 export function SectionTitle({ title, desc, light = false }: { title: ReactNode; desc?: ReactNode; light?: boolean }) {

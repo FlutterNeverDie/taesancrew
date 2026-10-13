@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ButtonLink, Container, PageHero, SectionTitle } from "@/components/ui";
-import { branches, recruitPosts, tel } from "@/lib/site";
+import Link from "next/link";
+import { FaqList } from "@/components/FaqList";
+import { branches, recruitPosts, tel, workerFaq } from "@/lib/site";
 import { RecruitGallery } from "./RecruitGallery";
 
 export const metadata: Metadata = { title: "일자리" };
@@ -12,12 +14,6 @@ const perks = [
   { title: "주말·단기 가능", desc: "하루만, 단기, 중장기 모두" },
 ];
 
-const faq = [
-  { q: "처음인데 할 수 있나요?", a: "네. 포장·피킹·검수처럼 어렵지 않은 업무가 많고, 시작 전에 안전교육을 받습니다." },
-  { q: "외국인도 가능한가요?", a: "현장에 따라 가능합니다(F비자 등). 지점으로 문의해 주세요." },
-  { q: "상하차 업무인가요?", a: "상하차 없는 현장이 많습니다. 공고마다 업무가 적혀 있습니다." },
-  { q: "잔업하면 수당이 있나요?", a: "잔업 시 1.5배 수당을 지급하는 현장이 있습니다." },
-];
 
 export default function JobsPage() {
   return (
@@ -78,17 +74,10 @@ export default function JobsPage() {
       <section className="bg-navy-50 py-16 md:py-24">
         <Container className="max-w-3xl">
           <SectionTitle title="자주 묻는 질문" />
-          <div className="border-t-2 border-navy-900">
-            {faq.map((f) => (
-              <details key={f.q} className="group border-b border-rule">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-lg font-bold text-navy-950 [&::-webkit-details-marker]:hidden">
-                  {f.q}
-                  <span aria-hidden className="text-2xl leading-none text-navy-700 group-open:rotate-45">+</span>
-                </summary>
-                <p className="pb-6 text-lg leading-relaxed text-ink">{f.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqList items={workerFaq.slice(0, 4)} />
+          <p className="mt-6">
+            <Link href="/faq#worker" className="font-bold text-navy-700 underline decoration-2 underline-offset-4">질문 더 보기</Link>
+          </p>
           <div className="mt-10 text-center">
             <ButtonLink href="/contact?type=worker">온라인으로 지원 남기기</ButtonLink>
           </div>
