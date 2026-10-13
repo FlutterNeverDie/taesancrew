@@ -7,10 +7,7 @@ export const metadata: Metadata = { title: "일자리" };
 
 // 지점 채용 전단에 공통으로 적힌 조건
 const perks = [
-  { title: "일급 10만 ~ 11.5만원", desc: "현장·직무별로 다름" },
   { title: "당일·익일 지급", desc: "지점별 지급 방식 확인" },
-  { title: "출퇴근 셔틀", desc: "수진역·천호역에서 함께 이동" },
-  { title: "점심 식사 제공", desc: "대부분의 현장" },
   { title: "초보 가능·경력 우대", desc: "안전교육 후 시작" },
   { title: "주말·단기 가능", desc: "하루만, 단기, 중장기 모두" },
 ];
@@ -33,7 +30,7 @@ export default function JobsPage() {
       <section className="py-16 md:py-24">
         <Container>
           <SectionTitle title="이런 조건으로 일해요" />
-          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-rule bg-rule md:grid-cols-3">
+          <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-rule bg-rule md:grid-cols-3">
             {perks.map((p) => (
               <div key={p.title} className="flex flex-col-reverse bg-paper p-5 md:p-7">
                 <dd className="mt-1 text-sm text-muted md:text-base">{p.desc}</dd>

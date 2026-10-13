@@ -120,7 +120,7 @@ export const clients = [
 export const recruitPosts = [
   { src: "/images/recruit/sujin-musinsa.jpg", branch: "수진역점", title: "무신사 물류센터 알바" },
   { src: "/images/recruit/sujin-brandworks.jpg", branch: "수진역점", title: "브랜드웍스 물류센터 포장·피킹" },
-  { src: "/images/recruit/cheonho-logistics.jpg", branch: "천호점", title: "물류센터 일급 세후 10만원 이상" },
+  { src: "/images/recruit/cheonho-logistics.jpg", branch: "천호점", title: "물류센터 알바" },
   { src: "/images/recruit/cheonho-cold.jpg", branch: "천호점", title: "냉장물류센터 알바" },
   { src: "/images/recruit/cheonho-icheon.jpg", branch: "천호점", title: "이천 냉장물류센터 알바" },
   { src: "/images/recruit/cheonho-musinsa.jpg", branch: "천호점", title: "무신사 물류센터 알바" },
