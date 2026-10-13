@@ -1,37 +1,33 @@
 <!doctype html><html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Russo+One&family=Kanit:ital,wght@1,900&family=Lexend+Zetta:wght@800&family=Teko:wght@700&display=block" rel="stylesheet">
-<style>
-html, body { margin: 0; background: transparent; }
-body { width: 1720px; height: 420px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.t { line-height: 1; color: #22215a; white-space: nowrap; font-size: 200px; visibility: hidden; }
-.G { font-family: Michroma; letter-spacing: -0.02em; }
-.H { font-family: "Russo One"; letter-spacing: 0; }
-.I { font-family: Kanit; font-weight: 900; font-style: italic; letter-spacing: -0.01em; }
-.J { font-family: "Lexend Zetta"; font-weight: 800; letter-spacing: -0.06em; }
-.K { font-family: Teko; font-weight: 700; letter-spacing: 0.01em; }
-</style></head><body>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Big+Shoulders+Stencil+Display:wght@900&family=Unbounded:wght@800&family=Saira:ital,wdth,wght@1,125,800&family=Bricolage+Grotesque:opsz,wdth,wght@96,75,800&family=Syne:wght@800&family=Michroma&family=Russo+One&family=Kanit:ital,wght@1,900&family=Lexend+Zetta:wght@800&family=Teko:wght@700&display=block" rel="stylesheet">
+<style>html,body{margin:0;background:transparent}canvas{display:block}</style></head><body>
 <script>
-const f = new URLSearchParams(location.search).get('f');
-document.body.innerHTML = '<div class="t ' + f + '">TS CREW</div>';
-const t = document.querySelector('.t');
-document.fonts.ready.then(() => {
-  // 실제 잉크(글자 모양) 크기를 재서 폭 1480 / 높이 230 안에 맞추고 정확히 가운데로
-  const cs = getComputedStyle(t);
-  const ctx = document.createElement('canvas').getContext('2d');
-  const measure = (size) => {
-    ctx.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + size + 'px ' + cs.fontFamily;
-    ctx.letterSpacing = ((parseFloat(cs.letterSpacing) || 0) / 200 * size) + 'px';
-    const m = ctx.measureText('TS CREW');
-    return { w: m.actualBoundingBoxLeft + m.actualBoundingBoxRight, h: m.actualBoundingBoxAscent + m.actualBoundingBoxDescent, left: m.actualBoundingBoxLeft, asc: m.actualBoundingBoxAscent };
-  };
-  const base = measure(200);
-  const size = 200 * Math.min(1480 / base.w, 230 / base.h);
-  const m = measure(size);
-  document.body.innerHTML = '';
-  const c = document.createElement('canvas');
-  c.width = 1720; c.height = 420; document.body.appendChild(c);
-  const g = c.getContext('2d');
-  g.font = ctx.font; g.letterSpacing = ctx.letterSpacing; g.fillStyle = '#22215a';
-  g.fillText('TS CREW', (1720 - m.w) / 2 + m.left, (420 - m.h) / 2 + m.asc);
+// 글꼴별 설정: [family, weight, style, stretch, 자간(em)]
+const F = {
+  A: ['Archivo', 900, 'normal', 'expanded', -0.01],
+  B: ['Big Shoulders Stencil Display', 900, 'normal', 'normal', 0.02],
+  C: ['Unbounded', 800, 'normal', 'normal', -0.02],
+  D: ['Saira', 800, 'italic', 'expanded', -0.01],
+  E: ['Bricolage Grotesque', 800, 'normal', 'condensed', -0.02],
+  F: ['Syne', 800, 'normal', 'normal', -0.02],
+  G: ['Michroma', 400, 'normal', 'normal', -0.02],
+  H: ['Russo One', 400, 'normal', 'normal', 0],
+  I: ['Kanit', 900, 'italic', 'normal', -0.01],
+  J: ['Lexend Zetta', 800, 'normal', 'normal', -0.06],
+  K: ['Teko', 700, 'normal', 'normal', 0.01],
+};
+const key = new URLSearchParams(location.search).get('f');
+const [fam, wt, st, str, ls] = F[key];
+const W = 1720, H = 420, TEXT = 'TS CREW';
+const c = document.createElement('canvas'); c.width = W; c.height = H; document.body.appendChild(c);
+const g = c.getContext('2d');
+const setFont = (size) => { g.font = `${st} ${wt} ${size}px "${fam}"`; g.fontStretch = str; g.letterSpacing = (ls * size) + 'px'; };
+const ink = (size) => { setFont(size); const m = g.measureText(TEXT); return { w: m.actualBoundingBoxLeft + m.actualBoundingBoxRight, h: m.actualBoundingBoxAscent + m.actualBoundingBoxDescent, l: m.actualBoundingBoxLeft, a: m.actualBoundingBoxAscent }; };
+document.fonts.load(`${st} ${wt} 100px "${fam}"`).then(() => document.fonts.ready).then(() => {
+  const b = ink(200);
+  const size = 200 * Math.min(1480 / b.w, 230 / b.h);
+  const m = ink(size);
+  g.fillStyle = '#22215a';
+  g.fillText(TEXT, (W - m.w) / 2 + m.l, (H - m.h) / 2 + m.a);
 });
 </script></body></html>
