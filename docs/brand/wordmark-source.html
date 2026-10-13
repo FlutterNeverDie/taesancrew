@@ -1,24 +1,16 @@
-<!doctype html>
-<html><head><meta charset="utf-8">
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Saira:ital,wdth,wght@1,125,800&display=block" rel="stylesheet">
 <style>
-@font-face { font-family: P; font-weight: 900; src: url(fonts/Paperlogy-9Black.woff2); }
-:root { --navy: #22215a; --yellow: #ffd23f; }
+:root { --navy: #22215a; }
 html, body { margin: 0; background: transparent; }
-body { display: flex; align-items: center; justify-content: center; font-family: P; font-weight: 900; overflow: hidden; }
-.wide { width: 1720px; height: 420px; }
-.wide .t { font-size: 300px; line-height: 1; letter-spacing: 0.005em; color: var(--navy); white-space: nowrap; transform: translateY(0.04em); }
-.wide.white .t { color: #fff; }
-/* 앱 아이콘: 정사각형 꽉 채움 (iOS가 모서리를 알아서 둥글게 깎음) */
-.app { width: 180px; height: 180px; background: var(--navy); flex-direction: column; gap: 0; }
-.app .l1, .app .l2 { color: #fff; line-height: 0.8; }
-.app .l1 { font-size: 92px; letter-spacing: 0.01em; }
-.app .l2 { font-size: 44px; letter-spacing: 0.02em; margin-top: 9px; }
-</style></head>
-<body>
+body { width: 1720px; height: 420px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.t { line-height: 1; color: var(--navy); white-space: nowrap; }
+.D { font-family: Saira; font-weight: 800; font-stretch: 125%; font-style: italic; font-size: 232px; letter-spacing: -0.01em; transform: translate(-0.03em, 0.02em); }
+.A { font-family: Archivo; font-weight: 900; font-stretch: 125%; font-size: 214px; letter-spacing: -0.01em; transform: translateY(0.03em); }
+body.white .t { color: #fff; }
+</style></head><body>
 <script>
-const v = new URLSearchParams(location.search).get('v');
-const b = document.body;
-if (v === 'app') { b.className = 'app'; b.innerHTML = '<div class="l1">TS</div><div class="l2">CREW</div>'; }
-else { b.className = 'wide' + (v === 'white' ? ' white' : ''); b.innerHTML = '<div class="t">TS CREW</div>'; }
-</script>
-</body></html>
+const p = new URLSearchParams(location.search);
+document.body.className = p.get('c') || '';
+document.body.innerHTML = '<div class="t ' + p.get('f') + '">TS CREW</div>';
+</script></body></html>
