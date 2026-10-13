@@ -1,168 +1,192 @@
 import Link from "next/link";
 import { ButtonLink, Container, Placeholder, SectionTitle } from "@/components/ui";
-import { PhoneIcon } from "@/components/MobileCallBar";
 import { branches, clients, company, stats, strengths, tel } from "@/lib/site";
 import { getAllPosts } from "@/lib/posts";
+
+const workerPerks = ["일급 10만 ~ 11.5만원", "당일·익일 지급", "역에서 출퇴근 셔틀", "점심 제공", "주말·하루만 가능"];
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3);
 
   return (
     <>
-      {/* 히어로: 기업 / 구직자 두 갈래 */}
-      <section className="relative overflow-hidden bg-navy-900 text-white">
-        <div className="absolute -top-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-navy-700/40 blur-3xl" />
-        <Container className="relative py-20 md:py-32">
-          <p className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-point">
-            물류·제조 인력 아웃소싱 전문기업
-          </p>
-          <h1 className="text-4xl leading-[1.2] font-extrabold md:text-6xl">
-            인력이 곧
-            <br />
-            <span className="text-point">기업의 경쟁력</span>입니다
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-100/85">
-            20년 물류 현장 노하우와 3개 직영 지점으로
-            <br className="hidden md:block" /> 필요한 순간, 검증된 인력을 보내드립니다.
-          </p>
-
-          <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-2">
-            <Link href="/business" className="group rounded-2xl bg-white p-6 text-navy-950 transition hover:-translate-y-1">
-              <p className="text-sm font-semibold text-navy-700">화주사 · 도급사</p>
-              <p className="mt-1 text-xl font-extrabold">인력이 필요해요 →</p>
-            </Link>
-            <Link href="/jobs" className="group rounded-2xl bg-point p-6 text-navy-950 transition hover:-translate-y-1">
-              <p className="text-sm font-semibold text-navy-900/70">일자리를 찾는 분</p>
-              <p className="mt-1 text-xl font-extrabold">일하고 싶어요 →</p>
-            </Link>
-          </div>
-        </Container>
-      </section>
-
-      {/* 숫자 */}
-      <section className="border-b border-navy-100 bg-white">
-        <Container className="grid grid-cols-2 gap-y-8 py-12 md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-3xl font-extrabold text-navy-800 md:text-5xl">{s.value}</p>
-              <p className="mt-2 text-sm text-gray-600 md:text-base">{s.label}</p>
+      {/* 히어로 + 지점 배차판 */}
+      <section className="on-dark bg-navy-900 text-white">
+        <Container className="grid gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
+          <div className="min-w-0">
+            <h1 className="text-[2.5rem] leading-[1.15] font-extrabold [overflow-wrap:anywhere] md:text-[3.75rem]">
+              필요한 날,
+              <br />
+              필요한 사람을
+              <br />
+              보냅니다
+            </h1>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-navy-100/85">
+              물류·제조 현장 20년. 수진역, 천호, 경기광주 세 지점에서 매일 100명 이상이 현장으로 출근합니다.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <ButtonLink href="/contact?type=business" variant="point">인력 요청하기</ButtonLink>
+              <ButtonLink href="/jobs" variant="ghost">일자리 찾기</ButtonLink>
             </div>
-          ))}
+          </div>
+
+          <DispatchBoard />
         </Container>
       </section>
 
-      {/* 5대 강점 */}
-      <section className="bg-navy-50 py-20 md:py-28">
+      {/* 숫자 — 사용자가 강조한 사실만 */}
+      <section className="border-b border-rule">
         <Container>
-          <SectionTitle eyebrow="WHY TS CREW" title={<>도급사가 태산크루를<br className="md:hidden" /> 선택하는 이유</>} />
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {strengths.map((s, i) => (
-              <div
-                key={s.no}
-                className={`rounded-2xl p-7 ${i === 3 ? "bg-navy-800 text-white lg:row-span-1" : "bg-white"}`}
-              >
-                <p className={`text-sm font-extrabold ${i === 3 ? "text-point" : "text-navy-700"}`}>{s.no}</p>
-                <h3 className="mt-3 text-xl font-extrabold">{s.title}</h3>
-                <p className={`mt-3 leading-relaxed ${i === 3 ? "text-navy-100/85" : "text-gray-600"}`}>{s.desc}</p>
+          <dl className="grid grid-cols-2 gap-px bg-rule md:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col-reverse bg-paper px-4 py-7 md:px-8 md:py-9">
+                <dt className="text-sm text-muted md:text-base">{s.label}</dt>
+                <dd className="font-display text-3xl font-extrabold text-navy-800 md:text-[2.75rem]">{s.value}</dd>
               </div>
             ))}
-            <Link
-              href="/business"
-              className="flex flex-col justify-between rounded-2xl border-2 border-navy-800 p-7 transition hover:bg-white"
-            >
-              <p className="text-xl font-extrabold text-navy-900">인력 운영 방식<br />자세히 보기</p>
-              <p className="mt-6 text-2xl text-navy-800">→</p>
+          </dl>
+        </Container>
+      </section>
+
+      {/* 기업 고객: 약속 목록 */}
+      <section className="py-20 md:py-28">
+        <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <SectionTitle
+              title={<>도급사가 태산크루를<br />다시 찾는 이유</>}
+              desc="현장이 원하는 사람을 정확히 보내고, 보낸 뒤에도 끝까지 책임집니다."
+            />
+            <Link href="/business" className="font-bold text-navy-700 underline decoration-2 underline-offset-4 hover:text-navy-900">
+              인력 운영 방식 자세히 보기
             </Link>
+          </div>
+          <ul className="border-t-2 border-navy-900">
+            {strengths.map((s) => (
+              <li key={s.title} className="border-b border-rule py-7">
+                <h3 className="text-xl font-bold text-navy-950 md:text-2xl">{s.title}</h3>
+                <p className="mt-2 max-w-xl leading-relaxed text-muted">{s.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* 약속 한 줄 */}
+      <section className="bg-navy-50 py-16 md:py-24">
+        <Container>
+          <p className="font-display max-w-4xl text-[1.75rem] leading-snug font-extrabold text-navy-900 md:text-[2.75rem]">
+            근로자 문제가 생기면
+            <br />
+            소장이 직접 현장으로 갑니다.
+          </p>
+          <p className="mt-5 max-w-xl text-lg text-muted">24시간 연중무휴로 도급사의 의견을 듣고, 이슈는 24시간 안에 답합니다.</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <ButtonLink href={tel(company.mainPhone)}>{`전화 ${company.mainPhone}`}</ButtonLink>
           </div>
         </Container>
       </section>
 
-      {/* 수상·인증 */}
+      {/* 구직자 */}
       <section className="py-20 md:py-28">
-        <Container>
-          <div className="flex items-end justify-between">
-            <SectionTitle eyebrow="AWARDS & CERTIFICATES" title="수상 · 인증" />
-            <Link href="/awards" className="mb-12 text-sm font-semibold text-navy-700 hover:underline">전체 보기 →</Link>
+        <Container className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-end">
+          <div>
+            <SectionTitle title={<>처음이어도 괜찮아요.<br />교육받고 시작합니다.</>} desc="문자 한 통이면 지원 끝. 성함, 생년월일, 거주지, 시작 가능일을 가까운 지점으로 보내주세요." />
+            <ButtonLink href="/jobs">지금 모집 중인 일자리</ButtonLink>
           </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {["상장 사진", "감사패 사진", "인증서 사진", "직업소개소 등록증"].map((label) => (
-              <Placeholder key={label} label={label} className="aspect-[3/4]" />
+          <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-rule bg-rule">
+            {workerPerks.map((p) => (
+              <li key={p} className="bg-paper px-4 py-5 text-base font-semibold text-ink md:px-5 md:text-lg">
+                {p}
+              </li>
             ))}
-          </div>
+            <li className="bg-paper px-4 py-5 text-base font-semibold text-ink md:px-5 md:text-lg">초보 가능, 경력 우대</li>
+          </ul>
         </Container>
       </section>
 
       {/* 고객사 */}
-      <section className="bg-navy-950 py-20 text-white md:py-28">
+      <section className="border-t border-rule py-20 md:py-24">
         <Container>
-          <SectionTitle light eyebrow="CLIENTS" title="함께하는 고객사" desc="국내 주요 유통·패션·식품 기업의 물류 현장에 인력을 공급하고 있습니다." />
-          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6">
+          <SectionTitle title="물류 현장을 맡겨 주신 고객사" desc="유통·패션·식품 기업의 물류센터에 인력을 공급하고 있습니다." />
+          <ul className="flex flex-wrap gap-x-7 gap-y-3 text-lg font-semibold text-navy-800/80 md:text-xl">
             {clients.map((c) => (
-              <div key={c} className="flex h-16 items-center justify-center rounded-lg bg-white/5 px-2 text-center text-sm font-semibold text-white/85">
-                {c}
-              </div>
+              <li key={c} className="whitespace-nowrap">{c}</li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* 수상·인증 */}
+      <section className="bg-navy-50 py-20 md:py-24">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <SectionTitle title="수상과 인증" />
+            <Link href="/awards" className="mb-10 font-bold text-navy-700 underline decoration-2 underline-offset-4 md:mb-14">
+              전체 보기
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {["상장 사진", "감사패 사진", "인증서 사진", "직업소개소 등록증"].map((label) => (
+              <Placeholder key={label} label={label} className="aspect-[3/4] bg-paper" />
             ))}
           </div>
         </Container>
       </section>
 
-      {/* 블로그 */}
-      <section className="py-20 md:py-28">
+      {/* 소식 */}
+      <section className="py-20 md:py-24">
         <Container>
-          <div className="flex items-end justify-between">
-            <SectionTitle eyebrow="NEWS" title="태산크루 소식" />
-            <Link href="/blog" className="mb-12 text-sm font-semibold text-navy-700 hover:underline">전체 보기 →</Link>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <SectionTitle title="태산크루 소식" />
+            <Link href="/blog" className="mb-10 font-bold text-navy-700 underline decoration-2 underline-offset-4 md:mb-14">
+              소식 전체 보기
+            </Link>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <ul className="border-t-2 border-navy-900">
             {posts.map((p) => (
-              <Link key={p.slug} href={`/blog/${p.slug}`} className="group rounded-2xl border border-navy-100 p-6 transition hover:border-navy-700">
-                <p className="text-xs font-bold text-navy-700">{p.category}</p>
-                <h3 className="mt-2 text-lg leading-snug font-bold group-hover:text-navy-700">{p.title}</h3>
-                <p className="mt-3 line-clamp-2 text-sm text-gray-600">{p.summary}</p>
-                <p className="mt-4 text-xs text-gray-400">{p.date}</p>
-              </Link>
+              <li key={p.slug} className="border-b border-rule">
+                <Link href={`/blog/${p.slug}`} className="group grid gap-1 py-6 md:grid-cols-[8rem_9rem_minmax(0,1fr)] md:items-baseline md:gap-6">
+                  <time dateTime={p.date} className="text-sm text-muted tabular-nums">{p.date}</time>
+                  <span className="text-sm font-bold text-navy-700">{p.category}</span>
+                  <span className="text-lg font-bold text-ink group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">{p.title}</span>
+                </Link>
+              </li>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 지점 */}
-      <section className="bg-navy-50 py-20 md:py-28">
-        <Container>
-          <SectionTitle eyebrow="BRANCHES" title="가까운 지점으로 오세요" desc="경기 광주 · 성남 · 서울 동부 세 권역에서 근로자를 모집합니다." />
-          <div className="grid gap-5 md:grid-cols-3">
-            {branches.map((b) => (
-              <div key={b.slug} className="rounded-2xl bg-white p-7">
-                <p className="text-sm font-semibold text-navy-700">{b.area} 권역</p>
-                <h3 className="mt-1 text-2xl font-extrabold text-navy-950">{b.name}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-gray-600">{b.address}</p>
-                {b.landmark && <p className="mt-1 text-sm font-semibold text-navy-800">{b.landmark}</p>}
-                {b.phone ? (
-                  <a href={tel(b.phone)} className="mt-5 flex items-center gap-2 text-lg font-bold text-navy-800">
-                    <PhoneIcon /> {b.phone}
-                  </a>
-                ) : (
-                  <p className="mt-5 text-sm text-gray-400">전화번호 준비 중</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-navy-800 py-16 text-white">
-        <Container className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <p className="text-2xl font-extrabold md:text-3xl">24시간 연중무휴, 지금 바로 상담하세요</p>
-            <p className="mt-2 text-navy-100/80">이슈 발생 시 24시간 이내 피드백을 약속합니다.</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <ButtonLink href={tel(company.mainPhone)} variant="point">{company.mainPhone}</ButtonLink>
-            <ButtonLink href="/contact" variant="ghost">문의 남기기</ButtonLink>
-          </div>
+          </ul>
         </Container>
       </section>
     </>
+  );
+}
+
+// 히어로 오른쪽: 지점 3곳을 현장 배차판처럼
+function DispatchBoard() {
+  return (
+    <div className="min-w-0 overflow-hidden rounded-lg bg-navy-950 ring-1 ring-white/10">
+      <div className="flex items-center justify-between bg-point px-5 py-3 text-navy-950">
+        <p className="font-display text-lg font-extrabold">지점별 집결지</p>
+        <p className="text-sm font-bold">전화 한 통이면 배치</p>
+      </div>
+      <ul>
+        {branches.map((b) => (
+          <li key={b.slug} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t border-white/10 px-5 py-5 first:border-t-0">
+            <div className="min-w-0">
+              <p className="flex items-baseline gap-2">
+                <span className="font-display text-xl font-extrabold text-white">{b.name}</span>
+                <span className="text-sm text-navy-100/60">{b.area} 권역</span>
+              </p>
+              <p className="mt-1 truncate text-[15px] text-navy-100/85">{b.landmark ?? b.address}</p>
+            </div>
+            {b.phone ? (
+              <a href={tel(b.phone)} className="press rounded-md border border-point/60 px-3 py-2 text-sm font-bold whitespace-nowrap text-point tabular-nums hover:bg-point hover:text-navy-950">
+                {b.phone}
+              </a>
+            ) : (
+              <span className="text-sm whitespace-nowrap text-navy-100/50">번호 준비 중</span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

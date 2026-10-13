@@ -1,26 +1,98 @@
+/* Hallmark · macrostructure: Dispatch Board (custom) · tone: utilitarian · anchor hue: navy 275 + safety yellow 92
+ * fonts: Paperlogy (display) + Pretendard (body) · motion: press · modal fade · stagger-free
+ */
 @import "tailwindcss";
 
-/* 회사소개서의 남색 계열 + 채용 전단의 노란색 포인트 */
+/* 색·글꼴 토큰. 컴포넌트에서는 이 이름(bg-navy-900, text-ink 등)만 쓴다 */
 @theme {
-  --color-navy-950: #161543;
-  --color-navy-900: #22215a;
-  --color-navy-800: #2a3577;
-  --color-navy-700: #36449a;
-  --color-navy-100: #e6e8f5;
-  --color-navy-50: #f3f4fa;
-  --color-point: #ffd43b;
-  --color-point-dark: #f2b705;
+  /* 회사소개서 남색 */
+  --color-navy-950: oklch(21% 0.07 277);
+  --color-navy-900: oklch(27% 0.1 277);
+  --color-navy-800: oklch(35% 0.12 273);
+  --color-navy-700: oklch(43% 0.14 271);
+  --color-navy-200: oklch(86% 0.03 275);
+  --color-navy-100: oklch(92% 0.018 275);
+  --color-navy-50: oklch(97% 0.008 275);
+  /* 채용 전단의 안전 노랑 — 배차판과 전화 버튼에만 */
+  --color-point: oklch(87% 0.17 92);
+  --color-point-dark: oklch(80% 0.17 85);
+  --color-ink: oklch(22% 0.03 275);
+  --color-muted: oklch(48% 0.02 275);
+  --color-rule: oklch(90% 0.012 275);
+  --color-paper: oklch(99.5% 0.002 275);
+
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: Paperlogy, "Pretendard Variable", Pretendard, sans-serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html,
+body {
+  overflow-x: clip;
 }
 
 html {
-  scroll-behavior: smooth;
   word-break: keep-all;
 }
 
 body {
-  background: #fff;
-  color: #1b1f2a;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+/* 키보드 포커스는 즉시, 항상 보이게 */
+:focus-visible {
+  outline: 3px solid var(--color-navy-700);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.on-dark :focus-visible {
+  outline-color: var(--color-point);
+}
+
+/* 누르는 요소는 눌린 느낌을 준다 */
+.press {
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, color 160ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+/* 사진 확대 창: 열릴 때만 짧게 */
+.modal {
+  transition: opacity 200ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+  }
+}
+.modal img {
+  transition: transform 200ms var(--ease-out);
+  @starting-style {
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press:active {
+    transform: none;
+  }
+  .modal img {
+    transition: none;
+  }
 }
 
 /* 블로그 본문 */
@@ -32,4 +104,4 @@ body {
 .prose-post ol { list-style: decimal; }
 .prose-post strong { color: var(--color-navy-900); }
 .prose-post a { color: var(--color-navy-700); text-decoration: underline; }
-.prose-post blockquote { border-left: 4px solid var(--color-point); background: var(--color-navy-50); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.prose-post blockquote { border-left: 4px solid var(--color-point); background: var(--color-navy-50); padding: 0.75rem 1rem; margin: 1rem 0; }

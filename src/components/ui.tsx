@@ -2,27 +2,23 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`mx-auto max-w-6xl px-4 ${className}`}>{children}</div>;
+  return <div className={`mx-auto max-w-6xl px-4 md:px-6 ${className}`}>{children}</div>;
 }
 
-export function SectionTitle({ eyebrow, title, desc, light = false }: { eyebrow?: string; title: ReactNode; desc?: ReactNode; light?: boolean }) {
+export function SectionTitle({ title, desc, light = false }: { title: ReactNode; desc?: ReactNode; light?: boolean }) {
   return (
-    <div className="mb-10 md:mb-12">
-      {eyebrow && (
-        <p className={`mb-2 text-sm font-bold tracking-widest ${light ? "text-point" : "text-navy-700"}`}>{eyebrow}</p>
-      )}
-      <h2 className={`text-2xl leading-snug font-extrabold md:text-4xl ${light ? "text-white" : "text-navy-950"}`}>{title}</h2>
-      {desc && <p className={`mt-4 max-w-2xl text-base leading-relaxed md:text-lg ${light ? "text-navy-100/80" : "text-gray-600"}`}>{desc}</p>}
+    <div className="mb-10 max-w-2xl md:mb-14">
+      <h2 className={`text-[1.75rem] leading-snug font-extrabold md:text-[2.5rem] ${light ? "text-white" : "text-navy-950"}`}>{title}</h2>
+      {desc && <p className={`mt-4 text-base leading-relaxed md:text-lg ${light ? "text-navy-100/80" : "text-muted"}`}>{desc}</p>}
     </div>
   );
 }
 
-export function PageHero({ eyebrow, title, desc }: { eyebrow: string; title: ReactNode; desc?: ReactNode }) {
+export function PageHero({ title, desc }: { title: ReactNode; desc?: ReactNode }) {
   return (
-    <section className="bg-navy-900 py-16 text-white md:py-24">
+    <section className="on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20">
       <Container>
-        <p className="mb-3 text-sm font-bold tracking-widest text-point">{eyebrow}</p>
-        <h1 className="text-3xl leading-tight font-extrabold md:text-5xl">{title}</h1>
+        <h1 className="max-w-3xl text-[2rem] leading-tight font-extrabold md:text-5xl">{title}</h1>
         {desc && <p className="mt-5 max-w-2xl text-base leading-relaxed text-navy-100/80 md:text-lg">{desc}</p>}
       </Container>
     </section>
@@ -33,9 +29,9 @@ export function ButtonLink({ href, children, variant = "primary" }: { href: stri
   const styles = {
     primary: "bg-navy-800 text-white hover:bg-navy-900",
     point: "bg-point text-navy-950 hover:bg-point-dark",
-    ghost: "border border-white/40 text-white hover:bg-white/10",
+    ghost: "border-2 border-white/50 text-white hover:bg-white/10",
   }[variant];
-  const cls = `inline-flex items-center justify-center rounded-full px-7 py-3.5 text-base font-bold transition ${styles}`;
+  const cls = `press inline-flex min-h-12 items-center justify-center rounded-md px-6 text-base font-bold whitespace-nowrap ${styles}`;
   if (href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("sms:")) {
     return <a href={href} className={cls}>{children}</a>;
   }
@@ -45,7 +41,7 @@ export function ButtonLink({ href, children, variant = "primary" }: { href: stri
 // 자료를 받기 전 비워 둔 자리
 export function Placeholder({ label, className = "" }: { label: string; className?: string }) {
   return (
-    <div className={`flex items-center justify-center rounded-2xl border-2 border-dashed border-navy-100 bg-navy-50 p-6 text-center text-sm font-medium text-navy-700/60 ${className}`}>
+    <div className={`flex items-center justify-center border-2 border-dashed border-navy-200 bg-navy-50 p-6 text-center text-sm font-medium text-muted ${className}`}>
       {label}
     </div>
   );

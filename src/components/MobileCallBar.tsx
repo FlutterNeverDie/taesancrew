@@ -4,11 +4,11 @@ import { company, tel } from "@/lib/site";
 // 모바일 하단 고정 바: 구직자 대부분이 휴대폰으로 들어오므로 전화가 한 번에 되게
 export function MobileCallBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-navy-100 bg-white md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-rule bg-paper pb-[env(safe-area-inset-bottom)] lg:hidden">
       <a href={tel(company.mainPhone)} className="flex h-16 items-center justify-center gap-2 bg-point font-bold text-navy-950">
         <PhoneIcon /> 전화하기
       </a>
-      <Link href="/contact" className="flex h-16 items-center justify-center bg-navy-800 font-bold text-white">
+      <Link href="/contact" className="flex h-16 items-center justify-center bg-navy-900 font-bold text-white">
         문의 남기기
       </Link>
     </div>

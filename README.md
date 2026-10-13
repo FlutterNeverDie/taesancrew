@@ -33,3 +33,17 @@ category: 공지   # 공지 · 현장 소식 · 기업 인사이트 · 구직 �
 summary: 목록과 검색 결과에 보이는 한 줄 요약
 ---
 ```
+
+## 디자인 스킬 (Claude Code)
+
+`.claude/skills/`에 디자인 스킬 5개가 들어 있어, 이 폴더에서 Claude Code를 열면 자동으로 쓸 수 있다.
+
+| 스킬 | 용도 | 출처 |
+| --- | --- | --- |
+| frontend-design | 디자인 방향·타이포·템플릿 티 안 나게 | Anthropic 공식 플러그인 |
+| hallmark | AI 티 나는 디자인 패턴 점검(audit/redesign) | github.com/Nutlope/hallmark |
+| emil-design-eng | 애니메이션·눌림·마이크로 인터랙션 | github.com/emilkowalski/skill |
+| ui-ux-pro-max | 접근성·UX 규칙 검색 (`scripts/search.py`) | github.com/nextlevelbuilder/ui-ux-pro-max-skill |
+| web-design-guidelines | Vercel 웹 인터페이스 가이드라인 점검 | vercel-labs/agent-skills |
+
+디자인 토큰(색·글꼴)은 `src/app/globals.css`의 `@theme` 블록에만 둔다. 색은 남색(회사소개서) + 안전 노랑(채용 전단, 배차판·전화 버튼에만).
