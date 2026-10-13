@@ -120,12 +120,45 @@ export const process = [
   { step: "사후 관리", desc: "대표 직접 순회 관리, 고객사 피드백 반영" },
 ];
 
-// 회사소개서 "주요 고객사 현황". 로고 게재는 각 사 동의 후 이미지로 교체
-export const clients = [
-  "CJ대한통운", "LF", "롯데", "신세계", "LX판토스", "현대그린푸드", "더현대", "DFD",
-  "무신사", "유니클로", "이베이", "자라", "폴로 랄프로렌", "리바이스", "스탠리", "아이더",
-  "일리", "웅진", "게스", "동원", "컨버스", "구르메F&B", "신상닷컴", "스타벅스", "소다", "블랙야크", "K2",
-  "한익스프레스", "나이키", "마운티아", "파스퇴르", "C&A Global", "샘표",
+// 회사소개서 "주요 고객사 현황". 로고는 회사소개서 PDF에서 뽑은 것 (public/images/clients)
+// logo가 없으면 이름을 글자 타일로 보여준다
+export type Client = { name: string; logo?: string };
+
+export const clients: Client[] = [
+  { name: "CJ대한통운", logo: "cj-logistics" },
+  { name: "LF", logo: "lf" },
+  { name: "롯데", logo: "lotte" },
+  { name: "신세계", logo: "shinsegae" },
+  { name: "LX판토스", logo: "lx-pantos" },
+  { name: "현대그린푸드", logo: "hyundai-greenfood" },
+  { name: "더현대", logo: "the-hyundai" },
+  { name: "DFD", logo: "dfd" },
+  { name: "무신사", logo: "musinsa" },
+  { name: "유니클로", logo: "uniqlo" },
+  { name: "이베이", logo: "ebay" },
+  { name: "자라", logo: "zara" },
+  { name: "폴로 랄프로렌", logo: "polo" },
+  { name: "리바이스", logo: "levis" },
+  { name: "스탠리", logo: "stanley" },
+  { name: "아이더", logo: "eider" },
+  { name: "일리", logo: "illy" },
+  { name: "웅진", logo: "woongjin" },
+  { name: "게스", logo: "guess" },
+  { name: "동원", logo: "dongwon" },
+  { name: "컨버스", logo: "converse" },
+  { name: "구르메F&B", logo: "gourmet-fnb" },
+  { name: "블랙야크", logo: "blackyak" },
+  { name: "K2", logo: "k2" },
+  { name: "한익스프레스", logo: "hanexpress" },
+  { name: "나이키", logo: "nike" },
+  { name: "마운티아", logo: "mountia" },
+  { name: "파스퇴르", logo: "pasteur" },
+  { name: "C&A Global", logo: "cna-global" },
+  { name: "샘표", logo: "sempio" },
+  // 아래 3곳은 대표 확인 후 노출 확정 (태산 홈페이지 변경.docx)
+  { name: "신상닷컴" },
+  { name: "스타벅스" },
+  { name: "소다" },
 ];
 
 export const recruitPosts = [

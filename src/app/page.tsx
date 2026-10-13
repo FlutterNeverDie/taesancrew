@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ButtonLink, Container, Placeholder, SectionTitle } from "@/components/ui";
-import { branches, clients, company, stats, strengths, tel } from "@/lib/site";
+import { branches, company, stats, strengths, tel } from "@/lib/site";
+import { ClientWall } from "@/components/ClientWall";
 import { getAllPosts } from "@/lib/posts";
 
 const workerPerks = ["당일·익일 지급", "주말·하루만 가능"];
@@ -108,11 +109,7 @@ export default function Home() {
       <section className="border-t border-rule py-20 md:py-24">
         <Container>
           <SectionTitle title="물류 현장을 맡겨 주신 고객사" desc="유통·패션·식품 기업의 물류센터에 인력을 공급하고 있습니다." />
-          <ul className="flex flex-wrap gap-x-7 gap-y-3 text-lg font-semibold text-navy-800/80 md:text-xl">
-            {clients.map((c) => (
-              <li key={c} className="whitespace-nowrap">{c}</li>
-            ))}
-          </ul>
+          <ClientWall />
         </Container>
       </section>
 

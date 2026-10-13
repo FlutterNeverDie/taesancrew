@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink, Container, PageHero, SectionTitle } from "@/components/ui";
-import { clients, company, process, services, strengths, tel } from "@/lib/site";
+import { company, process, services, strengths, tel } from "@/lib/site";
+import { ClientWall } from "@/components/ClientWall";
 
 export const metadata: Metadata = { title: "중점분야" };
 
@@ -116,11 +117,7 @@ export default function BusinessPage() {
       <section className="py-20 md:py-28">
         <Container>
           <SectionTitle title="주요 고객사" />
-          <ul className="flex flex-wrap gap-x-7 gap-y-3 text-lg font-semibold text-navy-800/80 md:text-xl">
-            {clients.map((c) => (
-              <li key={c} className="whitespace-nowrap">{c}</li>
-            ))}
-          </ul>
+          <ClientWall />
         </Container>
       </section>
 

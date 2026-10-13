@@ -1,6 +1,14 @@
 [
   {
     "date": "2026-10-13",
+    "macrostructure": "Notice Sheet (custom, 구인 공고문)",
+    "theme": "custom",
+    "theme_axes": "light / geometric-sans (Paperlogy) / cool navy + safety-yellow",
+    "enrichment": "none (typography + 실제 채용 전단)",
+    "brief": "/jobs redesign · 구직자 문자 지원 중심, 아이콘 타일 → 근로조건 표"
+  },
+  {
+    "date": "2026-10-13",
     "macrostructure": "Dispatch Board (custom)",
     "theme": "custom",
     "theme_axes": "light / geometric-sans (Paperlogy) / cool navy + safety-yellow",
