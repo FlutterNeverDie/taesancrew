@@ -15,7 +15,7 @@ export function JobsHero() {
             지원하세요
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/85 md:text-xl">
-            네 가지만 보내주시면 가까운 지점에서 연락드립니다. 처음이어도, 하루만 일해도 괜찮아요.
+            다섯 가지만 보내주시면 희망 근무지의 지점장이 직접 연락드립니다. 처음이어도, 하루만 일해도 괜찮아요.
           </p>
         </div>
 
@@ -23,9 +23,10 @@ export function JobsHero() {
           <p className="text-lg font-extrabold text-navy-900">보낼 내용</p>
           <ol className="mt-4 divide-y divide-rule border-y border-rule">
             {smsFields.map((f, i) => (
-              <li key={f} className="flex items-baseline gap-4 py-3.5">
+              <li key={f.label} className="flex flex-wrap items-baseline gap-x-4 gap-y-0.5 py-3">
                 <span className="w-6 shrink-0 text-lg font-extrabold text-navy-700 tabular-nums">{i + 1}</span>
-                <span className="text-xl font-bold md:text-2xl">{f}</span>
+                <span className="text-xl font-bold md:text-2xl">{f.label}</span>
+                {f.hint && <span className="text-base font-semibold text-navy-700">{f.hint} 중</span>}
               </li>
             ))}
           </ol>

@@ -27,7 +27,6 @@
 | `about/hero` | 회사소개 상단 | /about 맨 위 |
 | `about/greeting` | 대표 인사 | /about |
 | `about/focus` | 중점분야 요약 | /about |
-| `about/services` | 사업 영역 | /about |
 | `about/branches` | 지점안내 요약 | /about |
 | `about/team` | 지점장 단체 사진 | /about |
 | `about/history` | 연혁 | /about#history |

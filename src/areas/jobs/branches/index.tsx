@@ -21,7 +21,7 @@ export function JobsBranches() {
                   <a href={tel(b.phone)} className="press inline-flex min-h-13 items-center rounded-md bg-navy-900 px-5 text-lg font-bold whitespace-nowrap text-white tabular-nums hover:bg-navy-800">
                     전화 {b.phone}
                   </a>
-                  <a href={smsApplyHref(b.phone)} className="press inline-flex min-h-13 items-center rounded-md border-2 border-navy-900 px-5 text-lg font-bold whitespace-nowrap text-navy-900 hover:bg-paper">
+                  <a href={smsApplyHref(b.phone, b.name)} className="press inline-flex min-h-13 items-center rounded-md border-2 border-navy-900 px-5 text-lg font-bold whitespace-nowrap text-navy-900 hover:bg-paper">
                     문자 지원
                   </a>
                 </div>

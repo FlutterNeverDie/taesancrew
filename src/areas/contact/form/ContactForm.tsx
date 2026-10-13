@@ -69,11 +69,12 @@ export function ContactForm() {
               <Field label="거주지"><input name="거주지" autoComplete="address-level2" placeholder="예: 성남시 수정구…" className={input} /></Field>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="희망 지점">
-                <select name="희망 지점" className={input}>
+              <Field label="희망 근무지">
+                <select name="희망 근무지" className={input}>
                   {branches.map((b) => (
                     <option key={b.slug}>{b.name}</option>
                   ))}
+                  <option>어디든 괜찮아요</option>
                 </select>
               </Field>
               <Field label="시작 가능일"><input name="시작 가능일" type="date" className={input} /></Field>
