@@ -82,7 +82,7 @@ export function ContactForm() {
           </>
         )}
 
-        <label className="flex items-start gap-2 text-sm text-muted">
+        <label className="flex items-start gap-2 text-base text-muted">
           <input type="checkbox" name="agree" required className="mt-0.5 h-4 w-4" />
           상담을 위한 개인정보(이름, 연락처 등) 수집·이용에 동의합니다.
         </label>
@@ -97,7 +97,7 @@ export function ContactForm() {
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-sm font-semibold text-ink">{label}</span>
+      <span className="mb-1.5 block text-base font-semibold text-ink">{label}</span>
       {children}
     </label>
   );

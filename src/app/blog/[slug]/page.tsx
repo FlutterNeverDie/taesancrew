@@ -20,8 +20,8 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
   return (
     <article className="py-14 md:py-20">
       <Container className="max-w-3xl">
-        <Link href="/blog" className="text-sm font-semibold text-navy-700 hover:underline">소식 목록으로</Link>
-        <div className="mt-8 flex items-center gap-3 text-sm">
+        <Link href="/blog" className="text-base font-semibold text-navy-700 hover:underline">소식 목록으로</Link>
+        <div className="mt-8 flex items-center gap-3 text-base">
           <span className="rounded-full bg-navy-50 px-3 py-1 font-bold text-navy-700">{post.category}</span>
           <span className="text-muted">{post.date}</span>
         </div>

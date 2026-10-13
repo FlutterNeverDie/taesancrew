@@ -17,7 +17,7 @@ export default function ContactPage() {
           </Suspense>
           <aside className="space-y-4">
             <a href={tel(company.mainPhone)} className="press block rounded-lg bg-point p-7 hover:bg-point-dark">
-              <p className="text-sm font-bold text-navy-900/70">대표전화</p>
+              <p className="text-base font-bold text-navy-900/70">대표전화</p>
               <p className="mt-1 text-3xl font-extrabold text-navy-950">{company.mainPhone}</p>
             </a>
             <div className="rounded-lg bg-navy-50 p-7 text-ink">

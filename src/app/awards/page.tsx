@@ -21,7 +21,7 @@ export default function AwardsPage() {
                 <div key={label}>
                   <Placeholder label={`${label} 사진`} className="aspect-[3/4]" />
                   <p className="mt-3 font-bold text-muted/60">수상명</p>
-                  <p className="text-sm text-muted/60">수여 기관·날짜</p>
+                  <p className="text-base text-muted/60">수여 기관·날짜</p>
                 </div>
               ))}
           </div>
@@ -36,7 +36,7 @@ export default function AwardsPage() {
               <div key={b.slug}>
                 <Placeholder label={`${b.name} 등록증`} className="aspect-[3/4] bg-paper" />
                 <p className="mt-3 font-bold text-navy-950">{b.name}</p>
-                <p className="text-sm text-muted">등록번호 {b.agencyNo ?? "준비 중"}</p>
+                <p className="text-base text-muted">등록번호 {b.agencyNo ?? "준비 중"}</p>
               </div>
             ))}
           </div>

@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   // className에 max-w-*가 있으면 기본 폭(6xl) 대신 그걸 쓴다
-  const width = /\bmax-w-/.test(className) ? "" : "max-w-6xl";
-  return <div className={`mx-auto px-4 md:px-6 ${width} ${className}`}>{children}</div>;
+  const width = /\bmax-w-/.test(className) ? "" : "max-w-[90rem]";
+  return <div className={`mx-auto px-4 md:px-6 lg:px-10 ${width} ${className}`}>{children}</div>;
 }
 
 export function SectionTitle({ title, desc, light = false }: { title: ReactNode; desc?: ReactNode; light?: boolean }) {
@@ -18,9 +18,9 @@ export function SectionTitle({ title, desc, light = false }: { title: ReactNode;
 
 export function PageHero({ title, desc }: { title: ReactNode; desc?: ReactNode }) {
   return (
-    <section className="on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20">
+    <section className="on-dark brand-hero border-b-8 border-point bg-navy-900 py-14 text-white md:py-20 xl:py-28">
       <Container>
-        <h1 className="max-w-3xl text-[2rem] leading-tight font-extrabold md:text-5xl">{title}</h1>
+        <h1 className="max-w-4xl text-[2rem] leading-tight font-extrabold md:text-5xl xl:text-6xl">{title}</h1>
         {desc && <p className="mt-5 max-w-2xl text-base leading-relaxed font-medium text-white/90 md:text-lg">{desc}</p>}
       </Container>
     </section>
@@ -43,7 +43,7 @@ export function ButtonLink({ href, children, variant = "primary" }: { href: stri
 // 자료를 받기 전 비워 둔 자리
 export function Placeholder({ label, className = "" }: { label: string; className?: string }) {
   return (
-    <div className={`flex items-center justify-center border-2 border-dashed border-navy-200 bg-navy-50 p-6 text-center text-sm font-medium text-muted ${className}`}>
+    <div className={`flex items-center justify-center border-2 border-dashed border-navy-200 bg-navy-50 p-6 text-center text-base font-medium text-muted ${className}`}>
       {label}
     </div>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHero, Placeholder, SectionTitle } from "@/components/ui";
-import { services, stats } from "@/lib/site";
+import { branches, services, stats } from "@/lib/site";
 
 export const metadata: Metadata = { title: "회사소개" };
 
@@ -14,7 +14,8 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-28">
         <Container className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-center">
-          <Placeholder label="대표 사진 또는 사무실 사진" className="aspect-[4/5]" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/team/ceo.jpg" alt="태산 리크루트 & 태산크루 대표" width={1000} height={1250} className="aspect-[4/5] w-full rounded-lg object-cover" />
           <div>
             <SectionTitle title="인력이 곧 기업의 경쟁력입니다" />
             <div className="space-y-4 text-lg leading-relaxed text-ink">
@@ -36,12 +37,19 @@ export default function AboutPage() {
         <Container>
           <dl className="grid grid-cols-2 gap-px bg-rule md:grid-cols-4">
             {stats.map((s) => (
-              <div key={s.label} className="flex flex-col-reverse bg-paper px-4 py-7 md:px-8 md:py-9">
-                <dt className="text-sm text-muted md:text-base">{s.label}</dt>
+              <div key={s.label} className="flex flex-col-reverse bg-paper px-4 py-7 max-md:odd:pl-0 md:px-8 md:py-9 md:first:pl-0">
+                <dt className="text-base text-muted md:text-base">{s.label}</dt>
                 <dd className="font-display text-3xl font-extrabold text-navy-800 md:text-[2.75rem]">{s.value}</dd>
               </div>
             ))}
           </dl>
+        </Container>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <Container>
+          <SectionTitle title="함께하는 지점장들" desc="경기광주 본점, 성남 수진역점, 천호점을 맡고 있는 사람들입니다." />
+          <Placeholder label="지점장 단체 사진" className="aspect-[16/7]" />
         </Container>
       </section>
 
@@ -59,20 +67,18 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-navy-50 py-20 md:py-28">
+      <section id="history" className="scroll-mt-20 bg-navy-50 py-20 md:py-28">
         <Container>
           <SectionTitle title="연혁" />
-          <ol className="relative space-y-8 border-l-2 border-rule pl-8">
-            <li>
-              <span className="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full bg-navy-800" />
-              <p className="font-extrabold text-navy-800">2023. 11</p>
-              <p className="mt-1 text-ink">경기광주점 개업</p>
-            </li>
-            <li>
-              <span className="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full bg-navy-100" />
-              <p className="font-extrabold text-muted">연도 준비 중</p>
-              <p className="mt-1 text-muted">수진역점·천호점 개업, 태산크루 출범 등 - 자료를 받으면 채웁니다</p>
-            </li>
+          {/* 지점 개업 연월은 site.ts의 branches.opened */}
+          <ol className="relative space-y-8 border-l-2 border-navy-200 pl-8">
+            {branches.map((b) => (
+              <li key={b.slug} className="relative">
+                <span className="absolute top-1.5 -left-[41px] h-4 w-4 rounded-full border-2 border-navy-50 bg-navy-800" aria-hidden />
+                <p className="font-extrabold text-navy-800 tabular-nums">{b.opened}</p>
+                <p className="mt-1 text-lg font-semibold text-ink">{b.name} 개업</p>
+              </li>
+            ))}
           </ol>
         </Container>
       </section>

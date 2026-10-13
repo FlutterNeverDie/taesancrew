@@ -5,21 +5,24 @@
 
 /* 색·글꼴 토큰. 컴포넌트에서는 이 이름(bg-navy-900, text-ink 등)만 쓴다 */
 @theme {
-  /* 회사소개서 남색 */
-  --color-navy-950: oklch(21% 0.07 277);
-  --color-navy-900: oklch(27% 0.1 277);
-  --color-navy-800: oklch(35% 0.12 273);
-  --color-navy-700: oklch(43% 0.14 271);
-  --color-navy-200: oklch(86% 0.03 275);
-  --color-navy-100: oklch(92% 0.018 275);
-  --color-navy-50: oklch(97% 0.008 275);
+  /* 매장 포스터 남색 (#011A4A 중심, 밝은 쪽은 #0270D2까지) */
+  --color-navy-950: oklch(20.8% 0.084 261);
+  --color-navy-900: oklch(23.6% 0.095 260);
+  --color-navy-800: oklch(30% 0.12 259);
+  --color-navy-700: oklch(40.5% 0.149 258);
+  --color-navy-200: oklch(86% 0.035 255);
+  --color-navy-100: oklch(92% 0.02 255);
+  --color-navy-50: oklch(97% 0.008 255);
+  /* 포스터 그라데이션 끝 색 · 로고 하늘색 */
+  --color-brand-blue: oklch(54.9% 0.173 254);
+  --color-brand-sky: oklch(73.6% 0.1 241);
   /* 채용 전단의 안전 노랑 - 배차판과 전화 버튼에만 */
   --color-point: oklch(87% 0.17 92);
   --color-point-dark: oklch(80% 0.17 85);
-  --color-ink: oklch(22% 0.03 275);
-  --color-muted: oklch(48% 0.02 275);
-  --color-rule: oklch(90% 0.012 275);
-  --color-paper: oklch(99.5% 0.002 275);
+  --color-ink: oklch(22% 0.03 260);
+  --color-muted: oklch(48% 0.02 260);
+  --color-rule: oklch(90% 0.012 260);
+  --color-paper: oklch(99.5% 0.002 260);
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --font-display: Paperlogy, "Pretendard Variable", Pretendard, sans-serif;
@@ -52,6 +55,11 @@ h3,
 h1,
 h2 {
   text-wrap: balance;
+}
+
+/* [로컬 미리보기 전용] 주소에 ?grad 를 붙이면 상단 남색 영역을 포스터 그라데이션으로 */
+html.grad .brand-hero {
+  background: linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-900) 45%, oklch(35.2% 0.138 259) 75%, var(--color-brand-blue) 100%);
 }
 
 /* 키보드 포커스는 즉시, 항상 보이게 */
