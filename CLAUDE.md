@@ -28,3 +28,4 @@
 
 - `npm run lint`, `npm run build` 통과 후 커밋
 - 화면 변경은 PC(1440px)와 모바일(500px 이하)에서 모두 확인
+- 남은 작업은 `todo/README.md`. 끝낸 항목은 체크해서 "완료"로 옮긴다
