@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: P; font-weight: 900; src: url(fonts/Paperlogy-9Black.woff2); }
+@font-face { font-family: P; font-weight: 800; src: url(fonts/Paperlogy-8ExtraBold.woff2); }
+@font-face { font-family: P; font-weight: 600; src: url(fonts/Paperlogy-6SemiBold.woff2); }
+:root { --navy: #22215a; --navy2: #2b3678; --yellow: #ffd23f; }
+html, body { margin: 0; background: transparent; }
+body { width: var(--w); height: var(--h); display: flex; align-items: center; justify-content: center; font-family: P; overflow: hidden; }
+
+/* 심볼: 남색 타일 + "보낸다"는 뜻의 노란 화살표 줄 */
+.mark { position: relative; width: var(--m); height: var(--m); background: var(--navy); border-radius: calc(var(--m) * 0.22); flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.mark .ts { color: #fff; font-weight: 900; font-size: calc(var(--m) * 0.44); line-height: 0.74; letter-spacing: 0; margin-top: calc(var(--m) * 0.02); }
+.mark .arrow { margin-top: calc(var(--m) * 0.075); width: calc(var(--m) * 0.6); height: calc(var(--m) * 0.1); background: var(--yellow); clip-path: polygon(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%); }
+
+.lock { display: flex; align-items: center; gap: calc(var(--m) * 0.26); }
+.word { display: inline-flex; flex-direction: column; }
+.word .en { font-weight: 900; font-size: calc(var(--m) * 0.6); line-height: 0.9; letter-spacing: 0.005em; color: var(--navy); white-space: nowrap; }
+.word .ko { margin-top: calc(var(--m) * 0.11); font-weight: 600; font-size: calc(var(--m) * 0.19); letter-spacing: 0.14em; padding-left: 0.04em; color: var(--navy2); white-space: nowrap; }
+.word .en span { color: inherit; }
+body.dark .word .en { color: #fff; }
+body.dark .word .ko { color: var(--yellow); }
+body.dark .mark { background: #fff; }
+body.dark .mark .ts { color: var(--navy); }
+</style></head>
+<body>
+<script>
+const v = new URLSearchParams(location.search).get('v') || 'mark';
+const s = document.body.style;
+if (v === 'mark') { s.setProperty('--w','1024px'); s.setProperty('--h','1024px'); s.setProperty('--m','1024px');
+  document.body.innerHTML = '<div class="mark"><span class="ts">TS</span><span class="arrow"></span></div>'; }
+else { s.setProperty('--w','2400px'); s.setProperty('--h','720px'); s.setProperty('--m','480px');
+  if (v === 'dark') document.body.classList.add('dark');
+  document.body.innerHTML = '<div class="lock"><div class="mark"><span class="ts">TS</span><span class="arrow"></span></div><div class="word"><div class="en">TS CREW</div><div class="ko">태산크루</div></div></div>'; }
+</script>
+</body></html>
