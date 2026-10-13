@@ -31,7 +31,7 @@ ver1.0.0 배포 이후 남은 작업. 끝나면 체크하고, 다 끝난 항목�
 
 ## 기능
 
-- [ ] GitHub 저장소 Secret `CLOUDFLARE_API_TOKEN` 등록 → 푸시하면 자동 배포 (등록 전에는 `npx wrangler deploy`로 직접 배포)
+- [ ] GitHub 저장소 Secret `CLOUDFLARE_API_TOKEN` 등록 → 푸시하면 자동 배포 (등록 전에는 `npx wrangler pages deploy --branch main`으로 직접 배포)
 - [ ] Vercel 프로젝트 정리 (Cloudflare 주소 확인 후 삭제)
 
 - [ ] Contact 문의 폼 저장: 지금은 메일 앱이 열리기만 함 → 구글 시트 + 메일 알림 연동 (구글 계정, 알림 받을 메일 필요)
@@ -41,6 +41,6 @@ ver1.0.0 배포 이후 남은 작업. 끝나면 체크하고, 다 끝난 항목�
 
 ## 완료
 
-- [x] 호스팅을 Vercel(무료는 상업적 사용 불가) → Cloudflare로 이전 (2026-10-13, https://taesancrew.histlab.workers.dev)
+- [x] 호스팅을 Vercel(무료는 상업적 사용 불가) → Cloudflare Pages로 이전 (2026-10-13, https://taesancrew.pages.dev)
 
 - [x] ver1.0.0 배포 (2026-10-13, 태그 `v1.0.0`)

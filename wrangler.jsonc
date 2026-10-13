@@ -1,13 +1,9 @@
-// Cloudflare 배포 설정 - 정적 파일만 올린다(백엔드 없음). 빌드 결과 out/을 그대로 제공.
-// 이 파일이 없으면 wrangler가 Next.js를 알아보고 서버용 변환(OpenNext)을 붙이려다 실패한다. (chronomap과 같은 방식)
+// Cloudflare Pages 배포 설정 - 정적 파일만 올린다(백엔드 없음). 빌드 결과 out/을 그대로 제공.
+// 주소: https://taesancrew.pages.dev (Pages는 계정 이름 없이 프로젝트 이름만 들어간다)
+// /about → about.html, 없는 주소 → out/404.html 은 Pages가 알아서 처리한다
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "taesancrew",
   "compatibility_date": "2026-10-01",
-  "assets": {
-    "directory": "./out",
-    // /about → about.html, 없는 주소 → out/404.html
-    "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+  "pages_build_output_dir": "./out"
 }
