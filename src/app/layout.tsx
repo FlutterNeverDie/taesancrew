@@ -3,7 +3,6 @@ import "./globals.css";
 import { Header } from "@/areas/layout/header";
 import { Footer } from "@/areas/layout/footer";
 import { ContactDock } from "@/areas/layout/contact-dock";
-import { GradPreview } from "@/components/GradPreview";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,6 +21,11 @@ export const metadata: Metadata = {
     images: [{ url: "/og.png", width: 1200, height: 630, alt: company.title }],
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
+  // 네이버 서치어드바이저·구글 서치콘솔 소유 확인 (값은 site.ts의 company.verification)
+  verification: {
+    google: company.verification.google || undefined,
+    other: company.verification.naver ? { "naver-site-verification": company.verification.naver } : undefined,
+  },
 };
 
 export const viewport: Viewport = {
@@ -47,7 +51,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="main" className="flex-1">{children}</main>
         <Footer />
         <ContactDock />
-        <GradPreview />
       </body>
     </html>
   );

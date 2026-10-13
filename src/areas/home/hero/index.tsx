@@ -3,7 +3,7 @@ import { branches, tel } from "@/lib/site";
 
 export function HomeHero() {
   return (
-    <section className="on-dark brand-hero bg-navy-900 text-white">
+    <section className="on-dark bg-navy-900 text-white">
       <Container className="grid gap-12 py-14 md:py-20 lg:min-h-[min(calc(100svh-4rem),46rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16 xl:gap-24">
         <div className="min-w-0">
           <h1 className="text-[2.5rem] leading-[1.15] font-extrabold [overflow-wrap:anywhere] md:text-[3.75rem] xl:text-[5rem]">

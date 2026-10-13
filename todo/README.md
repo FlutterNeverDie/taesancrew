@@ -34,11 +34,14 @@ ver1.0.0 배포 이후 남은 작업. 끝나면 체크하고, 다 끝난 항목�
 - [ ] Vercel 프로젝트 정리 (Cloudflare 주소 확인 후 삭제)
 
 - [ ] Contact 문의 폼 저장: 지금은 메일 앱이 열리기만 함 → 구글 시트 + 메일 알림 연동 (구글 계정, 알림 받을 메일 필요)
-- [ ] 그라데이션(`?grad`) 쓸지 결정 → 안 쓰면 `GradPreview`, `.brand-hero` 그라데이션 제거
 - [ ] (선택) 카카오톡 전용 공유 카드: 카카오 개발자 JavaScript 키 필요
-- [ ] 도메인 연결, 네이버 서치어드바이저·구글 서치콘솔 등록, 네이버 플레이스(지점 3곳)
+- [ ] 네이버 서치어드바이저·구글 서치콘솔 등록 (사이트 지도 https://taesancrew.pages.dev/sitemap.xml 제출, 방법은 docs/검색등록.md)
+- [ ] 도메인 연결, 네이버 플레이스(지점 3곳)
 
 ## 완료
+
+- [x] 그라데이션 미리보기 제거, 단색 남색으로 확정 (2026-10-13)
+- [x] sitemap.xml, robots.txt 추가 (2026-10-13)
 
 - [x] GitHub Secret `CLOUDFLARE_API_TOKEN` 등록 → main 푸시 시 자동 배포 (2026-10-13, 토큰 권한: Cloudflare Pages Edit + Account Settings Read)
 

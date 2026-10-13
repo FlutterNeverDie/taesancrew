@@ -18,7 +18,7 @@ export function SectionTitle({ title, desc, light = false }: { title: ReactNode;
 
 export function PageHero({ title, desc }: { title: ReactNode; desc?: ReactNode }) {
   return (
-    <section className="on-dark brand-hero border-b-8 border-point bg-navy-900 py-14 text-white md:py-20 xl:py-28">
+    <section className="on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20 xl:py-28">
       <Container>
         <h1 className="max-w-4xl text-[2rem] leading-tight font-extrabold md:text-5xl xl:text-6xl">{title}</h1>
         {desc && <p className="mt-5 max-w-2xl text-base leading-relaxed font-medium text-white/90 md:text-lg">{desc}</p>}

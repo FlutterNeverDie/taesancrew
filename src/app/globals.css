@@ -57,11 +57,6 @@ h2 {
   text-wrap: balance;
 }
 
-/* [로컬 미리보기 전용] 주소에 ?grad 를 붙이면 상단 남색 영역을 포스터 그라데이션으로 */
-html.grad .brand-hero {
-  background: linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-900) 45%, oklch(35.2% 0.138 259) 75%, var(--color-brand-blue) 100%);
-}
-
 /* 키보드 포커스는 즉시, 항상 보이게 */
 :focus-visible {
   outline: 3px solid var(--color-navy-700);

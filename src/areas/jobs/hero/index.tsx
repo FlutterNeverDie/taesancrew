@@ -5,7 +5,7 @@ const head = branches[0]; // 경기광주 본점: 연락이 모이는 곳
 
 export function JobsHero() {
   return (
-    <section className="on-dark brand-hero bg-navy-900 text-white">
+    <section className="on-dark bg-navy-900 text-white">
       <Container className="grid gap-10 py-14 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-20">
         <div className="min-w-0">
           <p className="text-lg font-bold text-point">일자리 찾는 분</p>
