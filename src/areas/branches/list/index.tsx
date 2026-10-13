@@ -1,6 +1,6 @@
 import { Container, Placeholder } from "@/components/ui";
 import { branches, tel } from "@/lib/site";
-import { PhoneIcon } from "@/areas/layout/mobile-call-bar";
+import { PhoneIcon } from "@/components/icons";
 
 export function BranchesList() {
   return (

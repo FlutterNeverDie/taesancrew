@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/areas/layout/header";
 import { Footer } from "@/areas/layout/footer";
-import { MobileCallBar } from "@/areas/layout/mobile-call-bar";
+import { ContactDock } from "@/areas/layout/contact-dock";
 import { GradPreview } from "@/components/GradPreview";
 import { company } from "@/lib/site";
 
@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   },
   description:
     "20년 물류 현장 노하우, 경기광주 본점·성남·천호 3개 직영 지점. 하루 100명 이상 투입하는 인력 소개·도급 전문기업 태산 리크루트 & 태산크루.",
+  // 카톡·문자로 링크를 보낼 때 보이는 미리보기 카드 (이미지: public/og.png 1200×630)
+  metadataBase: new URL("https://taesancrew.vercel.app"),
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    siteName: company.title,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: company.title }],
+  },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 export const viewport: Viewport = {
@@ -37,7 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
-        <MobileCallBar />
+        <ContactDock />
         <GradPreview />
       </body>
     </html>

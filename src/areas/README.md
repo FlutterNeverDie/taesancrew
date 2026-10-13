@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | `layout/header` | 상단 메뉴바 | 모든 페이지 맨 위 |
 | `layout/footer` | 하단 회사 정보 | 모든 페이지 맨 아래 |
-| `layout/mobile-call-bar` | 모바일 하단 고정 바 | 모바일(1024px 미만) 화면 맨 아래 고정 |
+| `layout/contact-dock` | 연락·공유 버튼 (PC 오른쪽 아래 / 모바일 하단 바) | 모든 페이지 |
 | `shared/client-wall` | 고객사 로고 벽 | 메인·중점분야·일자리 |
 | `shared/faq-list` | 자주 묻는 질문 목록(접기/펼치기) | FAQ 페이지, 일자리 페이지 |
 | `shared/stats-strip` | 강조 숫자 줄 | 메인, 회사소개 |

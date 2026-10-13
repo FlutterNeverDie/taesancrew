@@ -80,6 +80,24 @@ html.grad .brand-hero {
   transform: scale(0.97);
 }
 
+/* 연락·공유 창: 모바일은 아래에서 올라오고, PC는 버튼 쪽(오른쪽 아래)에서 커진다 */
+.dock-panel {
+  transition: transform 220ms var(--ease-out), opacity 220ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@media (min-width: 64rem) {
+  .dock-panel {
+    transform-origin: bottom right;
+    @starting-style {
+      opacity: 0;
+      transform: scale(0.96) translateY(8px);
+    }
+  }
+}
+
 /* 사진 확대 창: 열릴 때만 짧게 */
 .modal {
   transition: opacity 200ms var(--ease-out);
@@ -98,8 +116,9 @@ html.grad .brand-hero {
   .press:active {
     transform: none;
   }
-  .modal img {
-    transition: none;
+  .modal img,
+  .dock-panel {
+    transition: opacity 120ms linear;
   }
 }
 

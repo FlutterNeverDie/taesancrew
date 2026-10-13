@@ -5,7 +5,7 @@ import { Logo } from "@/components/Logo";
 export function Footer() {
   return (
     <footer className="on-dark bg-navy-950 text-base text-navy-100/75">
-      <div className="mx-auto max-w-[90rem] px-4 py-12 md:px-6 lg:px-10">
+      <div className="mx-auto max-w-[90rem] px-4 py-12 md:px-6 lg:px-10 lg:pb-32">
         <div className="flex flex-col justify-between gap-8 md:flex-row">
           <div>
             <Logo light />
