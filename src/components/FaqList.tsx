@@ -5,11 +5,11 @@ export function FaqList({ items }: { items: Faq[] }) {
     <div className="border-t-2 border-navy-900">
       {items.map((f) => (
         <details key={f.q} className="group border-b border-rule">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-lg font-bold text-navy-950 [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-lg font-extrabold text-navy-950 [&::-webkit-details-marker]:hidden">
             {f.q}
-            <span aria-hidden className="text-2xl leading-none text-navy-700 group-open:rotate-45">+</span>
+            <span aria-hidden className="text-2xl leading-none font-bold text-navy-900 group-open:rotate-45">+</span>
           </summary>
-          <p className="pb-6 text-lg leading-relaxed text-ink">{f.a}</p>
+          <p className="pb-6 text-lg leading-relaxed font-medium text-navy-950">{f.a}</p>
         </details>
       ))}
     </div>
