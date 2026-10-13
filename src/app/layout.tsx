@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { MobileCallBar } from "@/components/MobileCallBar";
+import { Header } from "@/areas/layout/header";
+import { Footer } from "@/areas/layout/footer";
+import { MobileCallBar } from "@/areas/layout/mobile-call-bar";
 import { GradPreview } from "@/components/GradPreview";
 import { company } from "@/lib/site";
 

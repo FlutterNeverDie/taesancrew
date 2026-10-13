@@ -26,7 +26,8 @@ export const stats = [
 export type Branch = {
   slug: string;
   name: string; // 화면에 보이는 지점명
-  legalName: string; // 사업자 정보에 쓰는 이름 (태산크루 OOO)
+  brand: string; // 지점 상호 브랜드: 경기광주 본점만 "태산 리크루트", 나머지는 "태산크루"
+  legalName: string; // 사업자 정보에 쓰는 이름 ({brand} {legalName})
   area: string; // 근로자 모집 권역
   address: string;
   landmark: string | null;
@@ -42,6 +43,7 @@ export const branches: Branch[] = [
   {
     slug: "gwangju",
     name: "경기광주 본점",
+    brand: "태산 리크루트",
     legalName: "경기광주 본점",
     area: "경기 광주",
     address: "경기도 광주시 광주대로 11-5, 2층 (역동)",
@@ -55,6 +57,7 @@ export const branches: Branch[] = [
   {
     slug: "sujin",
     name: "성남 수진역점",
+    brand: "태산크루",
     legalName: "성남점",
     area: "성남",
     address: "경기도 성남시 수정구 단대로 7",
@@ -68,6 +71,7 @@ export const branches: Branch[] = [
   {
     slug: "cheonho",
     name: "천호점",
+    brand: "태산크루",
     legalName: "천호점",
     area: "서울 동부",
     address: "서울 강동구 천호대로 1024, 천호역 젠트리스",
@@ -120,44 +124,46 @@ export const process = [
   { step: "사후 관리", desc: "대표 직접 순회 관리, 고객사 피드백 반영" },
 ];
 
-// 회사소개서 "주요 고객사 현황". 로고는 회사소개서 PDF에서 뽑은 것 (public/images/clients)
-// logo가 없으면 이름을 글자 타일로 보여준다
-export type Client = { name: string; logo?: string };
+// 회사소개서 "주요 고객사 현황". 로고는 회사소개서 PDF에서 뽑아 흰 여백을 잘라낸 것 (public/images/clients/*.png)
+// 배열 순서 = 화면 순서. 앞에 둘 회사는 위로 올린다. logo가 없으면 이름을 글자로 보여준다
+// w, h = 로고 파일의 실제 픽셀 크기 (화면 크기 계산용, 파일을 바꾸면 같이 바꿀 것)
+// 올리브영·스타벅스·신상닷컴·소다는 로고 파일 없음 (스타벅스·신상닷컴·소다는 대표 확인 후 노출 확정)
+export type Client = { name: string; logo?: string; w?: number; h?: number };
 
 export const clients: Client[] = [
-  { name: "CJ대한통운", logo: "cj-logistics" },
-  { name: "LF", logo: "lf" },
-  { name: "롯데", logo: "lotte" },
-  { name: "신세계", logo: "shinsegae" },
-  { name: "LX판토스", logo: "lx-pantos" },
-  { name: "현대그린푸드", logo: "hyundai-greenfood" },
-  { name: "더현대", logo: "the-hyundai" },
-  { name: "DFD", logo: "dfd" },
-  { name: "무신사", logo: "musinsa" },
-  { name: "유니클로", logo: "uniqlo" },
-  { name: "이베이", logo: "ebay" },
-  { name: "자라", logo: "zara" },
-  { name: "폴로 랄프로렌", logo: "polo" },
-  { name: "리바이스", logo: "levis" },
-  { name: "스탠리", logo: "stanley" },
-  { name: "아이더", logo: "eider" },
-  { name: "일리", logo: "illy" },
-  { name: "웅진", logo: "woongjin" },
-  { name: "게스", logo: "guess" },
-  { name: "동원", logo: "dongwon" },
-  { name: "컨버스", logo: "converse" },
-  { name: "구르메F&B", logo: "gourmet-fnb" },
-  { name: "블랙야크", logo: "blackyak" },
-  { name: "K2", logo: "k2" },
-  { name: "한익스프레스", logo: "hanexpress" },
-  { name: "나이키", logo: "nike" },
-  { name: "마운티아", logo: "mountia" },
-  { name: "파스퇴르", logo: "pasteur" },
-  { name: "C&A Global", logo: "cna-global" },
-  { name: "샘표", logo: "sempio" },
-  // 아래 3곳은 대표 확인 후 노출 확정 (태산 홈페이지 변경.docx)
-  { name: "신상닷컴" },
+  { name: "무신사", logo: "musinsa", w: 300, h: 314 },
+  { name: "유니클로", logo: "uniqlo", w: 300, h: 311 },
+  { name: "올리브영" },
+  { name: "CJ대한통운", logo: "cj-logistics", w: 222, h: 132 },
+  { name: "신세계", logo: "shinsegae", w: 234, h: 177 },
+  { name: "롯데", logo: "lotte", w: 210, h: 210 },
+  { name: "나이키", logo: "nike", w: 300, h: 254 },
+  { name: "더현대", logo: "the-hyundai", w: 300, h: 313 },
+  { name: "현대그린푸드", logo: "hyundai-greenfood", w: 275, h: 238 },
+  { name: "LF", logo: "lf", w: 198, h: 194 },
+  { name: "자라", logo: "zara", w: 300, h: 313 },
+  { name: "폴로 랄프로렌", logo: "polo", w: 300, h: 299 },
   { name: "스타벅스" },
+  { name: "이베이", logo: "ebay", w: 289, h: 162 },
+  { name: "LX판토스", logo: "lx-pantos", w: 250, h: 57 },
+  { name: "리바이스", logo: "levis", w: 252, h: 165 },
+  { name: "컨버스", logo: "converse", w: 300, h: 313 },
+  { name: "게스", logo: "guess", w: 260, h: 236 },
+  { name: "블랙야크", logo: "blackyak", w: 265, h: 313 },
+  { name: "K2", logo: "k2", w: 284, h: 223 },
+  { name: "아이더", logo: "eider", w: 300, h: 313 },
+  { name: "동원", logo: "dongwon", w: 300, h: 313 },
+  { name: "스탠리", logo: "stanley", w: 240, h: 138 },
+  { name: "웅진", logo: "woongjin", w: 255, h: 78 },
+  { name: "일리", logo: "illy", w: 300, h: 313 },
+  { name: "구르메F&B", logo: "gourmet-fnb", w: 225, h: 242 },
+  { name: "마운티아", logo: "mountia", w: 300, h: 313 },
+  { name: "파스퇴르", logo: "pasteur", w: 242, h: 115 },
+  { name: "샘표", logo: "sempio", w: 174, h: 94 },
+  { name: "DFD", logo: "dfd", w: 284, h: 145 },
+  { name: "한익스프레스", logo: "hanexpress", w: 275, h: 77 },
+  { name: "C&A Global", logo: "cna-global", w: 300, h: 313 },
+  { name: "신상닷컴" },
   { name: "소다" },
 ];
 
@@ -216,3 +222,8 @@ export const workerFaq: Faq[] = [
 ];
 
 export const tel = (phone: string) => `tel:${phone.replaceAll("-", "")}`;
+
+// 문자 지원 양식. 링크를 누르면 이 내용이 채워진 문자 창이 열린다
+export const smsFields = ["성함", "생년월일", "거주지", "시작 가능일"];
+const smsBody = encodeURIComponent(["[일자리 지원]", ...smsFields.map((f) => `${f}: `)].join("\n"));
+export const smsApplyHref = (phone: string) => `sms:${phone.replaceAll("-", "")}?&body=${smsBody}`;

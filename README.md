@@ -15,12 +15,15 @@ npm run build   # out/ 생성
 
 ## 내용 고치는 곳
 
+수정은 **영역 단위**로 한다. 영역 지도: [`src/areas/README.md`](src/areas/README.md), 작업 규칙: [`CLAUDE.md`](CLAUDE.md)
+
 | 무엇 | 파일 |
 | --- | --- |
-| 회사 정보, 지점, 강점, 고객사, 채용 공고 | `src/lib/site.ts` (`null` = 화면에 "준비 중") |
+| 화면 한 덩어리(섹션) | `src/areas/<페이지>/<영역>/index.tsx` + `AREA.md` |
+| 회사 정보, 지점, 강점, 고객사, 질문, 메뉴 | `src/lib/site.ts` |
+| 색·글꼴 | `src/app/globals.css`의 `@theme` |
 | 블로그 글 | `content/blog/*.md` - 파일 하나가 글 하나, 파일 이름이 주소 |
-| 채용 전단 이미지 | `public/images/recruit/` |
-| 수상·인증 | `src/app/awards/page.tsx`의 `awards` 배열 |
+| 채용 전단 / 고객사 로고 / 대표 사진 | `public/images/recruit/`, `public/images/clients/`, `public/images/team/` |
 | 기획서 | `docs/기획서.html` |
 
 블로그 글 머리말 형식:
