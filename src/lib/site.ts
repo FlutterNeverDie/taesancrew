@@ -235,8 +235,9 @@ export const smsFields: { label: string; hint?: string }[] = [
   { label: "성함" },
   { label: "생년월일" },
   { label: "거주지" },
-  { label: "희망 근무지", hint: workplaceChoices },
+  { label: "희망 근무지", hint: `${workplaceChoices} 중` },
   { label: "시작 가능일" },
+  { label: "희망 요일", hint: "예: 월·수·금, 주말만" },
 ];
 // workplace를 넘기면 희망 근무지를 미리 채운다 (지점별 "문자 지원" 버튼)
 export const smsApplyHref = (phone: string, workplace?: string) => {

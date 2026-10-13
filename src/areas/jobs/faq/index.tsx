@@ -14,11 +14,7 @@ export function JobsFaq() {
             <Link href="/faq#worker" className="font-bold text-navy-800 underline decoration-2 underline-offset-4">
               전체 질문
             </Link>
-            을 보거나{" "}
-            <Link href="/contact?type=worker" className="font-bold text-navy-800 underline decoration-2 underline-offset-4">
-              온라인으로 지원
-            </Link>
-            하세요.
+            을 보거나, 위의 지점 번호로 문자 한 통 보내주세요.
           </p>
         </div>
         <FaqList items={workerFaq.slice(0, 4)} />
