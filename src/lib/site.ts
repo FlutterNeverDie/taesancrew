@@ -229,20 +229,20 @@ export const workerFaq: Faq[] = [
 export const tel = (phone: string) => `tel:${phone.replaceAll("-", "")}`;
 
 // 문자 지원 양식. 링크를 누르면 이 내용이 채워진 문자 창이 열린다
-// 희망 근무지가 있어야 지점장이 자기 지점 지원자를 바로 알아본다
+// 희망 집결지가 있어야 지점 대표가 자기 지점 지원자를 바로 알아본다
 export const workplaceChoices = "경기광주 / 성남 / 천호";
 export const smsFields: { label: string; hint?: string }[] = [
   { label: "성함" },
   { label: "생년월일" },
   { label: "거주지" },
-  { label: "희망 근무지", hint: `${workplaceChoices} 중` },
+  { label: "희망 집결지", hint: `${workplaceChoices} 중` },
   { label: "시작 가능일" },
   { label: "희망 요일", hint: "예: 월·수·금, 주말만" },
 ];
-// workplace를 넘기면 희망 근무지를 미리 채운다 (지점별 "문자 지원" 버튼)
+// workplace를 넘기면 희망 집결지를 미리 채운다 (지점별 "문자 지원" 버튼)
 export const smsApplyHref = (phone: string, workplace?: string) => {
   const lines = smsFields.map((f) =>
-    f.label === "희망 근무지" ? `희망 근무지${workplace ? "" : ` (${workplaceChoices})`}: ${workplace ?? ""}` : `${f.label}: `,
+    f.label === "희망 집결지" ? `희망 집결지${workplace ? "" : ` (${workplaceChoices})`}: ${workplace ?? ""}` : `${f.label}: `,
   );
   return `sms:${phone.replaceAll("-", "")}?&body=${encodeURIComponent(["[일자리 지원]", ...lines].join("\n"))}`;
 };

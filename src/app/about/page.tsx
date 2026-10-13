@@ -5,7 +5,6 @@ import { StatsStrip } from "@/areas/shared/stats-strip";
 import { AboutSubnav } from "@/areas/shared/about-subnav";
 import { AboutFocus } from "@/areas/about/focus";
 import { AboutBranches } from "@/areas/about/branches";
-import { AboutTeam } from "@/areas/about/team";
 import { AboutHistory } from "@/areas/about/history";
 
 // 이 페이지는 영역(area)을 순서대로 쌓기만 한다. 내용 수정은 src/areas/about/ 의 각 영역에서
@@ -20,7 +19,6 @@ export default function AboutPage() {
       <StatsStrip />
       <AboutFocus />
       <AboutBranches />
-      <AboutTeam />
       <AboutHistory />
     </>
   );

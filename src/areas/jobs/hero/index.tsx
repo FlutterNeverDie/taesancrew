@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui";
-import { branches, smsApplyHref, smsFields, tel } from "@/lib/site";
+import { branches, smsFields, tel } from "@/lib/site";
+import { SmsPicker } from "./SmsPicker";
 
 const head = branches[0]; // 경기광주 본점: 연락이 모이는 곳
 
@@ -15,7 +16,7 @@ export function JobsHero() {
             지원하세요
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/85 md:text-xl">
-            아래 내용을 보내주시면 희망 근무지의 지점 대표가 직접 연락드립니다. 처음이어도, 하루만 일해도 괜찮아요.
+            아래 내용을 보내주시면 희망 집결지의 지점 대표가 직접 연락드립니다. 처음이어도, 하루만 일해도 괜찮아요.
           </p>
         </div>
 
@@ -30,15 +31,10 @@ export function JobsHero() {
               </li>
             ))}
           </ol>
-          <a
-            href={smsApplyHref(head.phone!)}
-            className="press mt-6 flex min-h-14 items-center justify-center rounded-md bg-point px-6 text-lg font-extrabold text-navy-950 hover:bg-point-dark"
-          >
-            {head.name}으로 문자 보내기
-          </a>
+          <SmsPicker />
           <p className="mt-3 text-center text-base text-muted md:text-lg">
             전화로도 지원할 수 있어요{" "}
-            <a href={tel(head.phone!)} className="font-bold text-navy-800 underline underline-offset-4 tabular-nums">
+            <a href={tel(head.phone!)} className="font-bold whitespace-nowrap text-navy-800 underline underline-offset-4 tabular-nums">
               {head.phone}
             </a>
           </p>
