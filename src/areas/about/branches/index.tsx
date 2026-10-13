@@ -21,7 +21,7 @@ export function AboutBranches() {
               </p>
               <p className={`mt-1 text-2xl font-extrabold ${i === 0 ? "text-white" : "text-navy-950"}`}>{b.name}</p>
               <p className={`mt-3 text-lg ${i === 0 ? "text-white/90" : "text-ink"}`}>{b.landmark ?? b.address}</p>
-              <p className={`mt-1 text-base ${i === 0 ? "text-white/75" : "text-muted"}`}>
+              <p className={`mt-1 text-base md:text-lg ${i === 0 ? "text-white/85" : "text-muted"}`}>
                 대표 {b.owner ?? "준비 중"} · {b.opened} 개업
               </p>
               {b.phone && (

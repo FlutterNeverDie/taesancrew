@@ -13,7 +13,7 @@ export function HomeHero() {
             <br />
             보냅니다
           </h1>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-navy-100/85 xl:max-w-lg xl:text-xl">
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-white/90 md:text-xl xl:max-w-lg">
             물류·제조 현장 20년. 경기광주, 성남, 천호 세 지점에서 매일 100명 이상이 현장으로 출근합니다.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">

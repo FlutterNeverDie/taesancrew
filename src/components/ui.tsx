@@ -11,7 +11,7 @@ export function SectionTitle({ title, desc, light = false }: { title: ReactNode;
   return (
     <div className="mb-10 max-w-2xl md:mb-14">
       <h2 className={`text-[1.75rem] leading-snug font-extrabold md:text-[2.5rem] ${light ? "text-white" : "text-navy-950"}`}>{title}</h2>
-      {desc && <p className={`mt-4 text-base leading-relaxed md:text-lg ${light ? "text-navy-100/80" : "text-muted"}`}>{desc}</p>}
+      {desc && <p className={`mt-4 text-lg leading-relaxed md:text-xl ${light ? "text-white/85" : "text-muted"}`}>{desc}</p>}
     </div>
   );
 }
@@ -21,7 +21,7 @@ export function PageHero({ title, desc }: { title: ReactNode; desc?: ReactNode }
     <section className="on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20 xl:py-28">
       <Container>
         <h1 className="max-w-4xl text-[2rem] leading-tight font-extrabold md:text-5xl xl:text-6xl">{title}</h1>
-        {desc && <p className="mt-5 max-w-2xl text-base leading-relaxed font-medium text-white/90 md:text-lg">{desc}</p>}
+        {desc && <p className="mt-5 max-w-3xl text-lg leading-relaxed font-medium text-white/90 md:text-xl">{desc}</p>}
       </Container>
     </section>
   );

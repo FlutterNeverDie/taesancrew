@@ -36,7 +36,7 @@ export function JobsHero() {
           >
             {head.name}으로 문자 보내기
           </a>
-          <p className="mt-3 text-center text-base text-muted">
+          <p className="mt-3 text-center text-base text-muted md:text-lg">
             전화로도 지원할 수 있어요{" "}
             <a href={tel(head.phone!)} className="font-bold text-navy-800 underline underline-offset-4 tabular-nums">
               {head.phone}

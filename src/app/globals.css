@@ -20,7 +20,7 @@
   --color-point: oklch(87% 0.17 92);
   --color-point-dark: oklch(80% 0.17 85);
   --color-ink: oklch(22% 0.03 260);
-  --color-muted: oklch(48% 0.02 260);
+  --color-muted: oklch(40% 0.025 260);
   --color-rule: oklch(90% 0.012 260);
   --color-paper: oklch(99.5% 0.002 260);
 

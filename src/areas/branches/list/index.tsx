@@ -12,19 +12,19 @@ export function BranchesList() {
             <div className="p-7 md:p-10">
               <p className="text-base font-semibold text-navy-700">{b.brand} · {b.area} 권역</p>
               <h2 className="mt-1 text-3xl font-extrabold text-navy-950">{b.name}</h2>
-              <dl className="mt-6 space-y-3 text-ink">
+              <dl className="mt-6 space-y-3 text-lg text-ink">
                 <div className="flex gap-4">
-                  <dt className="w-16 shrink-0 font-semibold text-muted">주소</dt>
+                  <dt className="w-20 shrink-0 font-semibold text-muted">주소</dt>
                   <dd>{b.address}</dd>
                 </div>
                 {b.landmark && (
                   <div className="flex gap-4">
-                    <dt className="w-16 shrink-0 font-semibold text-muted">찾아오기</dt>
+                    <dt className="w-20 shrink-0 font-semibold text-muted">찾아오기</dt>
                     <dd className="font-semibold text-navy-800">{b.landmark}</dd>
                   </div>
                 )}
                 <div className="flex gap-4">
-                  <dt className="w-16 shrink-0 font-semibold text-muted">운영시간</dt>
+                  <dt className="w-20 shrink-0 font-semibold text-muted">운영시간</dt>
                   <dd className="text-muted">준비 중</dd>
                 </div>
               </dl>

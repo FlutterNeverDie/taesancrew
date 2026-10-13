@@ -19,7 +19,7 @@ export function HomePromises() {
           {strengths.map((s) => (
             <li key={s.title} className="border-b border-rule py-7">
               <h3 className="text-xl font-bold text-navy-950 md:text-2xl">{s.title}</h3>
-              <p className="mt-2 max-w-xl leading-relaxed text-muted">{s.desc}</p>
+              <p className="mt-2 max-w-xl text-lg leading-relaxed text-muted">{s.desc}</p>
             </li>
           ))}
         </ul>

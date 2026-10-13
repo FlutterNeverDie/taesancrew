@@ -9,8 +9,8 @@ export function BusinessServices() {
         <ul className="grid gap-px overflow-hidden rounded-lg border border-rule bg-rule sm:grid-cols-2 xl:grid-cols-4">
           {services.map((s) => (
             <li key={s.title} className="bg-paper p-6 md:p-7">
-              <h3 className="text-lg font-bold text-navy-900">{s.title}</h3>
-              <p className="mt-2 text-muted">{s.desc}</p>
+              <h3 className="text-xl font-bold text-navy-900">{s.title}</h3>
+              <p className="mt-2 text-lg leading-relaxed text-muted">{s.desc}</p>
             </li>
           ))}
         </ul>

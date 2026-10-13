@@ -23,13 +23,13 @@ export function BusinessPromises() {
                 현장으로 갑니다
               </p>
             </div>
-            <p className="text-lg leading-relaxed text-white/85">24시간 연중무휴로 도급사의 의견을 듣고, 이슈는 24시간 안에 답합니다.</p>
+            <p className="text-lg leading-relaxed text-white/90 md:text-xl">24시간 연중무휴로 도급사의 의견을 듣고, 이슈는 24시간 안에 답합니다.</p>
           </div>
           <dl className="grid gap-4 sm:grid-cols-2">
             {rest.map((s) => (
               <div key={s.title} className="rounded-lg bg-navy-50 p-7 md:p-8">
                 <dt className="text-xl font-bold text-navy-950 md:text-2xl">{s.title}</dt>
-                <dd className="mt-3 text-base leading-relaxed text-muted md:text-lg">{s.desc}</dd>
+                <dd className="mt-3 text-lg leading-relaxed text-muted">{s.desc}</dd>
               </div>
             ))}
           </dl>

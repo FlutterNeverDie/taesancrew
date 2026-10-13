@@ -17,7 +17,7 @@ export function BlogList() {
                   <span className="text-muted">{p.date}</span>
                 </div>
                 <h2 className="mt-3 text-xl font-bold text-navy-950 group-hover:text-navy-700 md:text-2xl">{p.title}</h2>
-                <p className="mt-2 text-muted">{p.summary}</p>
+                <p className="mt-2 text-lg text-muted">{p.summary}</p>
               </Link>
             </li>
           ))}

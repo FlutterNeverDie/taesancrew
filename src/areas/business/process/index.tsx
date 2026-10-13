@@ -12,7 +12,7 @@ export function BusinessProcess() {
             <li key={p.step} className="border-t-4 border-navy-800 pt-4">
               <p className="text-base font-bold text-navy-700 tabular-nums">{i + 1}단계</p>
               <p className="mt-1 text-lg font-bold text-navy-950">{p.step}</p>
-              <p className="mt-2 text-base leading-relaxed text-muted">{p.desc}</p>
+              <p className="mt-2 text-base leading-relaxed text-muted md:text-lg">{p.desc}</p>
             </li>
           ))}
         </ol>

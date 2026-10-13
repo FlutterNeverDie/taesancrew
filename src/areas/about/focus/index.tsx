@@ -16,7 +16,7 @@ export function AboutFocus() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
             <h2 className="text-[1.75rem] leading-snug font-extrabold text-navy-950 md:text-[2.5rem]">중점분야</h2>
-            <p className="mt-3 text-lg leading-relaxed text-muted">물류·제조 현장에 필요한 사람을 소개하고, 작업 단위로 맡아 끝까지 책임집니다.</p>
+            <p className="mt-3 text-lg leading-relaxed text-muted md:text-xl">물류·제조 현장에 필요한 사람을 소개하고, 작업 단위로 맡아 끝까지 책임집니다.</p>
           </div>
           <Link href="/business" className="text-lg font-bold text-navy-700 underline decoration-2 underline-offset-4 hover:text-navy-900">
             중점분야 자세히 보기
@@ -28,10 +28,10 @@ export function AboutFocus() {
           <div>
             <p className="inline-block rounded-md bg-point px-3 py-1.5 text-base font-bold text-navy-950">가장 많이 보내는 분야</p>
             <h3 className="mt-5 text-[1.75rem] leading-tight font-extrabold md:text-[2.25rem]">{main.title}</h3>
-            <p className="mt-3 text-lg leading-relaxed text-white/85">{main.desc}</p>
+            <p className="mt-3 text-lg leading-relaxed text-white/90 md:text-xl">{main.desc}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {logisticsTasks.map((t) => (
-                <li key={t} className="rounded-md border border-white/25 px-3.5 py-1.5 text-base font-semibold">
+                <li key={t} className="rounded-md border border-white/30 px-3.5 py-1.5 text-base font-semibold md:text-lg">
                   {t}
                 </li>
               ))}
@@ -54,7 +54,7 @@ export function AboutFocus() {
           {others.map((s) => (
             <li key={s.title} className="rounded-lg bg-navy-50 p-7">
               <h3 className="text-xl font-extrabold text-navy-950 md:text-2xl">{s.title}</h3>
-              <p className="mt-3 text-base leading-relaxed text-muted md:text-lg">{s.desc}</p>
+              <p className="mt-3 text-lg leading-relaxed text-muted">{s.desc}</p>
             </li>
           ))}
         </ul>

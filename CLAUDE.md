@@ -22,6 +22,7 @@
 ## 글쓰기
 
 - 사이트 문구와 문서는 한국어. 긴 대시(—, –) 대신 하이픈(-)만 쓴다
+- **글씨 크기 기준 (작고 흐린 글씨 금지):** 섹션·상단 설명 문장은 `text-lg md:text-xl`, 카드·목록 설명은 최소 `text-lg`(좁은 칸은 `text-base md:text-lg`), `text-sm`은 법적 표기·보조 정보에만. 흐린 색은 `text-muted` 토큰만 쓰고 투명도(/60 등)로 더 흐리게 하지 않는다
 - 디자인 판단은 `.claude/skills/`의 hallmark, frontend-design, emil-design-eng, web-design-guidelines, ui-ux-pro-max를 따른다 (`.hallmark/log.json`에 기록)
 
 ## 확인
