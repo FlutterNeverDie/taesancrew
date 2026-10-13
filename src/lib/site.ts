@@ -5,6 +5,8 @@ export const company = {
   name: "태산크루",
   // 홈페이지 제목 (태산 홈페이지 변경.docx)
   title: "태산 리크루트 & 태산크루",
+  // 배포 주소 (카톡 미리보기 등 절대 주소에 쓰임). 도메인을 연결하면 여기만 바꾼다
+  siteUrl: "https://taesancrew.histlab.workers.dev",
   nameEn: "TS CREW",
   slogan: "인력이 곧 기업의 경쟁력이다",
   tagline: "믿을 수 있는 일자리 파트너",

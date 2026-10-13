@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "20년 물류 현장 노하우, 경기광주 본점·성남·천호 3개 직영 지점. 하루 100명 이상 투입하는 인력 소개·도급 전문기업 태산 리크루트 & 태산크루.",
   // 카톡·문자로 링크를 보낼 때 보이는 미리보기 카드 (이미지: public/og.png 1200×630)
-  metadataBase: new URL("https://taesancrew.vercel.app"),
+  metadataBase: new URL(company.siteUrl),
   openGraph: {
     type: "website",
     locale: "ko_KR",
