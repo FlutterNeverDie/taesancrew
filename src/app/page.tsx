@@ -34,7 +34,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 숫자 — 사용자가 강조한 사실만 */}
+      {/* 숫자 - 사용자가 강조한 사실만 */}
       <section className="border-b border-rule">
         <Container>
           <dl className="grid grid-cols-2 gap-px bg-rule md:grid-cols-4">

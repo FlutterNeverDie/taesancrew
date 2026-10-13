@@ -18,7 +18,7 @@ npm run build   # out/ 생성
 | 무엇 | 파일 |
 | --- | --- |
 | 회사 정보, 지점, 강점, 고객사, 채용 공고 | `src/lib/site.ts` (`null` = 화면에 "준비 중") |
-| 블로그 글 | `content/blog/*.md` — 파일 하나가 글 하나, 파일 이름이 주소 |
+| 블로그 글 | `content/blog/*.md` - 파일 하나가 글 하나, 파일 이름이 주소 |
 | 채용 전단 이미지 | `public/images/recruit/` |
 | 수상·인증 | `src/app/awards/page.tsx`의 `awards` 배열 |
 | 기획서 | `docs/기획서.html` |

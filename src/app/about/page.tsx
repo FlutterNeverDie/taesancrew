@@ -71,7 +71,7 @@ export default function AboutPage() {
             <li>
               <span className="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full bg-navy-100" />
               <p className="font-extrabold text-muted">연도 준비 중</p>
-              <p className="mt-1 text-muted">수진역점·천호점 개업, 태산크루 출범 등 — 자료를 받으면 채웁니다</p>
+              <p className="mt-1 text-muted">수진역점·천호점 개업, 태산크루 출범 등 - 자료를 받으면 채웁니다</p>
             </li>
           </ol>
         </Container>

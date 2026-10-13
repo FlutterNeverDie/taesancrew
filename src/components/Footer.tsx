@@ -26,7 +26,7 @@ export function Footer() {
           </nav>
         </div>
 
-        {/* 지점별 사업자 정보 — 비어 있는 값은 자료를 받으면 site.ts에서 채운다 */}
+        {/* 지점별 사업자 정보 - 비어 있는 값은 자료를 받으면 site.ts에서 채운다 */}
         <div className="mt-10 grid gap-6 border-t border-white/10 pt-8 md:grid-cols-3">
           {branches.map((b) => (
             <dl key={b.slug} className="leading-relaxed text-navy-100/60">
