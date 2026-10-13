@@ -17,7 +17,7 @@
 | `shared/faq-list` | 자주 묻는 질문 목록(접기/펼치기) | FAQ 페이지, 일자리 페이지 |
 | `shared/stats-strip` | 강조 숫자 줄 | 메인, 회사소개 |
 | `shared/about-subnav` | 회사소개 탭 | 회사소개·중점분야·지점안내 페이지, 히어로 바로 아래 (스크롤 시 메뉴바 아래 고정) |
-| `home/hero` | 메인 첫 화면 + 지점별 집결지 배차판 | / 맨 위 |
+| `home/hero` | 메인 첫 화면 + 지점 안내판 | / 맨 위 |
 | `home/promises` | 도급사가 다시 찾는 이유 | / 숫자 줄 아래 |
 | `home/statement` | 약속 한 줄 | / |
 | `home/worker-cta` | 구직자 안내 | / |
