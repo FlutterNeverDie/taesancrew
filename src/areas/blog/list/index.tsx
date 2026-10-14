@@ -16,7 +16,9 @@ export function BlogList() {
                   <span className="rounded-full bg-navy-50 px-3 py-1 font-bold text-navy-700">{p.category}</span>
                   <span className="text-muted">{p.date}</span>
                 </div>
-                <h2 className="mt-3 text-xl font-bold text-navy-950 group-hover:text-navy-700 md:text-2xl">{p.title}</h2>
+                <h2 className="mt-3 text-xl font-bold text-navy-950 md:text-2xl">
+                  <span className="link-slide pb-0.5">{p.title}</span>
+                </h2>
                 <p className="mt-2 text-lg text-muted">{p.summary}</p>
               </Link>
             </li>

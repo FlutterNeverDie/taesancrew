@@ -9,6 +9,7 @@
 - 새 영역을 만들면 `src/areas/<페이지>/<영역>/index.tsx` + `AREA.md`를 만들고 `src/areas/README.md` 표에 한 줄 추가한다.
 - 여러 영역이 같이 쓰는 데이터(회사 정보, 지점, 고객사, 질문, 메뉴)는 `src/lib/site.ts` 한 곳에 있다.
 - 색·글꼴 토큰은 `src/app/globals.css`의 `@theme`. 컴포넌트에서 hex 값을 직접 쓰지 않는다.
+- 사진·로고는 WebP로 바꿔 `public/images/`에 넣는다 (`cwebp -q 80~90`, 가로 1200px 이하). 카톡 미리보기용 `public/og.png`만 PNG 유지.
 
 ## 회사 사실 (틀리면 안 되는 것)
 

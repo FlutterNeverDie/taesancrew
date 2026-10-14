@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { branches, company, smsApplyHref, tel } from "@/lib/site";
-import { BackIcon, CloseIcon, LinkIcon, MessageIcon, PhoneIcon, ShareIcon } from "@/components/icons";
+import { BackIcon, CheckIcon, CloseIcon, LinkIcon, MessageIcon, PhoneIcon, ShareIcon } from "@/components/icons";
 
 // 어느 화면에서나 보이는 연락·공유 버튼
 // - PC: 오른쪽 아래에 [공유] 위, [연락하기] 아래로 쌓인다. 누르면 버튼 위로 창이 열린다
@@ -219,7 +219,10 @@ function SharePanel({ onClose }: { onClose: () => void }) {
           문자로 보내기
         </a>
         <button type="button" onClick={copy} className={rowCls} aria-live="polite">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy-100 text-navy-900"><LinkIcon /></span>
+          <span className={`flex h-9 w-9 items-center justify-center rounded-full ${copied ? "bg-navy-900 text-point" : "bg-navy-100 text-navy-900"}`}>
+            {/* 복사되면 링크 아이콘이 체크로 바뀐다 */}
+            {copied ? <CheckIcon className="pop-in h-5 w-5" /> : <LinkIcon />}
+          </span>
           {copied ? "링크를 복사했어요" : "링크 복사"}
         </button>
       </div>

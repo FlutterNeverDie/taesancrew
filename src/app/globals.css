@@ -1,7 +1,23 @@
 /* Hallmark · macrostructure: Dispatch Board (custom) · tone: utilitarian · anchor hue: navy 275 + safety yellow 92
- * fonts: Paperlogy (display) + Pretendard (body) · motion: press · modal fade · stagger-free
+ * fonts: Paperlogy (display) + Pretendard (body) · motion: press · modal fade · hero stagger · scroll reveal · logo marquee · page crossfade · faq/menu open · tab slide · read progress · nav hover · copy check
  */
 @import "tailwindcss";
+
+/* 제목 글꼴 Paperlogy (무료 글꼴, 사이트에 직접 둔다). 사이트에서 쓰는 굵기만 */
+@font-face {
+  font-family: "Paperlogy";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Paperlogy-7Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Paperlogy";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Paperlogy-8ExtraBold.woff2") format("woff2");
+}
 
 /* 색·글꼴 토큰. 컴포넌트에서는 이 이름(bg-navy-900, text-ink 등)만 쓴다 */
 @theme {
@@ -115,6 +131,258 @@ h2 {
   .dock-panel {
     transition: opacity 120ms linear;
   }
+}
+
+/* ── 움직임 ──────────────────────────────────────────────
+ * 짧고 조용하게. 화면 이동(transform)과 투명도만 움직인다.
+ * '동작 줄이기'를 켠 사람에게는 움직이지 않는다 (아래 no-preference 안에만 둔다)
+ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes header-shadow {
+  to {
+    box-shadow: 0 8px 24px -16px color-mix(in oklch, var(--color-navy-900) 45%, transparent);
+  }
+}
+
+/* 고객사 로고 흐르기: 기본은 가운데 정렬된 고정 목록, 움직임을 허용하면 끝없이 옆으로 흐른다 */
+.marquee {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+.marquee-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.marquee-track > [data-dup] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 첫 화면: 순서대로 떠오르기 (지연은 style의 --d) */
+  .rise {
+    animation: rise 700ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  .marquee-track {
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: marquee var(--marquee-duration, 60s) linear infinite;
+  }
+  .marquee-track[data-reverse] {
+    animation-direction: reverse;
+  }
+  .marquee-track > [data-dup] {
+    display: flex;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* 스크롤하면 살며시 나타나기: 스크롤 위치에 묶인 CSS 애니메이션이라 JS가 없고 버벅이지 않는다.
+     지원하지 않는 브라우저는 그냥 평소처럼 보인다 */
+  @supports (animation-timeline: view()) {
+    .reveal,
+    .reveal-each > * {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+
+  /* 스크롤을 내리면 헤더에 얇은 그림자 */
+  @supports (animation-timeline: scroll()) {
+    .header-scroll {
+      animation: header-shadow linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 120px;
+    }
+  }
+
+}
+@keyframes page-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+/* 페이지 이동: 본문만 짧게 크로스페이드, 헤더는 그대로.
+   (@media 안에 넣으면 개발 서버 CSS 처리기가 규칙을 버려서 밖에 두고, 동작 줄이기는 아래에서 끈다) */
+::view-transition-old(page-content) {
+  animation: 120ms ease-out both page-out;
+}
+::view-transition-new(page-content) {
+  animation: 260ms var(--ease-out) 60ms both page-in;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(page-content),
+  ::view-transition-new(page-content) {
+    animation: none;
+  }
+}
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* 휴대폰 메뉴: 위에서 살짝 내려오며 열린다 */
+.menu-panel {
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* 휴대폰 메뉴 글자: 마우스를 올리면 살짝 커지며 남색, 손가락으로 누르면 그 순간 옅은 배경 */
+.menu-link {
+  transform-origin: left center;
+  border-radius: 6px;
+  transition: transform 200ms var(--ease-out), color 150ms ease, background-color 150ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .menu-link:hover {
+    transform: scale(1.05);
+    color: var(--color-navy-800);
+  }
+}
+.menu-link:active {
+  background-color: var(--color-navy-50);
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-link:hover {
+    transform: none;
+  }
+}
+
+/* PC 위쪽 메뉴: 마우스를 올리면 밑줄이 왼쪽에서 그어진다 (선택된 메뉴는 노란 밑줄 그대로) */
+.nav-slide {
+  position: relative;
+}
+.nav-slide::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 4px;
+  height: 2px;
+  background: var(--color-navy-700);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms var(--ease-out);
+}
+.nav-slide:hover::after {
+  transform: scaleX(1);
+}
+
+/* 복사 완료 체크 표시 */
+.pop-in {
+  transition: transform 220ms var(--ease-out), opacity 220ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-slide::after,
+  .pop-in {
+    transition: none;
+  }
+}
+
+/* 소식 글 읽기 진행 막대: 스크롤한 만큼 노란 막대가 찬다 (지원하는 브라우저에서만 보임) */
+.read-progress {
+  display: none;
+}
+@keyframes read-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .read-progress {
+    display: block;
+    transform-origin: left;
+    animation: read-grow linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* 회사소개 탭: 선택 표시가 다음 탭으로 미끄러진다 (페이지 전환 때 같은 이름의 요소끼리 이어 준다) */
+::view-transition-group(about-tab) {
+  animation-duration: 320ms;
+  animation-timing-function: var(--ease-out);
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-panel {
+    transition: none;
+  }
+  ::view-transition-group(about-tab) {
+    animation: none;
+  }
+}
+
+/* 마우스를 올리면 살짝 떠오르기 (마우스가 있는 기기에서만) */
+@media (hover: hover) and (pointer: fine) {
+  .lift {
+    transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+  }
+  .lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px -16px color-mix(in oklch, var(--color-navy-900) 40%, transparent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lift:hover {
+    transform: none;
+  }
+}
+
+/* 링크 밑줄이 왼쪽에서 오른쪽으로 그어지기 */
+.link-slide {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size 250ms var(--ease-out);
+}
+.group:hover .link-slide,
+.group:focus-visible .link-slide {
+  background-size: 100% 2px;
 }
 
 /* 블로그 본문 */

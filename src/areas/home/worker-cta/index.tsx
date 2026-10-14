@@ -13,7 +13,7 @@ export function HomeWorkerCta() {
           <ButtonLink href="/jobs">지금 모집 중인 일자리</ButtonLink>
         </div>
         {/* 구분선은 divide-y로 (gap-px + 배경색 방식은 화면 배율에 따라 1px 선이 사라질 때가 있음) */}
-        <ul className="divide-y divide-rule overflow-hidden rounded-lg border border-rule bg-paper">
+        <ul className="reveal divide-y divide-rule overflow-hidden rounded-lg border border-rule bg-paper">
           {workerPerks.map((p) => (
             <li key={p} className="px-4 py-5 text-base font-semibold text-ink md:px-5 md:text-lg">
               {p}

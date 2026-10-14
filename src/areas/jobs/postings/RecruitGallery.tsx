@@ -1,28 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { Lightbox } from "@/components/Lightbox";
 
 type Post = { src: string; branch: string; title: string };
 
 export function RecruitGallery({ posts }: { posts: Post[] }) {
   const [open, setOpen] = useState<Post | null>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    closeRef.current?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
-    window.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [open]);
 
   return (
     <>
-      <ul className="grid grid-cols-[repeat(2,minmax(0,1fr))] gap-4 md:grid-cols-[repeat(3,minmax(0,1fr))] xl:grid-cols-[repeat(4,minmax(0,1fr))]">
+      <ul className="reveal-each grid grid-cols-[repeat(2,minmax(0,1fr))] gap-4 md:grid-cols-[repeat(3,minmax(0,1fr))] xl:grid-cols-[repeat(4,minmax(0,1fr))]">
         {posts.map((p) => (
           <li key={p.src}>
             <button type="button" onClick={() => setOpen(p)} className="press block w-full cursor-pointer overflow-hidden rounded-lg border border-rule bg-paper text-left">
@@ -37,26 +25,7 @@ export function RecruitGallery({ posts }: { posts: Post[] }) {
         ))}
       </ul>
 
-      {open && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={open.title}
-          className="modal fixed inset-0 z-50 overscroll-contain flex items-center justify-center bg-navy-950/90 p-4"
-          onClick={() => setOpen(null)}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={open.src} alt={`${open.branch} 채용 공고: ${open.title}`} className="max-h-full max-w-full rounded-md" />
-          <button
-            ref={closeRef}
-            type="button"
-            aria-label="닫기"
-            className="press absolute top-4 right-4 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-paper text-2xl font-bold text-ink"
-          >
-            ×
-          </button>
-        </div>
-      )}
+      {open && <Lightbox src={open.src} alt={`${open.branch} 채용 공고: ${open.title}`} onClose={() => setOpen(null)} />}
     </>
   );
 }

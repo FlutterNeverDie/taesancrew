@@ -15,7 +15,7 @@ export function HomePromises() {
             인력 운영 방식 자세히 보기
           </Link>
         </div>
-        <ul className="grid border-t-2 border-navy-900 xl:grid-cols-2 xl:gap-x-12">
+        <ul className="reveal-each grid border-t-2 border-navy-900 xl:grid-cols-2 xl:gap-x-12">
           {strengths.map((s) => (
             <li key={s.title} className="border-b border-rule py-7">
               <h3 className="text-xl font-bold text-navy-950 md:text-2xl">{s.title}</h3>

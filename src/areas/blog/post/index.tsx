@@ -8,6 +8,8 @@ export function BlogPost({ slug }: { slug: string }) {
 
   return (
     <article className="py-14 md:py-20">
+      {/* 읽은 만큼 차는 막대 (globals.css의 .read-progress) */}
+      <div aria-hidden className="read-progress fixed inset-x-0 top-16 z-30 h-1 bg-point" />
       <Container className="max-w-3xl">
         <Link href="/blog" className="text-base font-semibold text-navy-700 hover:underline">소식 목록으로</Link>
         <div className="mt-8 flex items-center gap-3 text-base">

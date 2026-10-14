@@ -14,13 +14,15 @@ export function HomeNews() {
             소식 전체 보기
           </Link>
         </div>
-        <ul className="border-t-2 border-navy-900">
+        <ul className="reveal-each border-t-2 border-navy-900">
           {posts.map((p) => (
             <li key={p.slug} className="border-b border-rule">
               <Link href={`/blog/${p.slug}`} className="group grid gap-1 py-6 md:grid-cols-[8rem_9rem_minmax(0,1fr)] md:items-baseline md:gap-6">
                 <time dateTime={p.date} className="text-base text-muted tabular-nums">{p.date}</time>
                 <span className="text-base font-bold text-navy-700">{p.category}</span>
-                <span className="text-lg font-bold text-ink group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">{p.title}</span>
+                <span className="text-lg font-bold text-ink">
+                  <span className="link-slide pb-0.5">{p.title}</span>
+                </span>
               </Link>
             </li>
           ))}

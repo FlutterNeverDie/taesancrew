@@ -9,7 +9,7 @@ export function Container({ children, className = "" }: { children: ReactNode; c
 
 export function SectionTitle({ title, desc, light = false }: { title: ReactNode; desc?: ReactNode; light?: boolean }) {
   return (
-    <div className="mb-10 max-w-2xl md:mb-14">
+    <div className="reveal mb-10 max-w-2xl md:mb-14">
       <h2 className={`text-[1.75rem] leading-snug font-extrabold md:text-[2.5rem] ${light ? "text-white" : "text-navy-950"}`}>{title}</h2>
       {desc && <p className={`mt-4 text-lg leading-relaxed md:text-xl ${light ? "text-white/85" : "text-muted"}`}>{desc}</p>}
     </div>

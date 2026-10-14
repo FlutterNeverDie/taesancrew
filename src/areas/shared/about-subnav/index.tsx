@@ -20,11 +20,16 @@ export function AboutSubnav({ current }: { current: "about" | "business" | "bran
                 <Link
                   href={t.href}
                   aria-current={active ? "page" : undefined}
-                  className={`block rounded-md px-4 py-2.5 text-base font-bold whitespace-nowrap md:text-lg ${
-                    active ? "bg-navy-900 text-white" : "text-muted hover:bg-navy-50 hover:text-navy-900"
+                  className={`relative block rounded-md px-4 py-2.5 text-base font-bold whitespace-nowrap md:text-lg ${
+                    active ? "text-white" : "text-muted hover:bg-navy-50 hover:text-navy-900"
                   }`}
                 >
-                  {t.label}
+                  {/* 선택 표시: 페이지가 바뀌면 같은 이름(about-tab)끼리 이어져 다음 탭으로 미끄러진다.
+                      글자에도 이름을 줘서 미끄러지는 표시 위에 글자가 보이게 한다 */}
+                  {active && <span aria-hidden className="absolute inset-0 rounded-md bg-navy-900" style={{ viewTransitionName: "about-tab" }} />}
+                  <span className="relative" style={{ viewTransitionName: `about-tab-label-${t.key}` }}>
+                    {t.label}
+                  </span>
                 </Link>
               </li>
             );

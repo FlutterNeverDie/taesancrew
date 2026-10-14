@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { ViewTransition } from "react";
 import "./globals.css";
 import { Header } from "@/areas/layout/header";
 import { Footer } from "@/areas/layout/footer";
 import { ContactDock } from "@/areas/layout/contact-dock";
+import { StructuredData } from "@/areas/layout/structured-data";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -37,20 +39,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ko" className="h-full antialiased">
       <head>
+        {/* 본문 글꼴 Pretendard는 CDN에서 (쓰는 글자 묶음만 받는 방식). 사이트에 직접 넣으면 CSS가 100KB 넘게 커져서 오히려 느려진다 */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" />
+        {/* 제목 글꼴 Paperlogy는 쓰는 두 굵기(700·800)만 사이트에 직접 넣었다 (public/fonts, globals.css의 @font-face).
+            외부 CSS를 한 번 더 받는 단계가 없어져 첫 화면이 빨리 뜬다 */}
+        <link rel="preload" href="/fonts/Paperlogy-8ExtraBold.woff2" as="font" type="font/woff2" crossOrigin="" />
       </head>
       <body className="flex min-h-full flex-col pb-16 lg:pb-0">
         <a href="#main" className="sr-only z-50 bg-point px-4 py-3 font-bold text-navy-950 focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
           본문으로 건너뛰기
         </a>
         <Header />
-        <main id="main" className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          {/* 페이지 이동 때 본문만 짧게 크로스페이드 (globals.css의 page-content) */}
+          <ViewTransition name="page-content">{children}</ViewTransition>
+        </main>
         <Footer />
         <ContactDock />
+        <StructuredData />
       </body>
     </html>
   );

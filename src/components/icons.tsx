@@ -24,3 +24,6 @@ export function CloseIcon({ className = "h-5 w-5" }: P) {
 export function BackIcon({ className = "h-5 w-5" }: P) {
   return <svg {...base} className={className}><path d="M15 18l-6-6 6-6" /></svg>;
 }
+export function CheckIcon({ className = "h-5 w-5" }: P) {
+  return <svg {...base} className={className}><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>;
+}

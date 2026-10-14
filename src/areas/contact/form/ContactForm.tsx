@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { company } from "@/lib/site";
+import { CheckIcon } from "@/components/icons";
 
 type Sent = { text: string } | null;
 
@@ -77,7 +78,9 @@ export function ContactForm() {
           <p className="mt-3 text-2xl font-extrabold text-navy-900 tabular-nums">{to}</p>
           <pre className="mt-3 rounded-md bg-paper p-4 font-sans text-base whitespace-pre-wrap text-ink">{sent.text}</pre>
           <div className="mt-3 flex flex-wrap gap-2">
-            <button type="button" onClick={copy} className="press min-h-12 cursor-pointer rounded-md bg-navy-900 px-5 font-bold text-white hover:bg-navy-800">
+            <button type="button" onClick={copy} className="press inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md bg-navy-900 px-5 font-bold text-white hover:bg-navy-800">
+              {/* 복사되면 체크 표시가 톡 나타난다 (globals.css의 .pop-in) */}
+              {copied && <CheckIcon className="pop-in h-5 w-5 text-point" />}
               {copied ? "내용을 복사했어요" : "내용 복사"}
             </button>
             <a href={`tel:${to.replaceAll("-", "")}`} className="press inline-flex min-h-12 items-center rounded-md border-2 border-navy-900 px-5 font-bold text-navy-900 hover:bg-paper">

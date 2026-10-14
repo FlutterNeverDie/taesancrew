@@ -69,7 +69,7 @@ export const branches: Branch[] = [
     phone: "010-2244-0031",
     bizNo: "252-33-01651",
     agencyNo: "제2025-3780385-14-5-00029호",
-    licenseImage: "/images/licenses/sujin.jpg",
+    licenseImage: "/images/licenses/sujin.webp",
     owner: "이나라",
     opened: "2025. 10",
   },
@@ -84,7 +84,7 @@ export const branches: Branch[] = [
     phone: "010-8141-0240",
     bizNo: "239-95-02048",
     agencyNo: "제2026-3240289-14-5-00011호",
-    licenseImage: "/images/licenses/cheonho.jpg",
+    licenseImage: "/images/licenses/cheonho.webp",
     owner: "모목원",
     opened: "2026. 10",
   },
@@ -130,7 +130,7 @@ export const process = [
   { step: "사후 관리", desc: "대표 직접 순회 관리, 고객사 피드백 반영" },
 ];
 
-// 회사소개서 "주요 고객사 현황". 로고는 회사소개서 PDF에서 뽑아 흰 여백을 잘라낸 것 (public/images/clients/*.png)
+// 회사소개서 "주요 고객사 현황". 로고는 회사소개서 PDF에서 뽑아 흰 여백을 잘라낸 것 (public/images/clients/*.webp)
 // 배열 순서 = 화면 순서. 앞에 둘 회사는 위로 올린다. logo가 없으면 이름을 글자로 보여준다
 // w, h = 로고 파일의 실제 픽셀 크기 (화면 크기 계산용, 파일을 바꾸면 같이 바꿀 것)
 // 올리브영·스타벅스·신상닷컴·소다는 로고 파일 없음 (스타벅스·신상닷컴·소다는 대표 확인 후 노출 확정)
@@ -174,12 +174,12 @@ export const clients: Client[] = [
 ];
 
 export const recruitPosts = [
-  { src: "/images/recruit/sujin-musinsa.jpg", branch: "성남 수진역점", title: "무신사 물류센터 알바" },
-  { src: "/images/recruit/sujin-brandworks.jpg", branch: "성남 수진역점", title: "브랜드웍스 물류센터 포장·피킹" },
-  { src: "/images/recruit/cheonho-logistics.jpg", branch: "천호점", title: "물류센터 알바" },
-  { src: "/images/recruit/cheonho-cold.jpg", branch: "천호점", title: "냉장물류센터 알바" },
-  { src: "/images/recruit/cheonho-icheon.jpg", branch: "천호점", title: "이천 냉장물류센터 알바" },
-  { src: "/images/recruit/cheonho-musinsa.jpg", branch: "천호점", title: "무신사 물류센터 알바" },
+  { src: "/images/recruit/sujin-musinsa.webp", branch: "성남 수진역점", title: "무신사 물류센터 알바" },
+  { src: "/images/recruit/sujin-brandworks.webp", branch: "성남 수진역점", title: "브랜드웍스 물류센터 포장·피킹" },
+  { src: "/images/recruit/cheonho-logistics.webp", branch: "천호점", title: "물류센터 알바" },
+  { src: "/images/recruit/cheonho-cold.webp", branch: "천호점", title: "냉장물류센터 알바" },
+  { src: "/images/recruit/cheonho-icheon.webp", branch: "천호점", title: "이천 냉장물류센터 알바" },
+  { src: "/images/recruit/cheonho-musinsa.webp", branch: "천호점", title: "무신사 물류센터 알바" },
 ];
 
 export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };

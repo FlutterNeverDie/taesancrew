@@ -5,7 +5,7 @@ export function AboutGreeting() {
     <section className="py-20 md:py-28">
       <Container className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/team/ceo.jpg" alt="태산 리크루트 & 태산크루 대표" width={1000} height={1250} className="aspect-[4/5] w-full rounded-lg object-cover" />
+        <img src="/images/team/ceo.webp" alt="태산 리크루트 & 태산크루 대표" width={1000} height={1250} className="reveal aspect-[4/5] w-full rounded-lg object-cover" />
         <div>
           <SectionTitle title="인력이 곧 기업의 경쟁력입니다" />
           <div className="space-y-5 text-lg leading-relaxed font-medium text-ink md:text-xl md:leading-relaxed">

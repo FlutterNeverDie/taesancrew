@@ -12,9 +12,9 @@ export function Header() {
   const isActive = (href: string) => pathname.startsWith(href.split("#")[0]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule bg-paper">
+    <header className="header-scroll sticky top-0 z-40 border-b border-rule bg-paper" style={{ viewTransitionName: "site-header" }}>
       <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-4 md:px-6 lg:px-10">
-        <Link href="/" onClick={() => setOpen(false)} aria-label={`${company.title} 홈`}>
+        <Link href="/" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
@@ -22,7 +22,7 @@ export function Header() {
           {nav.map((item) => {
             const active = isActive(item.href) || item.children?.some((c) => isActive(c.href));
             const linkCls = `block rounded-md px-3 py-2 text-base font-semibold whitespace-nowrap transition-colors hover:bg-navy-50 ${
-              active ? "text-navy-800 underline decoration-point decoration-4 underline-offset-8" : "text-muted"
+              active ? "text-navy-800 underline decoration-point decoration-4 underline-offset-8" : "nav-slide text-muted"
             }`;
             if (!item.children) {
               return (
@@ -37,7 +37,7 @@ export function Header() {
                 <Link href={item.href} className={linkCls} aria-haspopup="true">
                   {item.label}
                 </Link>
-                <div className="invisible absolute top-full left-0 pt-2 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute top-full left-0 -translate-y-1 pt-2 opacity-0 transition-[opacity,translate,visibility] duration-200 ease-out group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:translate-y-0">
                   <ul className="min-w-40 rounded-lg border border-rule bg-paper p-1.5">
                     {item.children.map((c) => (
                       <li key={c.href}>
@@ -64,25 +64,25 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="relative block h-4 w-6" aria-hidden>
-            <span className={`absolute left-0 block h-0.5 w-6 bg-navy-900 ${open ? "top-2 rotate-45" : "top-0"}`} />
-            <span className={`absolute top-2 left-0 block h-0.5 w-6 bg-navy-900 ${open ? "opacity-0" : ""}`} />
-            <span className={`absolute left-0 block h-0.5 w-6 bg-navy-900 ${open ? "top-2 -rotate-45" : "top-4"}`} />
+            <span className={`absolute left-0 block h-0.5 w-6 bg-navy-900 transition-[top,transform] duration-200 ${open ? "top-2 rotate-45" : "top-0"}`} />
+            <span className={`absolute top-2 left-0 block h-0.5 w-6 bg-navy-900 transition-opacity duration-150 ${open ? "opacity-0" : ""}`} />
+            <span className={`absolute left-0 block h-0.5 w-6 bg-navy-900 transition-[top,transform] duration-200 ${open ? "top-2 -rotate-45" : "top-4"}`} />
           </span>
         </button>
       </div>
 
       {open && (
-        <nav aria-label="주 메뉴" className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-rule bg-paper px-4 pb-6 lg:hidden">
+        <nav aria-label="주 메뉴" className="menu-panel max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-rule bg-paper px-4 pb-6 lg:hidden">
           {nav.map((item) => (
             <div key={item.href} className="border-b border-rule">
-              <Link href={item.href} onClick={() => setOpen(false)} className="block py-4 text-lg font-semibold text-ink">
+              <Link href={item.href} onClick={() => setOpen(false)} className="menu-link block py-4 text-lg font-semibold text-ink">
                 {item.label}
               </Link>
               {item.children && (
                 <ul className="-mt-1 pb-3 pl-4">
                   {item.children.map((c) => (
                     <li key={c.href}>
-                      <Link href={c.href} onClick={() => setOpen(false)} className="block py-2.5 text-base font-medium text-muted">
+                      <Link href={c.href} onClick={() => setOpen(false)} className="menu-link block py-2.5 text-base font-medium text-muted">
                         {c.label}
                       </Link>
                     </li>

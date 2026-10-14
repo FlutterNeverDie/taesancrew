@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Container } from "@/components/ui";
 import { branches, smsFields, tel } from "@/lib/site";
 import { SmsPicker } from "./SmsPicker";
@@ -22,9 +23,10 @@ export function JobsHero() {
 
         <div className="min-w-0 rounded-lg bg-paper p-6 text-ink md:p-8">
           <p className="text-lg font-extrabold text-navy-900">보낼 내용</p>
+          {/* 보낼 내용 6줄이 한 줄씩 떠오른다 (globals.css의 .rise) */}
           <ol className="mt-4 divide-y divide-rule border-y border-rule">
             {smsFields.map((f, i) => (
-              <li key={f.label} className="flex flex-wrap items-baseline gap-x-4 gap-y-0.5 py-3">
+              <li key={f.label} style={{ "--d": `${250 + i * 70}ms` } as CSSProperties} className="rise flex flex-wrap items-baseline gap-x-4 gap-y-0.5 py-3">
                 <span className="w-6 shrink-0 text-lg font-extrabold text-navy-700 tabular-nums">{i + 1}</span>
                 <span className="text-xl font-bold md:text-2xl">{f.label}</span>
                 {f.hint && <span className="text-base font-semibold text-navy-700">{f.hint}</span>}
