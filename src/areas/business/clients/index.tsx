@@ -1,11 +1,12 @@
 import { Container, SectionTitle } from "@/components/ui";
 import { ClientWall } from "@/areas/shared/client-wall";
+import { getDict, type Locale } from "@/i18n";
 
-export function BusinessClients() {
+export function BusinessClients({ lang }: { lang: Locale }) {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <SectionTitle title="주요 고객사" />
+        <SectionTitle title={getDict(lang).business.clientsTitle} />
         <ClientWall />
       </Container>
     </section>

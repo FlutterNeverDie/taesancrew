@@ -2,12 +2,12 @@
 
 - **영역 경로:** `src/areas/layout/contact-dock/`
 - **보이는 곳:** 모든 페이지. PC는 오른쪽 아래에 [공유] 위 · [연락하기] 아래로 쌓인 버튼, 모바일은 화면 맨 아래 바([공유] [연락하기])
-- **파일:** `index.tsx` (클라이언트 컴포넌트)
+- **파일:** `index.tsx` (서버: 그 언어 문구와 지점별 문자 링크를 만든다), `DockClient.tsx` (브라우저: 버튼과 창)
 - **내용:**
   - 연락하기 → "어떤 문의인가요?" → **기업·도급사**면 무조건 본점 대표번호(`company.mainPhone`)로 전화/문자 → **일자리 지원**이면 세 지점 중 골라서 전화 또는 문자 지원(희망 집결지가 미리 채워진 문자)
   - 공유 → 카카오톡 등으로 공유(휴대폰 공유 창, 지원되는 기기에서만 보임) · 문자로 보내기 · 링크 복사
   - 창은 Esc, 바깥 클릭, X로 닫힌다. 열림 애니메이션은 globals.css의 `.dock-panel`
-- **데이터:** `company`, `branches`, `smsApplyHref`, `tel` (site.ts), 아이콘은 components/icons.tsx
+- **데이터:** 사전의 `dock`, `common`, `company`·`branches` (site.ts), 문자 링크 `smsApplyHref` (src/i18n/sms.ts), 아이콘은 components/icons.tsx
 - **주의:** 기업 문의를 지점 번호로 보내지 않는다(본점 대표가 직접 받음). 공유 미리보기(카톡 카드)는 layout.tsx의 openGraph + public/og.png. 카카오 전용 공유 카드를 쓰려면 카카오 개발자 JavaScript 키가 필요
 
 수정은 이 폴더 안에서만. 다른 영역도 쓰는 값(회사 정보·지점·고객사·질문)은 `src/lib/site.ts`에서 고친다.

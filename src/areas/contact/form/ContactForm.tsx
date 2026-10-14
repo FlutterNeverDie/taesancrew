@@ -4,13 +4,15 @@ import Link from "next/link";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { company } from "@/lib/site";
 import { CheckIcon } from "@/components/icons";
+import type { Dict } from "@/i18n/dict/ko";
 
 type Sent = { text: string } | null;
 
 // 기업·도급사 문의 전용 폼 (구직자는 일자리 페이지의 문자 지원으로 안내)
 // 서버가 없는 정적 사이트라, 제출하면 본점 대표번호로 보낼 문자를 만든다
 // 휴대폰: 문자 앱이 내용이 채워진 채로 열린다 / PC: 번호와 내용을 보여주고 복사할 수 있게 한다
-export function ContactForm() {
+// 입력칸 name(회사명·이름…)은 문자 내용의 항목 이름이라 언어와 상관없이 한국어 그대로 둔다 (본점 대표가 읽음)
+export function ContactForm({ t, jobsHref, privacyHref }: { t: Dict["contact"]["form"]; jobsHref: string; privacyHref: string }) {
   const [sent, setSent] = useState<Sent>(null);
   const [copied, setCopied] = useState(false);
   const to = company.mainPhone;
@@ -45,51 +47,51 @@ export function ContactForm() {
   return (
     <div>
       <form onSubmit={submit} className="space-y-5">
-        <Field label="회사명"><input name="회사명" autoComplete="organization" required className={input} /></Field>
+        <Field label={t.company}><input name="회사명" autoComplete="organization" required className={input} /></Field>
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field label="담당자 이름"><input name="이름" autoComplete="name" required className={input} /></Field>
-          <Field label="연락처"><input name="연락처" type="tel" autoComplete="tel" inputMode="tel" required className={input} /></Field>
+          <Field label={t.name}><input name="이름" autoComplete="name" required className={input} /></Field>
+          <Field label={t.phone}><input name="연락처" type="tel" autoComplete="tel" inputMode="tel" required className={input} /></Field>
         </div>
         <div className="grid gap-5 sm:grid-cols-2">
-          <Field label="필요 인원">
-            <input name="필요 인원" placeholder="예: 하루 20명…" className={input} />
+          <Field label={t.people}>
+            <input name="필요 인원" placeholder={t.peoplePh} className={input} />
           </Field>
-          <Field label="근무지 지역"><input name="근무지" placeholder="예: 이천 물류센터…" className={input} /></Field>
+          <Field label={t.place}><input name="근무지" placeholder={t.placePh} className={input} /></Field>
         </div>
-        <Field label="문의 내용">
-          <textarea name="내용" rows={5} placeholder="업무 내용, 근무 기간, 시작 희망일 등…" className={input} />
+        <Field label={t.message}>
+          <textarea name="내용" rows={5} placeholder={t.messagePh} className={input} />
         </Field>
 
         <label className="flex items-start gap-2 text-base text-muted">
           <input type="checkbox" name="agree" required className="mt-1 h-4 w-4" />
           <span>
-            상담을 위한 개인정보(이름, 연락처 등) 수집·이용에 동의합니다.{" "}
-            <Link href="/privacy" className="font-semibold text-navy-800 underline underline-offset-4">
-              개인정보처리방침
+            {t.agree}{" "}
+            <Link href={privacyHref} className="font-semibold text-navy-800 underline underline-offset-4">
+              {t.privacy}
             </Link>
           </span>
         </label>
         <button type="submit" className="press w-full cursor-pointer rounded-md bg-navy-800 py-4 text-lg font-bold text-white hover:bg-navy-900">
-          상담 요청하기
+          {t.submit}
         </button>
-        <p className="text-center text-base text-muted md:text-lg">본점 대표에게 바로 전달됩니다</p>
+        <p className="text-center text-base text-muted md:text-lg">{t.note}</p>
       </form>
 
       {/* 제출 후: PC에서는 문자 앱이 없으므로 받는 번호와 내용을 보여준다 */}
       {sent && (
         <div role="status" className="mt-6 rounded-lg border-2 border-navy-900 bg-navy-50 p-5">
-          <p className="text-lg font-extrabold text-navy-950">본점 대표에게 보낼 문자가 준비됐어요</p>
-          <p className="mt-1 text-base text-muted">휴대폰이면 문자 앱이 열립니다. 안 열리면 아래 번호로 내용을 보내주세요.</p>
+          <p className="text-lg font-extrabold text-navy-950">{t.sentTitle}</p>
+          <p className="mt-1 text-base text-muted">{t.sentDesc}</p>
           <p className="mt-3 text-2xl font-extrabold text-navy-900 tabular-nums">{to}</p>
           <pre className="mt-3 rounded-md bg-paper p-4 font-sans text-base whitespace-pre-wrap text-ink">{sent.text}</pre>
           <div className="mt-3 flex flex-wrap gap-2">
             <button type="button" onClick={copy} className="press inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md bg-navy-900 px-5 font-bold text-white hover:bg-navy-800">
               {/* 복사되면 체크 표시가 톡 나타난다 (globals.css의 .pop-in) */}
               {copied && <CheckIcon className="pop-in h-5 w-5 text-point" />}
-              {copied ? "내용을 복사했어요" : "내용 복사"}
+              {copied ? t.copied : t.copy}
             </button>
             <a href={`tel:${to.replaceAll("-", "")}`} className="press inline-flex min-h-12 items-center rounded-md border-2 border-navy-900 px-5 font-bold text-navy-900 hover:bg-paper">
-              전화하기
+              {t.call}
             </a>
           </div>
         </div>
@@ -97,11 +99,11 @@ export function ContactForm() {
 
       {/* 실수로 들어온 구직자 안내 */}
       <div className="mt-8 rounded-lg bg-point/30 p-5 md:p-6">
-        <p className="text-lg font-bold text-navy-950">일자리를 찾고 계신가요?</p>
+        <p className="text-lg font-bold text-navy-950">{t.jobsTitle}</p>
         <p className="mt-1 text-base text-ink md:text-lg">
-          일자리 페이지에서 문자 한 통으로 지원할 수 있어요.{" "}
-          <Link href="/jobs" className="font-bold text-navy-800 underline decoration-2 underline-offset-4">
-            일자리 보러 가기
+          {t.jobsDesc}{" "}
+          <Link href={jobsHref} className="font-bold text-navy-800 underline decoration-2 underline-offset-4">
+            {t.jobsLink}
           </Link>
         </p>
       </div>

@@ -1,22 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { ViewTransition } from "react";
 import "./globals.css";
-import { Header } from "@/areas/layout/header";
-import { Footer } from "@/areas/layout/footer";
-import { ContactDock } from "@/areas/layout/contact-dock";
-import { StructuredData } from "@/areas/layout/structured-data";
 import { company } from "@/lib/site";
+import { localeInfo } from "@/i18n/config";
 
 export const metadata: Metadata = {
-  // 메인 제목·설명: "인력사무소", 지역 이름, "물류센터 알바"가 들어가야 검색에 걸린다
-  title: {
-    default: `경기광주·성남·천호 인력사무소 ${company.title} | 물류센터 알바 · 인력 소개 · 도급`,
-    template: `%s | ${company.title}`,
-  },
-  description:
-    "경기광주 본점·성남 수진역점·천호점 인력사무소. 물류센터 알바·1일 알바(초보 가능, 출퇴근 셔틀, 당일·익일 지급)와 기업 인력 소개·도급. 항시 운영, 대표 010-5801-2036.",
-  // 소식 RSS (네이버 서치어드바이저에 제출)
-  alternates: { types: { "application/rss+xml": [{ url: "/blog/rss.xml", title: `${company.title} 소식` }] } },
+  // 제목·설명은 언어별 레이아웃((ko)/layout.tsx, [lang]/layout.tsx)과 각 페이지에서 정한다
   // 카톡·문자로 링크를 보낼 때 보이는 미리보기 카드 (이미지: public/og.png 1200×630)
   metadataBase: new URL(company.siteUrl),
   openGraph: {
@@ -38,10 +26,17 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+// <html lang dir>: 주소 맨 앞 언어 코드(/en, /ar …)를 보고 화면이 그려지기 전에 맞춘다.
+// 정적 사이트라 서버가 없어서 첫 화면은 이 짧은 스크립트가, 페이지 이동 때는 [lang]/layout.tsx의 HtmlLang이 맞춘다
+const langScript = `(function(){var m=${JSON.stringify(
+  Object.fromEntries(Object.entries(localeInfo).map(([k, v]) => [k, [v.html, v.dir]])),
+)};var s=location.pathname.split("/")[1];var v=m[s];if(v){document.documentElement.lang=v[0];document.documentElement.dir=v[1];}})();`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className="h-full antialiased">
+    <html lang="ko" className="h-full antialiased" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: langScript }} />
         {/* 본문 글꼴 Pretendard는 CDN에서 (쓰는 글자 묶음만 받는 방식). 사이트에 직접 넣으면 CSS가 100KB 넘게 커져서 오히려 느려진다 */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
         <link
@@ -52,19 +47,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             외부 CSS를 한 번 더 받는 단계가 없어져 첫 화면이 빨리 뜬다 */}
         <link rel="preload" href="/fonts/Paperlogy-8ExtraBold.woff2" as="font" type="font/woff2" crossOrigin="" />
       </head>
-      <body className="flex min-h-full flex-col pb-16 lg:pb-0">
-        <a href="#main" className="sr-only z-50 bg-point px-4 py-3 font-bold text-navy-950 focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
-          본문으로 건너뛰기
-        </a>
-        <Header />
-        <main id="main" className="flex-1">
-          {/* 페이지 이동 때 본문만 짧게 크로스페이드 (globals.css의 page-content) */}
-          <ViewTransition name="page-content">{children}</ViewTransition>
-        </main>
-        <Footer />
-        <ContactDock />
-        <StructuredData />
-      </body>
+      {/* 머리글·바닥글·연락 버튼은 언어별 레이아웃의 SiteChrome에서 그린다 */}
+      <body className="flex min-h-full flex-col pb-16 lg:pb-0">{children}</body>
     </html>
   );
 }

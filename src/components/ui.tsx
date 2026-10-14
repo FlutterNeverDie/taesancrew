@@ -7,6 +7,20 @@ export function Container({ children, className = "" }: { children: ReactNode; c
   return <div className={`mx-auto px-4 md:px-6 lg:px-10 ${width} ${className}`}>{children}</div>;
 }
 
+// 여러 줄 제목: 사전의 ["첫 줄", "둘째 줄"]을 줄바꿈으로 잇는다
+export function Lines({ lines }: { lines: string[] }) {
+  return (
+    <>
+      {lines.map((l, i) => (
+        <span key={i}>
+          {i > 0 && <br />}
+          {l}
+        </span>
+      ))}
+    </>
+  );
+}
+
 export function SectionTitle({ title, desc, light = false }: { title: ReactNode; desc?: ReactNode; light?: boolean }) {
   return (
     <div className="reveal mb-10 max-w-2xl md:mb-14">

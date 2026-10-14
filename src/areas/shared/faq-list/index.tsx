@@ -1,4 +1,5 @@
-import type { Faq } from "@/lib/site";
+// 질문 목록 항목: { q: 질문, a: 답 } (사전의 businessFaq·workerFaq)
+type Faq = { q: string; a: string };
 
 // 답이 높이가 늘어나며 펼쳐진다 (최신 CSS ::details-content, 미지원 브라우저는 그냥 열린다).
 // 이 문법은 빌드의 CSS 처리기가 globals.css에서 통째로 버리기 때문에 여기서 <style>로 직접 넣는다

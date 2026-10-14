@@ -54,6 +54,16 @@ body {
 html {
   word-break: keep-all;
 }
+/* 중국어·일본어는 띄어쓰기가 없어 keep-all이면 줄이 안 바뀌고 넘친다 → 글자 단위로 바꾼다 */
+:lang(zh),
+:lang(ja) {
+  word-break: normal;
+  line-break: strict;
+}
+/* 아랍어(오른쪽→왼쪽): 읽기 진행 막대도 오른쪽에서 찬다 */
+[dir="rtl"] .read-progress {
+  transform-origin: right;
+}
 
 body {
   background: var(--color-paper);

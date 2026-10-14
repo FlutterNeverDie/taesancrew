@@ -6,7 +6,7 @@ import { CloseIcon } from "@/components/icons";
 
 // 이미지를 화면 위에 크게 띄우는 창 (채용 전단, 등록증). 열릴 때 짧게 커지며 나타난다 (globals.css의 .modal)
 // Esc, 바깥 클릭, 닫기 버튼으로 닫는다. 열려 있는 동안 뒤 페이지는 스크롤되지 않는다
-export function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+export function Lightbox({ src, alt, onClose, closeLabel = "닫기" }: { src: string; alt: string; onClose: () => void; closeLabel?: string }) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -36,8 +36,8 @@ export function Lightbox({ src, alt, onClose }: { src: string; alt: string; onCl
       <button
         ref={closeRef}
         type="button"
-        aria-label="닫기"
-        className="press absolute top-4 right-4 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-paper text-ink"
+        aria-label={closeLabel}
+        className="press absolute end-4 top-4 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-paper text-ink"
       >
         <CloseIcon className="h-6 w-6" />
       </button>
@@ -47,14 +47,28 @@ export function Lightbox({ src, alt, onClose }: { src: string; alt: string; onCl
 }
 
 // 썸네일(children)을 누르면 Lightbox로 크게 보여준다. 서버 컴포넌트에서도 감싸서 쓸 수 있다
-export function ZoomImage({ src, alt, className = "", children }: { src: string; alt: string; className?: string; children: ReactNode }) {
+export function ZoomImage({
+  src,
+  alt,
+  className = "",
+  children,
+  closeLabel = "닫기",
+  zoomLabel = "크게 보기",
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  children: ReactNode;
+  closeLabel?: string;
+  zoomLabel?: string;
+}) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)} aria-label={`${alt} 크게 보기`} className={`block w-full cursor-zoom-in text-left ${className}`}>
+      <button type="button" onClick={() => setOpen(true)} aria-label={`${alt} ${zoomLabel}`} className={`block w-full cursor-zoom-in text-start ${className}`}>
         {children}
       </button>
-      {open && <Lightbox src={src} alt={alt} onClose={() => setOpen(false)} />}
+      {open && <Lightbox src={src} alt={alt} closeLabel={closeLabel} onClose={() => setOpen(false)} />}
     </>
   );
 }

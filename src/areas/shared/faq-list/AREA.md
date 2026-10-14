@@ -4,7 +4,7 @@
 - **보이는 곳:** FAQ 페이지, 일자리 페이지
 - **파일:** `index.tsx`
 - **내용:** 질문을 누르면 답이 펼쳐지는 목록 부품
-- **데이터:** props로 받은 `Faq[]` (site.ts `businessFaq`, `workerFaq`)
-- **주의:** 질문 내용은 site.ts에서 고친다
+- **데이터:** props로 받은 질문 목록 (사전의 `businessFaq`, `workerFaq`)
+- **주의:** 질문 내용은 사전(src/i18n/dict/ko.ts와 각 언어 파일)에서 고친다
 
 수정은 이 폴더 안에서만. 다른 영역도 쓰는 값(회사 정보·지점·고객사·질문)은 `src/lib/site.ts`에서 고친다.

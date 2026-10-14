@@ -1,7 +1,7 @@
 import { PageHero } from "@/components/ui";
+import { getDict, type Locale } from "@/i18n";
 
-export function FaqHero() {
-  return (
-    <PageHero title="자주 묻는 질문" desc="기업 고객과 일하려는 분이 가장 많이 묻는 내용을 모았습니다." />
-  );
+export function FaqHero({ lang }: { lang: Locale }) {
+  const t = getDict(lang).faq;
+  return <PageHero title={t.title} desc={t.desc} />;
 }

@@ -1,10 +1,7 @@
-import { PageHero } from "@/components/ui";
+import { Lines, PageHero } from "@/components/ui";
+import { getDict, type Locale } from "@/i18n";
 
-export function AboutHero() {
-  return (
-    <PageHero
-      title={<>필요한 날,<br />필요한 사람을 보냅니다</>}
-      desc="변화하는 시장에 유연하게 대응하는 인력운영·아웃소싱 전문기업입니다."
-    />
-  );
+export function AboutHero({ lang }: { lang: Locale }) {
+  const t = getDict(lang).about;
+  return <PageHero title={<Lines lines={t.title} />} desc={t.desc} />;
 }

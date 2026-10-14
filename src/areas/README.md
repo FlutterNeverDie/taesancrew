@@ -6,7 +6,8 @@
 1. 아래 표에서 해당 영역을 찾는다.
 2. 그 폴더의 `AREA.md`를 읽는다.
 3. 그 폴더 안의 파일만 고친다. 여러 영역이 같이 쓰는 데이터는 `src/lib/site.ts`, 색·글꼴은 `src/app/globals.css`의 `@theme`.
-4. 페이지(`src/app/**/page.tsx`)는 영역을 순서대로 쌓기만 한다. 영역 순서를 바꾸거나 추가·삭제할 때만 페이지를 고친다.
+4. **화면 문구는 사전(`src/i18n/dict/ko.ts`)에 있다.** 영역 파일에는 문구를 직접 쓰지 않고 `getDict(lang)`으로 읽는다. 문구를 고치면 다른 12개 언어 파일(`src/i18n/dict/<언어>.ts`)도 같이 고친다.
+5. 페이지 구성(영역 순서)은 `src/views/<페이지>.tsx`. 한국어 주소(`src/app/(ko)/…`)와 다른 언어 주소(`src/app/[lang]/…`)가 같은 view를 쓴다. 영역 순서를 바꾸거나 추가·삭제할 때만 view를 고친다.
 
 | 영역 | 이름 | 보이는 곳 |
 | --- | --- | --- |
@@ -14,6 +15,7 @@
 | `layout/footer` | 하단 회사 정보 | 모든 페이지 맨 아래 |
 | `layout/contact-dock` | 연락·공유 버튼 (PC 오른쪽 아래 / 모바일 하단 바) | 모든 페이지 |
 | `layout/structured-data` | 검색용 회사·지점 정보 (화면에 안 보임) | 모든 페이지 HTML |
+| `layout/chrome` | 공통 틀 (머리글·본문·바닥글·연락 버튼, 언어별 lang·dir) | 모든 페이지 |
 | `shared/client-wall` | 고객사 로고 벽 | 메인·중점분야·일자리 |
 | `shared/faq-list` | 자주 묻는 질문 목록(접기/펼치기) | FAQ 페이지, 일자리 페이지 |
 | `shared/stats-strip` | 강조 숫자 줄 | 메인, 회사소개 |

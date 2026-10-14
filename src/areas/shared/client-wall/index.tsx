@@ -40,7 +40,7 @@ export function ClientWall({ variant = "grid" }: { variant?: "grid" | "marquee" 
   if (variant === "marquee") {
     const rows = [clients.filter((_, i) => i % 2 === 0), clients.filter((_, i) => i % 2 === 1)];
     return (
-      <div className="marquee space-y-2 overflow-hidden rounded-lg border border-rule bg-white py-4 [--logo-scale:0.7] md:space-y-4 md:py-8 md:[--logo-scale:1]">
+      <div dir="ltr" className="marquee space-y-2 overflow-hidden rounded-lg border border-rule bg-white py-4 [--logo-scale:0.7] md:space-y-4 md:py-8 md:[--logo-scale:1]">
         {rows.map((row, r) => (
           <ul key={r} className="marquee-track" data-reverse={r === 1 ? "" : undefined} style={{ "--marquee-duration": `${row.length * 3.2}s` } as CSSProperties}>
             {[...row, ...row].map((c, i) => (

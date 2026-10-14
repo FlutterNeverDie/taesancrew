@@ -24,13 +24,6 @@ export function StructuredData() {
     url: `${company.siteUrl}/branches/${b.slug}`,
     telephone: b.phone ? intl(b.phone) : undefined,
     address: { "@type": "PostalAddress", streetAddress: b.address, addressLocality: b.locality, addressRegion: b.province, addressCountry: "KR" },
-    // 항시 운영 = 매일 0시~24시
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
     parentOrganization: { "@id": `${company.siteUrl}/#org` },
   }));
   const json = { "@context": "https://schema.org", "@graph": [org, ...shops] };
