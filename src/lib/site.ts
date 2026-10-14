@@ -15,6 +15,8 @@ export const company = {
   email: "crewts@naver.com",
   // 대표번호 = 경기광주 본점(대표 업무폰)
   mainPhone: "010-5801-2036",
+  // 운영시간: 세 지점 모두 항시 운영 (지점안내·검색용 정보에 쓰임)
+  hours: "항시 운영",
   officePhone: "031-769-1035",
   fax: "031-769-1036",
 };
@@ -41,6 +43,13 @@ export type Branch = {
   licenseImage: string | null; // 직업소개소 등록증 이미지 (대표 생년월일 가린 사본, public/images/licenses/)
   owner: string | null;
   opened: string; // 개업 연월
+  // 지점 상세 페이지(/branches/<slug>)와 검색용. 지역 이름은 사무실이 있는 곳 (사는 곳과 상관없이 누구나 올 수 있다)
+  region: string; // "성남"처럼 검색어에 쓰는 지역 이름
+  locality: string; // 시·구 (검색용 주소)
+  province: string; // 시·도 (검색용 주소)
+  seoTitle: string; // 검색 결과에 뜨는 제목
+  seoDesc: string; // 검색 결과 설명
+  intro: string; // 지점 페이지 첫 문단
 };
 
 // 본점이 맨 앞. 연락은 본점으로 모인다
@@ -58,6 +67,12 @@ export const branches: Branch[] = [
     licenseImage: null,
     owner: "이선우",
     opened: "2023. 11",
+    region: "경기광주",
+    locality: "광주시",
+    province: "경기도",
+    seoTitle: "경기광주 인력사무소 | 태산 리크루트 경기광주 본점",
+    seoDesc: "경기 광주시 역동 인력사무소 태산 리크루트 본점. 물류센터 알바·1일 알바 소개, 기업 인력 요청·도급 상담. 항시 운영, 010-5801-2036.",
+    intro: "경기 광주시 광주대로에 있는 태산 리크루트 본점입니다. 일하실 분께는 물류센터 일을 소개하고, 인력이 필요한 기업의 요청과 도급 상담은 모두 이곳 대표번호로 받습니다.",
   },
   {
     slug: "sujin",
@@ -72,6 +87,12 @@ export const branches: Branch[] = [
     licenseImage: "/images/licenses/sujin.webp",
     owner: "이나라",
     opened: "2025. 10",
+    region: "성남",
+    locality: "성남시",
+    province: "경기도",
+    seoTitle: "성남 인력사무소 | 태산크루 성남 수진역점 (수진역 3번 출구)",
+    seoDesc: "성남 수진역 3번 출구 1분 인력사무소 태산크루. 무신사·브랜드웍스 물류센터 알바, 당일지급, 초보 가능, 수진역 출퇴근 통근버스. 010-2244-0031.",
+    intro: "수진역 3번 출구에서 1분 거리의 태산크루 성남 수진역점입니다. 무신사·브랜드웍스 물류센터 일을 소개하고, 수진역에서 통근버스로 함께 출퇴근합니다.",
   },
   {
     slug: "cheonho",
@@ -87,6 +108,12 @@ export const branches: Branch[] = [
     licenseImage: "/images/licenses/cheonho.webp",
     owner: "모목원",
     opened: "2026. 10",
+    region: "천호",
+    locality: "강동구",
+    province: "서울특별시",
+    seoTitle: "천호 인력사무소 | 태산크루 천호점 (천호역 6번 출구, 강동구)",
+    seoDesc: "서울 강동구 천호역 6번 출구 1분 인력사무소 태산크루 천호점. 물류센터·냉장물류센터 알바, 초보 가능, 천호역 출퇴근 셔틀. 010-8141-0240.",
+    intro: "천호역 6번 출구 바로 앞 힐스테이트 천호역 젠트리스에 있는 태산크루 천호점입니다. 무신사 물류센터, 이천 냉장물류센터 등 일을 소개하고, 천호역에서 셔틀로 함께 출퇴근합니다.",
   },
 ];
 
@@ -173,14 +200,63 @@ export const clients: Client[] = [
   { name: "소다" },
 ];
 
-export const recruitPosts = [
-  { src: "/images/recruit/sujin-musinsa.webp", branch: "성남 수진역점", title: "무신사 물류센터 알바" },
-  { src: "/images/recruit/sujin-brandworks.webp", branch: "성남 수진역점", title: "브랜드웍스 물류센터 포장·피킹" },
-  { src: "/images/recruit/cheonho-logistics.webp", branch: "천호점", title: "물류센터 알바" },
-  { src: "/images/recruit/cheonho-cold.webp", branch: "천호점", title: "냉장물류센터 알바" },
-  { src: "/images/recruit/cheonho-icheon.webp", branch: "천호점", title: "이천 냉장물류센터 알바" },
-  { src: "/images/recruit/cheonho-musinsa.webp", branch: "천호점", title: "무신사 물류센터 알바" },
+export type RecruitPost = {
+  slug: string;
+  src: string; // 전단 이미지
+  branchSlug: string;
+  branch: string;
+  title: string;
+  site: string; // 일하는 곳
+  tasks: string; // 하는 일
+  hours: string; // 근무 시간
+  days?: string; // 근무 요일
+  pay: string; // 지급 방식 (금액은 사이트에 넣지 않는다)
+  meet: string; // 집결지
+  perks: string[]; // 혜택·조건
+};
+
+// 지금 모집 중인 공고. 전단 이미지 + 같은 내용을 글자로 (검색엔진이 글자만 읽을 수 있어서). 일급 금액·나이 조건은 넣지 않는다
+// datePosted: 사이트에 올린 날 (구글 채용 정보용)
+export const recruitPostedAt = "2026-10-13";
+export const recruitPosts: RecruitPost[] = [
+  {
+    slug: "sujin-musinsa", src: "/images/recruit/sujin-musinsa.webp", branchSlug: "sujin", branch: "성남 수진역점",
+    title: "무신사 물류센터 알바", site: "무신사 물류센터", tasks: "포장 · 피킹 · 검수 · 입고 · 출고",
+    hours: "09:00 ~ 18:00", days: "월 ~ 금", pay: "당일 지급", meet: "수진역 3번 출구 태산크루 사무실 (신규는 7시 집결)",
+    perks: ["수진역 ↔ 물류센터 통근버스", "점심 식사 제공", "초보 가능 · 경력자 우대", "외국인 가능", "스타렉스 운전 가능자 우대", "주말엔 다른 물류센터 근무 가능"],
+  },
+  {
+    slug: "sujin-brandworks", src: "/images/recruit/sujin-brandworks.webp", branchSlug: "sujin", branch: "성남 수진역점",
+    title: "브랜드웍스 물류센터 포장·피킹", site: "브랜드웍스 물류센터", tasks: "포장 · 피킹 · 검수 · 입고 · 출고",
+    hours: "09:00 ~ 18:00", days: "월 ~ 금", pay: "당일 지급", meet: "수진역 3번 출구 태산크루 사무실 (신규는 7시 집결)",
+    perks: ["수진역 ↔ 물류센터 통근버스", "점심 식사 제공", "초보 가능 · 경력자 우대", "외국인 가능", "스타렉스 운전 가능자 우대", "주말엔 다른 물류센터 근무 가능"],
+  },
+  {
+    slug: "cheonho-logistics", src: "/images/recruit/cheonho-logistics.webp", branchSlug: "cheonho", branch: "천호점",
+    title: "물류센터 알바", site: "물류센터", tasks: "물류센터 작업",
+    hours: "09:00 ~ 18:00 (잔업 시 1.5배 수당)", pay: "월~목 근무는 다음 날, 금~토 근무는 다음 주 월요일 지급", meet: "힐스테이트 천호역 젠트리스 (천호역 6번 출구)",
+    perks: ["천호역 출퇴근 셔틀", "점심 식사 무료", "1종 운전 가능 시 인센티브", "친구 동반 가능", "초보 환영", "당일 지원 가능"],
+  },
+  {
+    slug: "cheonho-cold", src: "/images/recruit/cheonho-cold.webp", branchSlug: "cheonho", branch: "천호점",
+    title: "냉장물류센터 알바", site: "냉장물류센터", tasks: "냉장물류센터 작업",
+    hours: "11:00 ~ 20:00", pay: "지점에 문의", meet: "천호역 집결",
+    perks: ["천호역 출퇴근 셔틀", "점심 식사 제공", "초보 가능", "단기 · 중장기 환영"],
+  },
+  {
+    slug: "cheonho-icheon", src: "/images/recruit/cheonho-icheon.webp", branchSlug: "cheonho", branch: "천호점",
+    title: "이천 냉장물류센터 알바", site: "이천 냉장물류센터", tasks: "포장 · 피킹 · 검수 · 분배",
+    hours: "11:00 ~ 20:00", days: "월 ~ 금", pay: "당일 지급", meet: "천호역 6번 출구 1분, 힐스테이트 천호역 젠트리스",
+    perks: ["천호역 → 이천 냉장물류센터 셔틀", "점심 식사 제공", "초보 가능 · 경력자 우대", "외국인 가능 (F비자)", "운전 가능자 당일 인센티브", "주말엔 다른 물류센터 근무 가능"],
+  },
+  {
+    slug: "cheonho-musinsa", src: "/images/recruit/cheonho-musinsa.webp", branchSlug: "cheonho", branch: "천호점",
+    title: "무신사 물류센터 알바", site: "무신사 물류센터", tasks: "물류센터 작업",
+    hours: "09:00 ~ 18:00 (잔업 시 1.5배 수당)", pay: "다음 날 지급", meet: "천호역 집결",
+    perks: ["천호역 출퇴근 셔틀", "점심 제공", "1종 운전 가능 시 인센티브", "초보 가능", "단기 · 중장기 환영"],
+  },
 ];
+
 
 export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
 
@@ -228,6 +304,9 @@ export const workerFaq: Faq[] = [
 ];
 
 export const tel = (phone: string) => `tel:${phone.replaceAll("-", "")}`;
+
+// 지도 검색어: 따로 정한 값(mapQuery)이 있으면 그것, 없으면 도로명 주소까지만 (층·호수·괄호가 붙으면 위치를 못 찾을 때가 있음)
+export const mapQuery = (b: Branch) => b.mapQuery ?? b.address.split(",")[0];
 
 // 문자 지원 양식. 링크를 누르면 이 내용이 채워진 문자 창이 열린다
 // 희망 집결지가 있어야 지점 대표가 자기 지점 지원자를 바로 알아본다

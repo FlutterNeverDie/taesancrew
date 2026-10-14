@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { Container } from "@/components/ui";
 import { branches, smsFields, tel } from "@/lib/site";
-import { SmsPicker } from "./SmsPicker";
+import { SmsPicker } from "@/areas/shared/sms-picker";
 
 const head = branches[0]; // 경기광주 본점: 연락이 모이는 곳
 

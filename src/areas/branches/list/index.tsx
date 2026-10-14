@@ -1,9 +1,7 @@
 import { Container } from "@/components/ui";
-import { branches, tel, type Branch } from "@/lib/site";
+import Link from "next/link";
+import { branches, company, mapQuery, tel } from "@/lib/site";
 import { PhoneIcon } from "@/components/icons";
-
-// 지도 검색어: 따로 정한 값(mapQuery)이 있으면 그것, 없으면 도로명 주소까지만 (층·호수·괄호가 붙으면 위치를 못 찾을 때가 있음)
-const mapQuery = (b: Branch) => b.mapQuery ?? b.address.split(",")[0];
 
 export function BranchesList() {
   return (
@@ -21,7 +19,9 @@ export function BranchesList() {
             />
             <div className="p-7 md:p-10">
               <p className="text-base font-semibold text-navy-700">{b.brand}</p>
-              <h2 className="mt-1 text-3xl font-extrabold text-navy-950">{b.name}</h2>
+              <h2 className="mt-1 text-3xl font-extrabold text-navy-950">
+                <Link href={`/branches/${b.slug}`} className="hover:text-navy-700">{b.name}</Link>
+              </h2>
               <dl className="mt-6 space-y-3 text-lg text-ink">
                 <div className="flex gap-4">
                   <dt className="w-20 shrink-0 font-semibold text-muted">주소</dt>
@@ -35,7 +35,7 @@ export function BranchesList() {
                 )}
                 <div className="flex gap-4">
                   <dt className="w-20 shrink-0 font-semibold text-muted">운영시간</dt>
-                  <dd className="text-muted">준비 중</dd>
+                  <dd>{company.hours}</dd>
                 </div>
               </dl>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -62,6 +62,9 @@ export function BranchesList() {
                 >
                   카카오맵
                 </a>
+                <Link href={`/branches/${b.slug}`} className="press rounded-md bg-navy-900 px-5 py-3 font-bold whitespace-nowrap text-white hover:bg-navy-800">
+                  지점 자세히 보기
+                </Link>
               </div>
             </div>
           </article>

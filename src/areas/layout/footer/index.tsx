@@ -40,7 +40,12 @@ export function Footer() {
             </dl>
           ))}
         </div>
-        <p className="mt-8 text-base text-navy-100/85">© {company.title}. All rights reserved.</p>
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
+          <p className="text-base text-navy-100/85">© {company.title}. All rights reserved.</p>
+          <Link href="/privacy" className="text-base font-bold text-white hover:underline">
+            개인정보처리방침
+          </Link>
+        </div>
       </div>
     </footer>
   );

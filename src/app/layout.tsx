@@ -8,12 +8,15 @@ import { StructuredData } from "@/areas/layout/structured-data";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
+  // 메인 제목·설명: "인력사무소", 지역 이름, "물류센터 알바"가 들어가야 검색에 걸린다
   title: {
-    default: `${company.title} | 물류·제조 인력 아웃소싱 전문`,
+    default: `경기광주·성남·천호 인력사무소 ${company.title} | 물류센터 알바 · 인력 소개 · 도급`,
     template: `%s | ${company.title}`,
   },
   description:
-    "20년 물류 현장 노하우, 경기광주 본점·성남·천호 3개 직영 지점. 하루 100명 이상 투입하는 인력 소개·도급 전문기업 태산 리크루트 & 태산크루.",
+    "경기광주 본점·성남 수진역점·천호점 인력사무소. 물류센터 알바·1일 알바(초보 가능, 출퇴근 셔틀, 당일·익일 지급)와 기업 인력 소개·도급. 항시 운영, 대표 010-5801-2036.",
+  // 소식 RSS (네이버 서치어드바이저에 제출)
+  alternates: { types: { "application/rss+xml": [{ url: "/blog/rss.xml", title: `${company.title} 소식` }] } },
   // 카톡·문자로 링크를 보낼 때 보이는 미리보기 카드 (이미지: public/og.png 1200×630)
   metadataBase: new URL(company.siteUrl),
   openGraph: {

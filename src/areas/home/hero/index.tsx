@@ -7,6 +7,8 @@ export function HomeHero() {
     <section className="on-dark bg-navy-900 text-white">
       <Container className="grid gap-12 py-14 md:py-20 lg:min-h-[min(calc(100svh-4rem),46rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16 xl:gap-24">
         <div className="min-w-0">
+          {/* 검색엔진이 무슨 회사인지 알 수 있게 "인력사무소"를 제목 바로 위에 */}
+          <p className="rise mb-4 text-lg font-bold text-point md:text-xl">경기광주 · 성남 · 천호 인력사무소</p>
           <h1 className="text-[2.5rem] leading-[1.15] font-extrabold [overflow-wrap:anywhere] md:text-[3.75rem] xl:text-[5rem]">
             {/* 첫 화면은 한 줄씩 떠오른다 (globals.css의 .rise, 지연은 --d) */}
             <span className="rise block" style={{ "--d": "0ms" } as CSSProperties}>믿을 수 있는</span>

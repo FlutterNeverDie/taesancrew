@@ -62,7 +62,12 @@ export function ContactForm() {
 
         <label className="flex items-start gap-2 text-base text-muted">
           <input type="checkbox" name="agree" required className="mt-1 h-4 w-4" />
-          상담을 위한 개인정보(이름, 연락처 등) 수집·이용에 동의합니다.
+          <span>
+            상담을 위한 개인정보(이름, 연락처 등) 수집·이용에 동의합니다.{" "}
+            <Link href="/privacy" className="font-semibold text-navy-800 underline underline-offset-4">
+              개인정보처리방침
+            </Link>
+          </span>
         </label>
         <button type="submit" className="press w-full cursor-pointer rounded-md bg-navy-800 py-4 text-lg font-bold text-white hover:bg-navy-900">
           상담 요청하기

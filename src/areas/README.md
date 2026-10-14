@@ -18,6 +18,8 @@
 | `shared/faq-list` | 자주 묻는 질문 목록(접기/펼치기) | FAQ 페이지, 일자리 페이지 |
 | `shared/stats-strip` | 강조 숫자 줄 | 메인, 회사소개 |
 | `shared/about-subnav` | 회사소개 탭 | 회사소개·중점분야·지점안내 페이지, 히어로 바로 아래 (스크롤 시 메뉴바 아래 고정) |
+| `shared/posting-card` | 채용 공고 카드(전단+글자) · 구글 채용 정보 | /jobs, 지점 페이지 |
+| `shared/sms-picker` | 문자 보내기 → 지점 고르기 창 | /jobs |
 | `home/hero` | 메인 첫 화면 + 지점 안내판 | / 맨 위 |
 | `home/promises` | 도급사가 다시 찾는 이유 | / 숫자 줄 아래 |
 | `home/statement` | 약속 한 줄 | / |
@@ -51,8 +53,13 @@
 | `awards/licenses` | 유료직업소개소 등록증 | /awards |
 | `branches/hero` | 지점안내 상단 | /branches |
 | `branches/list` | 지점 상세 | /branches |
+| `branch/hero` | 지점 페이지 첫 화면 ("○○ 인력사무소") | /branches/<지점> |
+| `branch/info` | 지점 페이지 찾아오는 길 (지도·주소·운영시간) | /branches/<지점> |
+| `branch/postings` | 지점 페이지 모집 공고 | /branches/<지점> |
+| `branch/others` | 지점 페이지 다른 지점 | /branches/<지점> |
 | `contact/hero` | 문의하기 상단 | /contact |
 | `contact/form` | 문의 폼 | /contact |
 | `blog/hero` | 소식 상단 | /blog |
 | `blog/list` | 소식 목록 | /blog |
 | `blog/post` | 소식 글 본문 | /blog/<slug> |
+| `privacy/body` | 개인정보처리방침 | /privacy |
