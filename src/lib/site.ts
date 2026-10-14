@@ -70,7 +70,7 @@ export const branches: Branch[] = [
     bizNo: "252-33-01651",
     agencyNo: "제2025-3780385-14-5-00029호",
     owner: "이나라",
-    opened: "2025. 9",
+    opened: "2025. 10",
   },
   {
     slug: "cheonho",

@@ -14,7 +14,8 @@ export function JobsBranches() {
                   <span className="text-2xl font-extrabold text-navy-950">{b.name}</span>
                   <span className="text-lg font-semibold text-navy-700">{b.area} 권역</span>
                 </p>
-                <p className="mt-1.5 text-lg text-ink">{b.landmark ?? b.address}</p>
+                <p className="mt-1.5 text-lg text-ink">{b.address}</p>
+                {b.landmark && <p className="mt-0.5 text-base font-semibold text-navy-700 md:text-lg">{b.landmark}</p>}
               </div>
               {b.phone && (
                 <div className="flex flex-wrap items-center gap-2">

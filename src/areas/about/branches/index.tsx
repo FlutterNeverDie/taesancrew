@@ -20,7 +20,8 @@ export function AboutBranches() {
                 {b.brand} · {b.area} 권역
               </p>
               <p className={`mt-1 text-2xl font-extrabold ${i === 0 ? "text-white" : "text-navy-950"}`}>{b.name}</p>
-              <p className={`mt-3 text-lg ${i === 0 ? "text-white/90" : "text-ink"}`}>{b.landmark ?? b.address}</p>
+              <p className={`mt-3 text-lg ${i === 0 ? "text-white/90" : "text-ink"}`}>{b.address}</p>
+              {b.landmark && <p className={`mt-0.5 text-base font-semibold md:text-lg ${i === 0 ? "text-brand-sky" : "text-navy-700"}`}>{b.landmark}</p>}
               <p className={`mt-1 text-base md:text-lg ${i === 0 ? "text-white/85" : "text-muted"}`}>
                 대표 {b.owner ?? "준비 중"} · {b.opened} 개업
               </p>
