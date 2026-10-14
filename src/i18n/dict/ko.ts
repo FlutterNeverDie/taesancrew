@@ -222,6 +222,9 @@ export const ko = {
     workerDesc: "문자 한 통이면 지원 끝. {fields}을 편한 지점으로 보내주세요.",
     workerButton: "지금 모집 중인 일자리",
     workerPerks: ["당일·익일 지급", "주말·하루만 가능", "초보 가능, 경력 우대"],
+    // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
+    workerVisa: "외국인 가능 (F-2·F-4·F-5·F-6 등)",
+    workerVisaLink: "비자별 안내 보기",
     clientsTitle: "물류 현장을 맡겨 주신 고객사",
     clientsDesc: "유통·패션·식품 기업의 물류센터에 인력을 공급하고 있습니다.",
     licensesTitle: "유료직업소개소 등록증",

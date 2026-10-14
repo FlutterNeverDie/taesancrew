@@ -7,9 +7,9 @@ import { company, nav, tel } from "@/lib/site";
 import { Logo } from "@/components/Logo";
 import { lp, splitLocale, type Locale } from "@/i18n/config";
 import type { Dict } from "@/i18n/dict/ko";
-import { LanguageMenu, LanguageList, type LangOption } from "./LanguageMenu";
+import { LanguageMenu, type LangOption } from "./LanguageMenu";
 
-export function HeaderClient({ lang, t, languages }: { lang: Locale; t: Dict["nav"]; languages: LangOption[] }) {
+export function HeaderClient({ lang, t, closeLabel, languages }: { lang: Locale; t: Dict["nav"]; closeLabel: string; languages: LangOption[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   // 언어 코드를 뗀 주소로 비교한다 (/en/jobs → /jobs)
@@ -57,7 +57,7 @@ export function HeaderClient({ lang, t, languages }: { lang: Locale; t: Dict["na
             );
           })}
           {/* Contact 옆: 언어 고르기 */}
-          <LanguageMenu lang={lang} label={t.language} languages={languages} />
+          <LanguageMenu lang={lang} label={t.language} close={closeLabel} languages={languages} />
           <a href={tel(company.mainPhone)} dir="ltr" className="press ms-3 rounded-md bg-point px-4 py-2 text-base font-bold whitespace-nowrap text-navy-950 hover:bg-point-dark">
             {company.mainPhone}
           </a>
@@ -98,10 +98,9 @@ export function HeaderClient({ lang, t, languages }: { lang: Locale; t: Dict["na
               )}
             </div>
           ))}
-          {/* 휴대폰 메뉴 맨 아래: 언어 고르기 */}
+          {/* 휴대폰 메뉴 맨 아래: 언어 고르기 버튼 (누르면 아래에서 창이 올라온다) */}
           <div className="pt-5">
-            <p className="text-base font-bold text-navy-700">{t.language}</p>
-            <LanguageList lang={lang} languages={languages} onPick={() => setOpen(false)} />
+            <LanguageMenu lang={lang} label={t.language} close={closeLabel} languages={languages} block onPicked={() => setOpen(false)} />
           </div>
         </nav>
       )}

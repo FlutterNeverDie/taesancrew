@@ -65,3 +65,4 @@
 | `blog/list` | 소식 목록 | /blog |
 | `blog/post` | 소식 글 본문 | /blog/<slug> |
 | `privacy/body` | 개인정보처리방침 | /privacy |
+| `visa/body` | 비자별 근무 안내 | /visa |

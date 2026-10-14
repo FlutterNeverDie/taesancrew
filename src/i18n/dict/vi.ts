@@ -214,6 +214,9 @@ export const vi: Dict = {
     workerDesc: "Chỉ 1 tin nhắn là xong. Gửi {fields} đến chi nhánh tiện cho bạn.",
     workerButton: "Việc làm đang tuyển",
     workerPerks: ["Trả lương trong ngày hoặc ngày hôm sau", "Làm cuối tuần hoặc 1 ngày cũng được", "Không cần kinh nghiệm, ưu tiên người có kinh nghiệm"],
+    // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
+    workerVisa: "Người nước ngoài có thể làm (F-2, F-4, F-5, F-6...)",
+    workerVisaLink: "Xem hướng dẫn visa",
     clientsTitle: "Khách hàng đã tin giao hiện trường logistics",
     clientsDesc: "Chúng tôi cung cấp nhân lực cho kho logistics của các doanh nghiệp phân phối, thời trang, thực phẩm.",
     licensesTitle: "Giấy đăng ký văn phòng giới thiệu việc làm có thu phí",

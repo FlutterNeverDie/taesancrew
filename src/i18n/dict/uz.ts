@@ -214,6 +214,9 @@ export const uz: Dict = {
     workerDesc: "Bitta SMS - va ariza tayyor. {fields} - shularni qulay filialga yuboring.",
     workerButton: "Hozir ochiq ish oʻrinlari",
     workerPerks: ["Ish haqi shu kuni yoki ertasi kuni", "Dam olish kunlari yoki bir kun ham boʻladi", "Tajribasiz ham boʻladi, tajribalilarga ustunlik"],
+    // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
+    workerVisa: "Chet elliklar ham mumkin (F-2, F-4, F-5, F-6 va b.)",
+    workerVisaLink: "Viza boʻyicha maʼlumot",
     clientsTitle: "Logistika ishlarini bizga ishongan mijozlar",
     clientsDesc: "Savdo, moda va oziq-ovqat kompaniyalarining logistika markazlariga xodimlar bilan taʼminlaymiz.",
     licensesTitle: "Pullik ishga joylashtirish idorasi roʻyxat guvohnomalari",

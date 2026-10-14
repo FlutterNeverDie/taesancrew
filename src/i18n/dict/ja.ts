@@ -214,6 +214,9 @@ export const ja: Dict = {
     workerDesc: "SMS1通で応募完了。{fields}を行きやすい支店に送ってください。",
     workerButton: "いま募集中のお仕事",
     workerPerks: ["当日・翌日払い", "週末だけ・1日だけOK", "未経験OK、経験者優遇"],
+    // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
+    workerVisa: "外国人OK(F-2・F-4・F-5・F-6など)",
+    workerVisaLink: "ビザ別の案内",
     clientsTitle: "物流現場をお任せいただいた取引先",
     clientsDesc: "流通・ファッション・食品企業の物流センターに人材をご紹介しています。",
     licensesTitle: "有料職業紹介所 登録証",

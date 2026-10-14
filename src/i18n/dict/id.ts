@@ -214,6 +214,9 @@ export const id: Dict = {
     workerDesc: "Cukup satu SMS untuk mendaftar. Kirim {fields} ke cabang yang paling mudah untuk Anda.",
     workerButton: "Lowongan yang sedang dibuka",
     workerPerks: ["Gaji hari itu atau besoknya", "Bisa akhir pekan atau satu hari saja", "Pemula bisa, berpengalaman diutamakan"],
+    // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
+    workerVisa: "Orang asing bisa (F-2, F-4, F-5, F-6, dll.)",
+    workerVisaLink: "Panduan visa",
     clientsTitle: "Klien yang mempercayakan lapangan logistiknya",
     clientsDesc: "Kami menempatkan tenaga kerja di gudang logistik perusahaan ritel, fashion, dan makanan.",
     licensesTitle: "Sertifikat Registrasi Kantor Penempatan Kerja Berbayar",

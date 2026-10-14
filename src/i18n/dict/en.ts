@@ -214,6 +214,9 @@ export const en: Dict = {
     workerDesc: "Apply with one text. Send these to any branch: {fields}.",
     workerButton: "Jobs open now",
     workerPerks: ["Same-day or next-day pay", "Weekends or one day OK", "Beginners OK, experience preferred"],
+    // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
+    workerVisa: "Foreigners welcome (F-2, F-4, F-5, F-6 etc.)",
+    workerVisaLink: "Visa guide",
     clientsTitle: "Clients who trust us with their logistics sites",
     clientsDesc: "We supply workers to logistics centers of retail, fashion and food companies.",
     licensesTitle: "Job Placement Agency Registration Certificates",

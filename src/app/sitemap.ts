@@ -18,6 +18,7 @@ const pages: { path: string; priority: number }[] = [
   { path: "/contact", priority: 0.6 },
   { path: "/awards", priority: 0.5 },
   { path: "/blog", priority: 0.6 },
+  { path: "/visa", priority: 0.6 },
   { path: "/privacy", priority: 0.2 },
   ...branches.map((b) => ({ path: `/branches/${b.slug}`, priority: 0.9 })),
   ...getAllPosts().map((p) => ({ path: `/blog/${p.slug}`, priority: 0.5 })),

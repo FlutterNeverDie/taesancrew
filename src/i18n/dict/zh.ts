@@ -214,6 +214,9 @@ export const zh: Dict = {
     workerDesc: "一条短信就能报名。请把以下内容发到方便的门店：{fields}。",
     workerButton: "正在招聘的工作",
     workerPerks: ["当天或次日发薪", "可只做周末或一天", "新手可做，有经验者优先"],
+    // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
+    workerVisa: "外国人可报名(F-2、F-4、F-5、F-6等)",
+    workerVisaLink: "查看签证说明",
     clientsTitle: "把物流现场交给我们的客户",
     clientsDesc: "我们为流通、时尚、食品企业的物流中心提供人员。",
     licensesTitle: "收费职业介绍所登记证",
