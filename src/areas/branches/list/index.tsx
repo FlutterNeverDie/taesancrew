@@ -10,7 +10,7 @@ export function BranchesList() {
           <article key={b.slug} id={b.slug} className="grid overflow-hidden rounded-lg border border-rule md:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
             <Placeholder label={`${b.name} 사무실 사진`} className="min-h-56 rounded-none border-0" />
             <div className="p-7 md:p-10">
-              <p className="text-base font-semibold text-navy-700">{b.brand} · {b.area} 권역</p>
+              <p className="text-base font-semibold text-navy-700">{b.brand}</p>
               <h2 className="mt-1 text-3xl font-extrabold text-navy-950">{b.name}</h2>
               <dl className="mt-6 space-y-3 text-lg text-ink">
                 <div className="flex gap-4">

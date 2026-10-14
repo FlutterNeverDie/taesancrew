@@ -42,7 +42,6 @@ function DispatchBoard() {
             <div className="min-w-0">
               <p className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
                 <span className="font-display text-2xl font-extrabold text-white xl:text-[1.75rem]">{b.name}</span>
-                <span className="text-base font-medium text-brand-sky">{b.area} 권역</span>
               </p>
               <p className="mt-1.5 text-base leading-snug text-white/90 md:text-lg">{b.address}</p>
               {b.landmark && <p className="mt-0.5 text-base font-semibold text-brand-sky">{b.landmark}</p>}

@@ -70,7 +70,7 @@ export function SmsPicker() {
                 >
                   <span className="min-w-0 flex-1">
                     <span className="block text-lg font-extrabold">{b.name}</span>
-                    <span className="block text-base text-muted">{b.landmark ?? b.area}</span>
+                    <span className="block text-base text-muted">{b.landmark ?? b.address}</span>
                   </span>
                   <span className="text-base font-bold whitespace-nowrap text-navy-700 tabular-nums md:text-lg">{b.phone}</span>
                 </a>

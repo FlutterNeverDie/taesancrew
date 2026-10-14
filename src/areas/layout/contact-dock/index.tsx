@@ -154,7 +154,7 @@ function ContactPanel({ step, setStep, onClose }: { step: Step; setStep: (s: Ste
             <li key={b.slug} className="rounded-xl border border-rule p-4">
               <p className="flex flex-wrap items-baseline gap-x-2">
                 <span className="text-lg font-extrabold text-navy-950">{b.name}</span>
-                <span className="text-base text-muted">{b.area} 권역</span>
+                <span className="text-base text-muted">{b.landmark ?? b.address}</span>
               </p>
               <div className="mt-3 flex gap-2">
                 <a href={tel(b.phone)} className={callCls}>

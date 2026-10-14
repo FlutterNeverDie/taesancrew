@@ -17,7 +17,7 @@ export function AboutBranches() {
           {branches.map((b, i) => (
             <li key={b.slug} className={`rounded-lg p-6 md:p-7 ${i === 0 ? "on-dark bg-navy-900 text-white" : "bg-paper"}`}>
               <p className={`text-base font-bold ${i === 0 ? "text-point" : "text-navy-700"}`}>
-                {b.brand} · {b.area} 권역
+                {b.brand}
               </p>
               <p className={`mt-1 text-2xl font-extrabold ${i === 0 ? "text-white" : "text-navy-950"}`}>{b.name}</p>
               <p className={`mt-3 text-lg ${i === 0 ? "text-white/90" : "text-ink"}`}>{b.address}</p>
