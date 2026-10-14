@@ -66,7 +66,7 @@ export function ContactForm() {
         <button type="submit" className="press w-full cursor-pointer rounded-md bg-navy-800 py-4 text-lg font-bold text-white hover:bg-navy-900">
           상담 요청하기
         </button>
-        <p className="text-center text-base text-muted md:text-lg">본점 대표({to})에게 바로 전달됩니다</p>
+        <p className="text-center text-base text-muted md:text-lg">본점 대표에게 바로 전달됩니다</p>
       </form>
 
       {/* 제출 후: PC에서는 문자 앱이 없으므로 받는 번호와 내용을 보여준다 */}
