@@ -1,5 +1,5 @@
 // Cloudflare Pages 배포 설정 - 정적 파일만 올린다(백엔드 없음). 빌드 결과 out/을 그대로 제공.
-// 주소: https://taesancrew.pages.dev (Pages는 계정 이름 없이 프로젝트 이름만 들어간다)
+// 주소: https://taesan-recruit.com (연결한 도메인). Pages 기본 주소 taesancrew.pages.dev는 프로젝트 이름에서 나온다
 // /about → about.html, 없는 주소 → out/404.html 은 Pages가 알아서 처리한다
 {
   "$schema": "node_modules/wrangler/config-schema.json",

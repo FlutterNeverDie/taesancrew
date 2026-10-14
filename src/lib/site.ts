@@ -5,10 +5,12 @@ export const company = {
   name: "태산크루",
   // 홈페이지 제목 (태산 홈페이지 변경.docx)
   title: "태산 리크루트 & 태산크루",
-  // 배포 주소 (카톡 미리보기 등 절대 주소에 쓰임). 도메인을 연결하면 여기만 바꾼다
-  siteUrl: "https://taesancrew.pages.dev",
+  // 사이트 주소 (카톡 미리보기·검색 등록·사이트맵 등 절대 주소에 쓰임). 도메인이 바뀌면 여기만 바꾼다
+  siteUrl: "https://taesan-recruit.com",
+  // 예전 주소·www 주소로 들어오면 siteUrl의 같은 페이지로 넘긴다 (layout.tsx의 hostScript)
+  oldHosts: ["taesancrew.pages.dev", "www.taesan-recruit.com"],
   // 검색 등록 소유 확인 코드 (docs/검색등록.md). 받은 content 값만 넣는다. 빈 값이면 태그가 안 나간다
-  verification: { google: "", naver: "1ac66f9851f34ee99246e2b1016d689ca858229a" },
+  verification: { google: "", naver: "6c1ffcd2e541cbf1ba058edf6a80de1c55324ea6" },
   nameEn: "TS CREW",
   slogan: "인력이 곧 기업의 경쟁력이다",
   tagline: "믿을 수 있는 일자리 파트너",

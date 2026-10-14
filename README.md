@@ -4,7 +4,7 @@
 
 - Next.js 16 (App Router) · TypeScript · Tailwind CSS 4
 - 정적 export: `npm run build` → `out/` 폴더를 그대로 호스팅
-- 배포: Cloudflare Pages (`wrangler.jsonc`). 주소 https://taesancrew.pages.dev
+- 배포: Cloudflare Pages (`wrangler.jsonc`). 주소 https://taesan-recruit.com (Cloudflare 기본 주소 taesancrew.pages.dev는 새 주소로 넘어간다)
   - **자동:** main에 푸시하면 GitHub Actions(`.github/workflows/deploy.yml`)가 빌드·배포. 저장소 Secret `CLOUDFLARE_API_TOKEN` 필요
   - **직접:** `npx wrangler login`(한 번) → `npm run build` → `npx wrangler pages deploy --branch main`
 

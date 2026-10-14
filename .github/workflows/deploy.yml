@@ -1,4 +1,4 @@
-# main에 푸시하면 정적 빌드 후 Cloudflare Pages(taesancrew.pages.dev)에 배포한다.
+# main에 푸시하면 정적 빌드 후 Cloudflare Pages(taesan-recruit.com)에 배포한다.
 # 필요한 저장소 Secret: CLOUDFLARE_API_TOKEN (Cloudflare → My Profile → API Tokens → "Edit Cloudflare Workers" 템플릿 + Cloudflare Pages Edit 권한)
 name: Deploy
 
