@@ -1,5 +1,8 @@
-// 질문 목록 항목: { q: 질문, a: 답 } (사전의 businessFaq·workerFaq)
-type Faq = { q: string; a: string };
+// 질문 목록 항목: { q: 질문, a: 답, link?: 답 끝에 붙는 링크 글자, href?: 그 주소 } (사전의 businessFaq·workerFaq)
+import Link from "next/link";
+import { lp, type Locale } from "@/i18n";
+
+type Faq = { q: string; a: string; link?: string; href?: string };
 
 // 답이 높이가 늘어나며 펼쳐진다 (최신 CSS ::details-content, 미지원 브라우저는 그냥 열린다).
 // 이 문법은 빌드의 CSS 처리기가 globals.css에서 통째로 버리기 때문에 여기서 <style>로 직접 넣는다
@@ -16,7 +19,7 @@ const faqMotion = `
 }
 `;
 
-export function FaqList({ items }: { items: Faq[] }) {
+export function FaqList({ lang, items }: { lang: Locale; items: Faq[] }) {
   return (
     <div className="border-t-2 border-navy-900">
       <style>{faqMotion}</style>
@@ -26,7 +29,17 @@ export function FaqList({ items }: { items: Faq[] }) {
             {f.q}
             <span aria-hidden className="text-2xl leading-none font-bold text-navy-900 transition-transform duration-200 group-open:rotate-45">+</span>
           </summary>
-          <p className="pb-6 text-lg leading-relaxed font-medium text-navy-950">{f.a}</p>
+          <p className="pb-6 text-lg leading-relaxed font-medium text-navy-950">
+            {f.a}
+            {f.link && f.href && (
+              <>
+                {" "}
+                <Link href={lp(lang, f.href)} className="font-bold whitespace-nowrap text-navy-800 underline decoration-2 underline-offset-4 hover:text-navy-950">
+                  {f.link}
+                </Link>
+              </>
+            )}
+          </p>
         </details>
       ))}
     </div>

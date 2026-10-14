@@ -114,7 +114,7 @@ export const uz: Dict = {
     { q: "Faqat bir kun ishlasam boʻladimi?", a: "Ha. Bir kunlik, qisqa muddatli va uzoq muddatli - hammasi mumkin. Faqat dam olish kunlari ishlamoqchi boʻlsangiz ham yozing." },
     { q: "Ish haqi qachon beriladi?", a: "Ish joyiga qarab shu kuni yoki ertasi kuni toʻlanadi. Aniq maʼlumotni filialdan soʻrang." },
     { q: "Qoʻshimcha ish uchun pul toʻlanadimi?", a: "Ha. Qoʻshimcha ish uchun 1.5 barobar haq toʻlanadi." },
-    { q: "Chet elliklar ham ishlay oladimi?", a: "Ish joyiga qarab mumkin (F viza va boshqalar). Filialga murojaat qiling. Kundalik koreys tilida gaplasha olish kerak." },
+    { q: "Chet elliklar ham ishlay oladimi?", a: "Vizaga bogʻliq. F-2 (yashash), F-5 (doimiy yashash) va F-6 (nikoh migranti) egalari koʻp ishlarda ishlay oladi. F-4 (xorijdagi koreyslar) uchun ish turiga qarab tekshirish kerak. Batafsil maʼlumotni viza boʻyicha qoʻllanmadan koʻring va filialga murojaat qiling. Kundalik koreys tilida gaplasha olish kerak.", link: "Viza boʻyicha maʼlumot", href: "/visa" },
     { q: "Yuklash-tushirish ishimi?", a: "Koʻp ish joylarida yuklash-tushirish yoʻq. Har bir eʼlonda ish mazmuni yozilgan." },
     { q: "Qaysi filialga borishim kerak?", a: "Qayerda yashashingizdan qatʼi nazar, borib-kelish qulay boʻlgan filialga yozing. Bilmasangiz, bosh ofisga qoʻngʻiroq qiling." },
   ],
@@ -179,7 +179,7 @@ export const uz: Dict = {
     "cheonho-icheon": {
       title: "Icheon sovutgichli logistika markazida ish", tasks: "Qadoqlash · terish · tekshirish · saralash", hours: "11:00 ~ 20:00", days: "Dushanba ~ Juma", pay: "Shu kuni toʻlanadi",
       meet: "Cheonho bekati (천호역) 6-chiqishdan 1 daqiqa, Hillstate Cheonho Station Gentris",
-      perks: ["Cheonho bekati → Icheon sovutgichli logistika markazi servis avtobusi", "Tushlik beriladi", "Tajribasiz ham boʻladi · tajribalilarga ustunlik", "Chet elliklar ham boʻladi (F viza)", "Mashina haydasangiz, shu kuni qoʻshimcha mukofot", "Dam olish kunlari boshqa logistika markazida ishlash mumkin"],
+      perks: ["Cheonho bekati → Icheon sovutgichli logistika markazi servis avtobusi", "Tushlik beriladi", "Tajribasiz ham boʻladi · tajribalilarga ustunlik", "Chet elliklar ham boʻladi (F-2, F-5, F-6; F-4 ishga qarab)", "Mashina haydasangiz, shu kuni qoʻshimcha mukofot", "Dam olish kunlari boshqa logistika markazida ishlash mumkin"],
     },
     "cheonho-musinsa": {
       title: "Musinsa logistika markazida ish", tasks: "Logistika markazi ishlari", hours: "09:00 ~ 18:00 (qoʻshimcha ish uchun 1.5 barobar haq)", days: "", pay: "Ertasi kuni toʻlanadi",
@@ -215,7 +215,7 @@ export const uz: Dict = {
     workerButton: "Hozir ochiq ish oʻrinlari",
     workerPerks: ["Ish haqi shu kuni yoki ertasi kuni", "Dam olish kunlari yoki bir kun ham boʻladi", "Tajribasiz ham boʻladi, tajribalilarga ustunlik"],
     // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
-    workerVisa: "Chet elliklar ham mumkin (F-2, F-4, F-5, F-6 va b.)",
+    workerVisa: "Chet elliklar ham mumkin (F-2, F-5, F-6; F-4 ishga qarab)",
     workerVisaLink: "Viza boʻyicha maʼlumot",
     clientsTitle: "Logistika ishlarini bizga ishongan mijozlar",
     clientsDesc: "Savdo, moda va oziq-ovqat kompaniyalarining logistika markazlariga xodimlar bilan taʼminlaymiz.",
@@ -276,7 +276,7 @@ export const uz: Dict = {
       { label: "Ish haqi", items: ["Shu kuni yoki ertasi kuni toʻlanadi (filialdan soʻrang)", "Qoʻshimcha ish uchun 1.5 barobar haq", "1-toifa haydovchilik guvohnomasi boʻlsa, qoʻshimcha mukofot"] },
       { label: "Ovqat", items: ["Tushlik bepul"] },
       { label: "Borib-kelish", items: ["Bekatdan servis avtobusi bor"] },
-      { label: "Hamma uchun", items: ["Tajribasiz ham boʻladi, tajribalilarga ustunlik", "Chet elliklar ham boʻladi (F viza)", "Doʻstingiz bilan birga ariza bera olasiz"] },
+      { label: "Hamma uchun", items: ["Tajribasiz ham boʻladi, tajribalilarga ustunlik", "Chet elliklar ham boʻladi (F-2, F-5, F-6; F-4 ishga qarab)", "Doʻstingiz bilan birga ariza bera olasiz"] },
       { label: "Muddat", items: ["Bir kun, faqat dam olish kunlari, qisqa yoki uzoq muddat - hammasi mumkin"] },
     ],
     branchesTitle: "Qulay filialga yozing",

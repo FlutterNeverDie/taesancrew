@@ -19,7 +19,7 @@ export function JobsFaq({ lang }: { lang: Locale }) {
             {after}
           </p>
         </div>
-        <FaqList items={d.workerFaq.slice(0, 4)} />
+        <FaqList lang={lang} items={d.workerFaq.slice(0, 4)} />
       </Container>
     </section>
   );

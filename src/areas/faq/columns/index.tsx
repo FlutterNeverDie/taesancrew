@@ -9,11 +9,11 @@ export function FaqColumns({ lang }: { lang: Locale }) {
       <Container className="grid gap-16 lg:grid-cols-2 lg:gap-16 xl:gap-24">
         <div id="business" className="min-w-0 scroll-mt-20">
           <SectionTitle title={d.faq.business} />
-          <FaqList items={d.businessFaq} />
+          <FaqList lang={lang} items={d.businessFaq} />
         </div>
         <div id="worker" className="min-w-0 scroll-mt-20">
           <SectionTitle title={d.faq.worker} />
-          <FaqList items={d.workerFaq} />
+          <FaqList lang={lang} items={d.workerFaq} />
         </div>
       </Container>
     </section>

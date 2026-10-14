@@ -114,7 +114,7 @@ export const vi: Dict = {
     { q: "Làm 1 ngày có được không?", a: "Được. Làm 1 ngày, ngắn hạn hay dài hạn đều được. Muốn chỉ làm cuối tuần cũng cứ liên hệ." },
     { q: "Khi nào nhận lương?", a: "Tùy hiện trường, trả trong ngày hoặc ngày hôm sau. Hỏi chi nhánh để biết chính xác." },
     { q: "Làm thêm giờ có phụ cấp không?", a: "Có. Làm thêm giờ được trả 1,5 lần." },
-    { q: "Người nước ngoài có làm được không?", a: "Tùy hiện trường thì được (visa F, v.v.). Vui lòng hỏi chi nhánh. Cần giao tiếp được tiếng Hàn hằng ngày." },
+    { q: "Người nước ngoài có làm được không?", a: "Tùy loại visa. F-2 (cư trú), F-5 (vĩnh trú), F-6 (kết hôn di trú) làm được hầu hết công việc. Với F-4 (kiều bào), cần kiểm tra tùy loại công việc. Xem hướng dẫn visa để biết thêm và hỏi chi nhánh. Cần giao tiếp được tiếng Hàn hằng ngày.", link: "Xem hướng dẫn visa", href: "/visa" },
     { q: "Có phải bốc xếp hàng không?", a: "Nhiều hiện trường không có bốc xếp. Mỗi tin tuyển dụng đều ghi rõ nội dung công việc." },
     { q: "Nên đến chi nhánh nào?", a: "Không quan trọng bạn sống ở đâu, cứ liên hệ chi nhánh bạn đi lại tiện nhất. Nếu không chắc, hãy gọi trụ sở chính." },
   ],
@@ -179,7 +179,7 @@ export const vi: Dict = {
     "cheonho-icheon": {
       title: "Việc làm kho lạnh Icheon", tasks: "Đóng gói · Picking · Kiểm hàng · Phân loại", hours: "11:00 ~ 20:00", days: "Thứ 2 ~ Thứ 6", pay: "Trả trong ngày",
       meet: "Ga Cheonho (천호역) cửa số 6, 1 phút, Hillstate Cheonho Station Gentris",
-      perks: ["Xe đưa đón Ga Cheonho → kho lạnh Icheon", "Có bữa trưa", "Không cần kinh nghiệm · Ưu tiên người có kinh nghiệm", "Người nước ngoài được (visa F)", "Người lái xe được thưởng thêm trong ngày", "Cuối tuần có thể làm ở kho khác"],
+      perks: ["Xe đưa đón Ga Cheonho → kho lạnh Icheon", "Có bữa trưa", "Không cần kinh nghiệm · Ưu tiên người có kinh nghiệm", "Người nước ngoài được (F-2, F-5, F-6; F-4 tùy công việc)", "Người lái xe được thưởng thêm trong ngày", "Cuối tuần có thể làm ở kho khác"],
     },
     "cheonho-musinsa": {
       title: "Việc làm kho logistics Musinsa", tasks: "Công việc trong kho logistics", hours: "09:00 ~ 18:00 (làm thêm giờ trả 1,5 lần)", days: "", pay: "Trả ngày hôm sau",
@@ -215,7 +215,7 @@ export const vi: Dict = {
     workerButton: "Việc làm đang tuyển",
     workerPerks: ["Trả lương trong ngày hoặc ngày hôm sau", "Làm cuối tuần hoặc 1 ngày cũng được", "Không cần kinh nghiệm, ưu tiên người có kinh nghiệm"],
     // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
-    workerVisa: "Người nước ngoài có thể làm (F-2, F-4, F-5, F-6...)",
+    workerVisa: "Người nước ngoài có thể làm (F-2, F-5, F-6; F-4 tùy công việc)",
     workerVisaLink: "Xem hướng dẫn visa",
     clientsTitle: "Khách hàng đã tin giao hiện trường logistics",
     clientsDesc: "Chúng tôi cung cấp nhân lực cho kho logistics của các doanh nghiệp phân phối, thời trang, thực phẩm.",
@@ -276,7 +276,7 @@ export const vi: Dict = {
       { label: "Lương", items: ["Trả trong ngày hoặc ngày hôm sau (hỏi từng chi nhánh)", "Làm thêm giờ trả 1,5 lần", "Có bằng lái hạng 1 (Hàn Quốc) được thưởng thêm"] },
       { label: "Ăn uống", items: ["Bữa trưa miễn phí"] },
       { label: "Đi lại", items: ["Có xe đưa đón từ ga"] },
-      { label: "Ai cũng được", items: ["Không cần kinh nghiệm, ưu tiên người có kinh nghiệm", "Người nước ngoài được (visa F)", "Ứng tuyển cùng bạn bè được"] },
+      { label: "Ai cũng được", items: ["Không cần kinh nghiệm, ưu tiên người có kinh nghiệm", "Người nước ngoài được (F-2, F-5, F-6; F-4 tùy công việc)", "Ứng tuyển cùng bạn bè được"] },
       { label: "Thời gian", items: ["1 ngày, chỉ cuối tuần, ngắn hạn, dài hạn đều được"] },
     ],
     branchesTitle: "Liên hệ chi nhánh tiện cho bạn",

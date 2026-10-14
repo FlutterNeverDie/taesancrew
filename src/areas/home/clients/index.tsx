@@ -8,7 +8,7 @@ export function HomeClients({ lang }: { lang: Locale }) {
     <section className="border-t border-rule py-20 md:py-24">
       <Container>
         <SectionTitle title={t.clientsTitle} desc={t.clientsDesc} />
-        <ClientWall variant="marquee" />
+        <ClientWall lang={lang} variant="marquee" />
       </Container>
     </section>
   );

@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { clients, type Client } from "@/lib/site";
+import type { Locale } from "@/i18n";
 
 // 로고마다 가로세로 비율이 달라서(LX판토스 4:1, 무신사 1:1) 높이를 같게 맞추면 들쭉날쭉해 보인다.
 // 대신 "보이는 면적"이 비슷하도록 크기를 정한다. 숫자를 키우면 전체 로고가 커진다
@@ -16,13 +17,15 @@ function logoSize(c: Client) {
   return { w: Math.round(w), h: Math.round(h) };
 }
 
-function Logo({ c }: { c: Client }) {
+function Logo({ c, lang }: { c: Client; lang: Locale }) {
   const s = c.logo ? logoSize(c) : null;
+  // 한국어 화면은 한국어 이름, 다른 언어는 영문 이름 (글자로 보이는 회사와 로고 대체 글자 모두)
+  const name = lang === "ko" ? c.name : (c.nameEn ?? c.name);
   return c.logo && s ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={`/images/clients/${c.logo}.webp`}
-      alt={c.name}
+      alt={name}
       width={s.w}
       height={s.h}
       loading="lazy"
@@ -30,13 +33,13 @@ function Logo({ c }: { c: Client }) {
       className="object-contain"
     />
   ) : (
-    <span className="text-center text-sm font-extrabold whitespace-nowrap text-navy-900/80 sm:text-base md:text-lg">{c.name}</span>
+    <span className="text-center text-sm font-extrabold whitespace-nowrap text-navy-900/80 sm:text-base md:text-lg">{name}</span>
   );
 }
 
 // variant="marquee": 두 줄이 서로 반대 방향으로 천천히 흐른다 (메인). 마우스를 올리면 멈춘다.
 // '동작 줄이기'를 켠 사람에게는 흐르지 않고 가운데 정렬 목록으로 보인다 (globals.css의 .marquee)
-export function ClientWall({ variant = "grid" }: { variant?: "grid" | "marquee" }) {
+export function ClientWall({ lang, variant = "grid" }: { lang: Locale; variant?: "grid" | "marquee" }) {
   if (variant === "marquee") {
     const rows = [clients.filter((_, i) => i % 2 === 0), clients.filter((_, i) => i % 2 === 1)];
     return (
@@ -50,7 +53,7 @@ export function ClientWall({ variant = "grid" }: { variant?: "grid" | "marquee" 
                 aria-hidden={i >= row.length ? true : undefined}
                 className="flex h-16 shrink-0 items-center justify-center px-5 md:h-20 md:px-9"
               >
-                <Logo c={c} />
+                <Logo c={c} lang={lang} />
               </li>
             ))}
           </ul>
@@ -63,7 +66,7 @@ export function ClientWall({ variant = "grid" }: { variant?: "grid" | "marquee" 
     <ul className="grid grid-cols-4 rounded-lg border border-rule bg-white px-1 py-3 [--logo-scale:0.62] sm:grid-cols-5 sm:[--logo-scale:0.8] md:grid-cols-6 md:px-6 md:py-6 md:[--logo-scale:1] lg:grid-cols-9">
       {clients.map((c) => (
         <li key={c.name} className="flex h-16 items-center justify-center px-1 sm:h-20 md:h-24 md:px-2">
-          <Logo c={c} />
+          <Logo c={c} lang={lang} />
         </li>
       ))}
     </ul>

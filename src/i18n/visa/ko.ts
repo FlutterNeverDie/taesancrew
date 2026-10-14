@@ -1,8 +1,6 @@
-import type { Locale } from "./config";
-
 // 비자(체류자격)별 안내 페이지(/visa) 문구.
 // 법령이 자주 바뀌는 내용이라 사전(dict)과 따로 둔다. 바뀌면 updated(기준일)와 근거 링크도 같이 고친다.
-// 지금은 한국어만 있고, 다른 언어 페이지도 한국어로 보인다 (번역은 todo/README.md 다국어 항목)
+// 이 파일이 원본이고, 번역은 같은 폴더의 <언어>.ts (구조·배열 순서·개수를 같게. 다르면 빌드 실패)
 // 근거: 출입국관리법 시행령 제23조, 법무부고시 제2026-65호(재외동포 F-4 취업활동 제한범위, 2026.2.12 시행),
 //      외국국적동포 업무 매뉴얼(2026.2, H-2 신규 발급 중단), 대학 유학생 시간제 취업 안내
 
@@ -13,7 +11,7 @@ export type VisaGroup = {
   items: { code: string; name: string; note: string }[];
 };
 
-const ko = {
+export const ko = {
   metaTitle: "외국인 비자별 근무 안내 (F-2·F-4·F-5·F-6·H-2) | 태산크루 인력사무소",
   metaDesc:
     "외국인도 물류센터에서 일할 수 있어요. 비자(체류자격)에 따라 가능한 일이 달라서 F-2, F-4, F-5, F-6, H-2, E-9, D-2 등 비자별로 정리했습니다. 2026년 10월 기준.",
@@ -88,10 +86,3 @@ const ko = {
 };
 
 export type VisaText = typeof ko;
-
-// 번역이 생기면 여기에 언어를 추가한다 (구조는 ko와 같게)
-const visa: Partial<Record<Locale, VisaText>> = { ko };
-
-export function getVisa(lang: Locale): VisaText {
-  return visa[lang] ?? ko;
-}

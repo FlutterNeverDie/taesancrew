@@ -14,7 +14,7 @@ Here are the working conditions people ask about most before they start.
 - **Meals**: Free lunch
 - **Commute**: Shuttle to work and back from the meeting point
 - **Bonus**: Bonus if you have a Class 1 driver's license
-- **Who can apply**: Beginners OK, foreigners (F visa) OK, you can apply with a friend
+- **Who can apply**: Beginners OK, foreigners OK (F-2, F-5, F-6; F-4 depends on the work), you can apply with a friend
 - **Work days**: Working just one day or only weekends is fine
 
 ## The work

@@ -114,7 +114,7 @@ export const en: Dict = {
     { q: "Can I work just one day?", a: "Yes. One day, short-term and long-term are all OK. If you only want to work weekends, contact us too." },
     { q: "When do I get paid?", a: "Same day or next day, depending on the site. Ask the branch for details." },
     { q: "Is there extra pay for overtime?", a: "Yes. Overtime is paid at 1.5 times." },
-    { q: "Can foreigners apply?", a: "Yes, depending on the site (F visa, etc.). Please ask the branch. You need to be able to speak everyday Korean." },
+    { q: "Can foreigners apply?", a: "It depends on your visa. F-2 (residence), F-5 (permanent residence) and F-6 (marriage migrant) can do most jobs. For F-4 (overseas Korean), it depends on the type of work. See the visa guide for details and ask the branch. You need to be able to speak everyday Korean.", link: "Visa guide", href: "/visa" },
     { q: "Is it loading/unloading work?", a: "Many sites have no loading/unloading. Each job posting lists the work." },
     { q: "Which branch should I go to?", a: "Contact whichever branch is easiest for you to get to, no matter where you live. If you are not sure, call the head office." },
   ],
@@ -179,7 +179,7 @@ export const en: Dict = {
     "cheonho-icheon": {
       title: "Icheon Cold-Storage Logistics Center Job", tasks: "Packing · Picking · Inspection · Sorting", hours: "11:00 ~ 20:00", days: "Mon ~ Fri", pay: "Same-day pay",
       meet: "Hillstate Cheonho Station Gentris, 1 min from Cheonho Station Exit 6",
-      perks: ["Shuttle: Cheonho Station → Icheon cold-storage logistics center", "Lunch provided", "Beginners OK · experience preferred", "Foreigners OK (F visa)", "Same-day bonus for drivers", "Weekend work at other logistics centers available"],
+      perks: ["Shuttle: Cheonho Station → Icheon cold-storage logistics center", "Lunch provided", "Beginners OK · experience preferred", "Foreigners OK (F-2, F-5, F-6; F-4 depends on the work)", "Same-day bonus for drivers", "Weekend work at other logistics centers available"],
     },
     "cheonho-musinsa": {
       title: "Musinsa Logistics Center Job", tasks: "Logistics center work", hours: "09:00 ~ 18:00 (overtime paid 1.5×)", days: "", pay: "Paid next day",
@@ -215,7 +215,7 @@ export const en: Dict = {
     workerButton: "Jobs open now",
     workerPerks: ["Same-day or next-day pay", "Weekends or one day OK", "Beginners OK, experience preferred"],
     // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
-    workerVisa: "Foreigners welcome (F-2, F-4, F-5, F-6 etc.)",
+    workerVisa: "Foreigners welcome (F-2, F-5, F-6; F-4 depends on the work)",
     workerVisaLink: "Visa guide",
     clientsTitle: "Clients who trust us with their logistics sites",
     clientsDesc: "We supply workers to logistics centers of retail, fashion and food companies.",
@@ -276,7 +276,7 @@ export const en: Dict = {
       { label: "Pay", items: ["Same-day or next-day pay (check with each branch)", "Overtime paid 1.5×", "Bonus for Class 1 driver's license holders"] },
       { label: "Meals", items: ["Free lunch"] },
       { label: "Commute", items: ["Shuttle from the station to work and back"] },
-      { label: "Who can apply", items: ["Beginners OK, experience preferred", "Foreigners OK (F visa)", "Apply together with a friend"] },
+      { label: "Who can apply", items: ["Beginners OK, experience preferred", "Foreigners OK (F-2, F-5, F-6; F-4 depends on the work)", "Apply together with a friend"] },
       { label: "How long", items: ["One day, weekends only, short-term or long-term - all OK"] },
     ],
     branchesTitle: "Contact any branch that suits you",

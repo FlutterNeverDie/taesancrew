@@ -8,7 +8,7 @@ export function JobsClients({ lang }: { lang: Locale }) {
       <Container>
         <h2 className="text-[1.75rem] font-extrabold text-navy-950 md:text-[2.5rem]">{getDict(lang).jobs.clientsTitle}</h2>
         <div className="mt-8 md:mt-10">
-          <ClientWall />
+          <ClientWall lang={lang} />
         </div>
       </Container>
     </section>

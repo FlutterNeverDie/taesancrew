@@ -114,7 +114,7 @@ export const id: Dict = {
     { q: "Boleh kerja satu hari saja?", a: "Boleh. Satu hari, jangka pendek, atau jangka menengah-panjang semuanya bisa. Yang mau kerja akhir pekan saja juga silakan hubungi kami." },
     { q: "Kapan gaji dibayar?", a: "Tergantung lokasi kerja, gaji dibayar hari itu juga atau keesokan harinya. Tanyakan ke cabang untuk info pastinya." },
     { q: "Kalau lembur, ada uang lembur?", a: "Ada. Lembur dibayar 1,5 kali." },
-    { q: "Orang asing boleh?", a: "Tergantung lokasi kerja, bisa (misalnya F visa). Silakan tanya ke cabang. Anda harus bisa berbicara bahasa Korea sehari-hari." },
+    { q: "Orang asing boleh?", a: "Tergantung visa. Pemegang F-2 (tinggal), F-5 (tinggal tetap) dan F-6 (imigran pernikahan) bisa melakukan sebagian besar pekerjaan. Untuk F-4 (warga keturunan Korea di luar negeri), perlu dicek sesuai jenis pekerjaan. Lihat panduan visa untuk detailnya dan tanyakan ke cabang. Anda harus bisa berbicara bahasa Korea sehari-hari.", link: "Panduan visa", href: "/visa" },
     { q: "Apakah kerjanya bongkar muat?", a: "Banyak lokasi kerja yang tidak ada bongkar muat. Isi pekerjaan tertulis di setiap lowongan." },
     { q: "Saya harus ke cabang mana?", a: "Di mana pun Anda tinggal, hubungi cabang yang paling mudah dijangkau. Kalau bingung, telepon kantor pusat." },
   ],
@@ -179,7 +179,7 @@ export const id: Dict = {
     "cheonho-icheon": {
       title: "Kerja Icheon Cold-Storage Logistics Center", tasks: "Packing · Picking · Inspeksi · Sorting", hours: "11:00 ~ 20:00", days: "Senin ~ Jumat", pay: "Dibayar hari itu juga",
       meet: "Hillstate Cheonho Station Gentris, 1 menit dari Stasiun Cheonho (천호역) pintu keluar 6",
-      perks: ["Bus antar-jemput Stasiun Cheonho → Icheon cold-storage logistics center", "Makan siang disediakan", "Pemula bisa · berpengalaman diutamakan", "Orang asing bisa (F visa)", "Insentif harian untuk yang bisa menyetir", "Akhir pekan bisa kerja di gudang logistik lain"],
+      perks: ["Bus antar-jemput Stasiun Cheonho → Icheon cold-storage logistics center", "Makan siang disediakan", "Pemula bisa · berpengalaman diutamakan", "Orang asing bisa (F-2, F-5, F-6; F-4 tergantung pekerjaan)", "Insentif harian untuk yang bisa menyetir", "Akhir pekan bisa kerja di gudang logistik lain"],
     },
     "cheonho-musinsa": {
       title: "Kerja Gudang Logistik Musinsa", tasks: "Pekerjaan gudang logistik", hours: "09:00 ~ 18:00 (lembur dibayar 1,5 kali)", days: "", pay: "Dibayar keesokan harinya",
@@ -215,7 +215,7 @@ export const id: Dict = {
     workerButton: "Lowongan yang sedang dibuka",
     workerPerks: ["Gaji hari itu atau besoknya", "Bisa akhir pekan atau satu hari saja", "Pemula bisa, berpengalaman diutamakan"],
     // 목록 맨 위: 외국인 가능 + 비자 안내(/visa) 링크
-    workerVisa: "Orang asing bisa (F-2, F-4, F-5, F-6, dll.)",
+    workerVisa: "Orang asing bisa (F-2, F-5, F-6; F-4 tergantung pekerjaan)",
     workerVisaLink: "Panduan visa",
     clientsTitle: "Klien yang mempercayakan lapangan logistiknya",
     clientsDesc: "Kami menempatkan tenaga kerja di gudang logistik perusahaan ritel, fashion, dan makanan.",
@@ -276,7 +276,7 @@ export const id: Dict = {
       { label: "Gaji", items: ["Dibayar hari itu atau besoknya (cek ke cabang)", "Lembur dibayar 1,5 kali", "Insentif jika punya SIM Kelas 1"] },
       { label: "Makan", items: ["Makan siang gratis"] },
       { label: "Transportasi", items: ["Bus antar-jemput dari stasiun"] },
-      { label: "Siapa saja", items: ["Pemula bisa, berpengalaman diutamakan", "Orang asing bisa (F visa)", "Bisa daftar bersama teman"] },
+      { label: "Siapa saja", items: ["Pemula bisa, berpengalaman diutamakan", "Orang asing bisa (F-2, F-5, F-6; F-4 tergantung pekerjaan)", "Bisa daftar bersama teman"] },
       { label: "Periode", items: ["Satu hari, akhir pekan, jangka pendek, menengah-panjang semua bisa"] },
     ],
     branchesTitle: "Hubungi cabang yang paling mudah untuk Anda",

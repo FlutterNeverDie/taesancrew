@@ -7,7 +7,7 @@ export function BusinessClients({ lang }: { lang: Locale }) {
     <section className="py-20 md:py-28">
       <Container>
         <SectionTitle title={getDict(lang).business.clientsTitle} />
-        <ClientWall />
+        <ClientWall lang={lang} />
       </Container>
     </section>
   );

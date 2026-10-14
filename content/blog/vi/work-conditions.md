@@ -14,7 +14,7 @@ Chúng tôi đã tổng hợp các điều kiện làm việc hay được hỏi
 - **Ăn uống**: Bữa trưa miễn phí
 - **Đi lại**: Có xe đưa đón từ điểm tập trung
 - **Thưởng thêm**: Có bằng lái hạng 1 (Hàn Quốc) được thưởng thêm
-- **Ai cũng được**: Không cần kinh nghiệm, người nước ngoài (visa F) được, ứng tuyển cùng bạn bè được
+- **Ai cũng được**: Không cần kinh nghiệm, người nước ngoài (F-2, F-5, F-6; F-4 tùy công việc) được, ứng tuyển cùng bạn bè được
 - **Ngày làm**: Chỉ làm 1 ngày hoặc chỉ cuối tuần cũng được
 
 ## Công việc
