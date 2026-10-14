@@ -114,7 +114,7 @@ export const id: Dict = {
     { q: "Boleh kerja satu hari saja?", a: "Boleh. Satu hari, jangka pendek, atau jangka menengah-panjang semuanya bisa. Yang mau kerja akhir pekan saja juga silakan hubungi kami." },
     { q: "Kapan gaji dibayar?", a: "Tergantung lokasi kerja, gaji dibayar hari itu juga atau keesokan harinya. Tanyakan ke cabang untuk info pastinya." },
     { q: "Kalau lembur, ada uang lembur?", a: "Ada. Lembur dibayar 1,5 kali." },
-    { q: "Orang asing boleh?", a: "Tergantung lokasi kerja, bisa (misalnya F visa). Silakan tanya ke cabang." },
+    { q: "Orang asing boleh?", a: "Tergantung lokasi kerja, bisa (misalnya F visa). Silakan tanya ke cabang. Anda harus bisa berbicara bahasa Korea sehari-hari." },
     { q: "Apakah kerjanya bongkar muat?", a: "Banyak lokasi kerja yang tidak ada bongkar muat. Isi pekerjaan tertulis di setiap lowongan." },
     { q: "Saya harus ke cabang mana?", a: "Di mana pun Anda tinggal, hubungi cabang yang paling mudah dijangkau. Kalau bingung, telepon kantor pusat." },
   ],
@@ -124,6 +124,8 @@ export const id: Dict = {
     workplaceChoices: "Gyeonggi-Gwangju / Seongnam / Cheonho",
     workplaceHint: "Pilih salah satu: {choices}",
     dayHint: "Contoh: Sen, Rab, Jum / akhir pekan saja",
+    // 다른 언어 페이지에서 보낼 때만 생년월일 아래에 붙는 항목 (문자에는 한국어 "국적", "비자 종류"로 들어간다)
+    extraFields: ["Kewarganegaraan", "Jenis visa"],
   },
 
   branches: {
@@ -264,6 +266,7 @@ export const id: Dict = {
     desc: "Kirim data di bawah ini, pemilik cabang di meeting point pilihan Anda akan menghubungi langsung. Pemula atau kerja satu hari saja, tidak apa-apa.",
     sendLabel: "Isi SMS",
     phoneApply: "Bisa juga daftar lewat telepon",
+    koreanNote: "Anda harus bisa berbicara bahasa Korea sehari-hari untuk bekerja.",
     conditionsTitle: "Kondisi kerja",
     conditions: [
       { label: "Pekerjaan", items: ["Packing, picking, inspeksi, sorting", "Banyak lokasi tanpa bongkar muat"] },

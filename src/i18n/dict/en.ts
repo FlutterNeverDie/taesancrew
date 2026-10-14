@@ -114,7 +114,7 @@ export const en: Dict = {
     { q: "Can I work just one day?", a: "Yes. One day, short-term and long-term are all OK. If you only want to work weekends, contact us too." },
     { q: "When do I get paid?", a: "Same day or next day, depending on the site. Ask the branch for details." },
     { q: "Is there extra pay for overtime?", a: "Yes. Overtime is paid at 1.5 times." },
-    { q: "Can foreigners apply?", a: "Yes, depending on the site (F visa, etc.). Please ask the branch." },
+    { q: "Can foreigners apply?", a: "Yes, depending on the site (F visa, etc.). Please ask the branch. You need to be able to speak everyday Korean." },
     { q: "Is it loading/unloading work?", a: "Many sites have no loading/unloading. Each job posting lists the work." },
     { q: "Which branch should I go to?", a: "Contact whichever branch is easiest for you to get to, no matter where you live. If you are not sure, call the head office." },
   ],
@@ -124,6 +124,8 @@ export const en: Dict = {
     workplaceChoices: "Gyeonggi-Gwangju / Seongnam / Cheonho",
     workplaceHint: "One of {choices}",
     dayHint: "e.g. Mon, Wed, Fri / weekends only",
+    // 다른 언어 페이지에서 보낼 때만 생년월일 아래에 붙는 항목 (문자에는 한국어 "국적", "비자 종류"로 들어간다)
+    extraFields: ["Nationality", "Visa type"],
   },
 
   branches: {
@@ -264,6 +266,7 @@ export const en: Dict = {
     desc: "Send us the details below and the manager of the branch near your preferred meeting point will contact you. First time or just one day? That's fine.",
     sendLabel: "What to send",
     phoneApply: "You can also apply by phone",
+    koreanNote: "You need to be able to speak everyday Korean to work.",
     conditionsTitle: "Working conditions",
     conditions: [
       { label: "Work", items: ["Packing, picking, inspection, sorting", "Many sites have no loading/unloading"] },

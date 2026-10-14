@@ -114,7 +114,7 @@ export const uz: Dict = {
     { q: "Faqat bir kun ishlasam boʻladimi?", a: "Ha. Bir kunlik, qisqa muddatli va uzoq muddatli - hammasi mumkin. Faqat dam olish kunlari ishlamoqchi boʻlsangiz ham yozing." },
     { q: "Ish haqi qachon beriladi?", a: "Ish joyiga qarab shu kuni yoki ertasi kuni toʻlanadi. Aniq maʼlumotni filialdan soʻrang." },
     { q: "Qoʻshimcha ish uchun pul toʻlanadimi?", a: "Ha. Qoʻshimcha ish uchun 1.5 barobar haq toʻlanadi." },
-    { q: "Chet elliklar ham ishlay oladimi?", a: "Ish joyiga qarab mumkin (F viza va boshqalar). Filialga murojaat qiling." },
+    { q: "Chet elliklar ham ishlay oladimi?", a: "Ish joyiga qarab mumkin (F viza va boshqalar). Filialga murojaat qiling. Kundalik koreys tilida gaplasha olish kerak." },
     { q: "Yuklash-tushirish ishimi?", a: "Koʻp ish joylarida yuklash-tushirish yoʻq. Har bir eʼlonda ish mazmuni yozilgan." },
     { q: "Qaysi filialga borishim kerak?", a: "Qayerda yashashingizdan qatʼi nazar, borib-kelish qulay boʻlgan filialga yozing. Bilmasangiz, bosh ofisga qoʻngʻiroq qiling." },
   ],
@@ -124,6 +124,8 @@ export const uz: Dict = {
     workplaceChoices: "Gyeonggi-Gwangju / Seongnam / Cheonho",
     workplaceHint: "{choices} dan biri",
     dayHint: "Masalan: Dushanba·Chorshanba·Juma, faqat dam olish kunlari",
+    // 다른 언어 페이지에서 보낼 때만 생년월일 아래에 붙는 항목 (문자에는 한국어 "국적", "비자 종류"로 들어간다)
+    extraFields: ["Fuqarolik", "Viza turi"],
   },
 
   branches: {
@@ -264,6 +266,7 @@ export const uz: Dict = {
     desc: "Quyidagi maʼlumotlarni yuborsangiz, istagan yigʻilish joyingizdagi filial rahbari oʻzi bogʻlanadi. Birinchi marta boʻlsa ham, bir kun ishlasangiz ham boʻladi.",
     sendLabel: "Yuboriladigan maʼlumot",
     phoneApply: "Telefon orqali ham ariza bera olasiz",
+    koreanNote: "Ishlash uchun kundalik koreys tilida gaplasha olish kerak.",
     conditionsTitle: "Ish sharoitlari",
     conditions: [
       { label: "Ish", items: ["Qadoqlash, terish, tekshirish, saralash", "Koʻp ish joylarida yuklash-tushirish yoʻq"] },

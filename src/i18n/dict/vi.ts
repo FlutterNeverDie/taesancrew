@@ -114,7 +114,7 @@ export const vi: Dict = {
     { q: "Làm 1 ngày có được không?", a: "Được. Làm 1 ngày, ngắn hạn hay dài hạn đều được. Muốn chỉ làm cuối tuần cũng cứ liên hệ." },
     { q: "Khi nào nhận lương?", a: "Tùy hiện trường, trả trong ngày hoặc ngày hôm sau. Hỏi chi nhánh để biết chính xác." },
     { q: "Làm thêm giờ có phụ cấp không?", a: "Có. Làm thêm giờ được trả 1,5 lần." },
-    { q: "Người nước ngoài có làm được không?", a: "Tùy hiện trường thì được (visa F, v.v.). Vui lòng hỏi chi nhánh." },
+    { q: "Người nước ngoài có làm được không?", a: "Tùy hiện trường thì được (visa F, v.v.). Vui lòng hỏi chi nhánh. Cần giao tiếp được tiếng Hàn hằng ngày." },
     { q: "Có phải bốc xếp hàng không?", a: "Nhiều hiện trường không có bốc xếp. Mỗi tin tuyển dụng đều ghi rõ nội dung công việc." },
     { q: "Nên đến chi nhánh nào?", a: "Không quan trọng bạn sống ở đâu, cứ liên hệ chi nhánh bạn đi lại tiện nhất. Nếu không chắc, hãy gọi trụ sở chính." },
   ],
@@ -124,6 +124,8 @@ export const vi: Dict = {
     workplaceChoices: "Gyeonggi-Gwangju / Seongnam / Cheonho",
     workplaceHint: "Chọn: {choices}",
     dayHint: "Ví dụ: Thứ 2, 4, 6 hoặc chỉ cuối tuần",
+    // 다른 언어 페이지에서 보낼 때만 생년월일 아래에 붙는 항목 (문자에는 한국어 "국적", "비자 종류"로 들어간다)
+    extraFields: ["Quốc tịch", "Loại visa"],
   },
 
   branches: {
@@ -264,6 +266,7 @@ export const vi: Dict = {
     desc: "Gửi nội dung dưới đây, giám đốc chi nhánh ở điểm tập trung bạn muốn sẽ trực tiếp liên hệ. Lần đầu hay chỉ làm 1 ngày cũng không sao.",
     sendLabel: "Nội dung cần gửi",
     phoneApply: "Bạn cũng có thể ứng tuyển qua điện thoại",
+    koreanNote: "Cần giao tiếp được tiếng Hàn hằng ngày mới có thể làm việc.",
     conditionsTitle: "Điều kiện làm việc",
     conditions: [
       { label: "Công việc", items: ["Đóng gói, picking, kiểm hàng, phân loại", "Nhiều nơi không có bốc xếp"] },
