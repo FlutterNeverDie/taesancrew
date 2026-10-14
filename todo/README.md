@@ -9,15 +9,15 @@ ver1.0.0 배포 이후 남은 작업. 끝나면 체크하고, 다 끝난 항목�
 - [ ] **지점별 대표 사진** (경기광주 본점, 성남 수진역점, 천호점)
   - 넣을 곳: `src/areas/branches/list` 의 사무실 사진 자리
   - 파일: `public/images/branches/<gwangju|sujin|cheonho>.jpg` (가로 1200px 이하 JPG)
-- [ ] **사업자등록증** (성남점, 천호점. 광주는 이미 있음)
+- [ ] **사업자등록증** (천호점 남음. 광주·성남 수진역점 완료)
   - 사진은 사이트에 올리지 않는다 (대표 생년월일 등 개인정보)
   - 사업자등록번호만 `src/lib/site.ts` 의 `branches[].bizNo` 에 입력 → 하단 회사 정보에 자동 표시
 - [ ] **상장 / 감사패 / 인증서**
   - 넣을 곳: `src/areas/awards/awards` 의 `awards` 배열 `{ src, title, issuer, date }`
   - 메인 미리보기: `src/areas/home/awards` 사진 자리도 같이 교체
   - 파일: `public/images/awards/`
-- [ ] **직업소개소 등록증** (지점별)
-  - 등록증 사진: `src/areas/awards/licenses` 자리
+- [ ] **직업소개소 등록증** (경기광주 본점, 천호점 남음. 성남 수진역점 완료)
+  - 등록증 사진: 대표 생년월일을 가린 사본을 `public/images/licenses/<slug>.jpg`로 넣고 `src/areas/awards/licenses`의 `images`에 등록
   - 등록번호: `src/lib/site.ts` 의 `branches[].agencyNo`
 
 ## 확인 필요

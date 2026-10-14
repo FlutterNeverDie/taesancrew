@@ -44,7 +44,8 @@ function DispatchBoard() {
                 <span className="font-display text-2xl font-extrabold text-white xl:text-[1.75rem]">{b.name}</span>
                 <span className="text-base font-medium text-brand-sky">{b.area} 권역</span>
               </p>
-              <p className="mt-1.5 text-base leading-snug text-white/90 md:text-lg">{b.landmark ?? b.address}</p>
+              <p className="mt-1.5 text-base leading-snug text-white/90 md:text-lg">{b.address}</p>
+              {b.landmark && <p className="mt-0.5 text-base font-semibold text-brand-sky">{b.landmark}</p>}
             </div>
             {b.phone ? (
               <a href={tel(b.phone)} className="press justify-self-start rounded-md border-2 border-point px-4 py-2.5 text-lg font-bold whitespace-nowrap text-point xl:px-5 xl:py-3 xl:text-xl tabular-nums hover:bg-point hover:text-navy-950 sm:justify-self-auto">
