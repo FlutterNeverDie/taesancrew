@@ -7,13 +7,13 @@ export function HomeAwards() {
   return (
     <section className="bg-navy-50 py-20 md:py-24">
       <Container>
-        <div className="flex max-w-5xl flex-wrap items-end justify-between gap-4">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionTitle title="유료직업소개소 등록증" desc="세 지점 모두 관할 관청에 정식 등록된 직업소개소입니다." />
-          <Link href="/awards" className="mb-10 text-lg font-bold whitespace-nowrap text-navy-700 underline decoration-2 underline-offset-4 md:mb-14">
+          <Link href="/awards" className="mb-10 ml-auto text-lg font-bold whitespace-nowrap text-navy-700 underline decoration-2 underline-offset-4 md:mb-14">
             크게 보기
           </Link>
         </div>
-        <ul className="grid max-w-5xl grid-cols-3 gap-3 md:gap-5">
+        <ul className="grid grid-cols-3 gap-3 md:gap-5">
           {branches.map((b) => (
             <li key={b.slug} className="min-w-0">
               <Link href="/awards" className="block">
