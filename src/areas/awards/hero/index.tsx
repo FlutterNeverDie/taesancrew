@@ -2,6 +2,6 @@ import { PageHero } from "@/components/ui";
 
 export function AwardsHero() {
   return (
-    <PageHero title="수상과 인증" desc="태산크루가 받은 상과 공식 자격을 소개합니다." />
+    <PageHero title="유료직업소개소 등록증" desc="세 지점 모두 관할 관청에 정식 등록된 유료직업소개소입니다." />
   );
 }

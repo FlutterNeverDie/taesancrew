@@ -22,7 +22,7 @@
 | `home/statement` | 약속 한 줄 | / |
 | `home/worker-cta` | 구직자 안내 | / |
 | `home/clients` | 고객사 | / |
-| `home/awards` | 수상과 인증 미리보기 | / |
+| `home/awards` | 등록증 미리보기 | / |
 | `home/news` | 최근 소식 | / 맨 아래 |
 | `about/hero` | 회사소개 상단 | /about 맨 위 |
 | `about/greeting` | 대표 인사 | /about |
@@ -46,8 +46,8 @@
 | `faq/jump-nav` | FAQ 바로가기 | /faq (모바일에서만) |
 | `faq/columns` | FAQ 본문 | /faq |
 | `faq/cta` | FAQ 하단 안내 | /faq |
-| `awards/hero` | 수상·인증 상단 | /awards |
-| `awards/awards` | 수상·감사패 | /awards |
+| `awards/hero` | 등록증 페이지 상단 | /awards |
+| `awards/awards` | 수상·감사패 (지금은 페이지에서 뺌) | /awards |
 | `awards/licenses` | 유료직업소개소 등록증 | /awards |
 | `branches/hero` | 지점안내 상단 | /branches |
 | `branches/list` | 지점 상세 | /branches |

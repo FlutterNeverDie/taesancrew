@@ -38,6 +38,7 @@ export type Branch = {
   phone: string | null;
   bizNo: string | null; // 사업자등록번호
   agencyNo: string | null; // 유료직업소개소 등록번호
+  licenseImage: string | null; // 직업소개소 등록증 이미지 (대표 생년월일 가린 사본, public/images/licenses/)
   owner: string | null;
   opened: string; // 개업 연월
 };
@@ -55,6 +56,7 @@ export const branches: Branch[] = [
     phone: "010-5801-2036",
     bizNo: "365-14-02519",
     agencyNo: null,
+    licenseImage: null,
     owner: "이선우",
     opened: "2023. 11",
   },
@@ -69,6 +71,7 @@ export const branches: Branch[] = [
     phone: "010-2244-0031",
     bizNo: "252-33-01651",
     agencyNo: "제2025-3780385-14-5-00029호",
+    licenseImage: "/images/licenses/sujin.jpg",
     owner: "이나라",
     opened: "2025. 10",
   },
@@ -78,11 +81,12 @@ export const branches: Branch[] = [
     brand: "태산크루",
     legalName: "천호점",
     area: "서울 동부",
-    address: "서울 강동구 천호대로 1024, 천호역 젠트리스",
+    address: "서울 강동구 천호대로 1024, 힐스테이트 천호역 젠트리스 지하 2층 242호 (성내동)",
     landmark: "천호역 6번 출구 1분",
     phone: "010-8141-0240",
-    bizNo: null,
-    agencyNo: null,
+    bizNo: "239-95-02048",
+    agencyNo: "제2026-3240289-14-5-00011호",
+    licenseImage: "/images/licenses/cheonho.jpg",
     owner: "모목원",
     opened: "2026. 10",
   },
@@ -212,7 +216,7 @@ export const businessFaq: Faq[] = [
   { q: "도급도 맡길 수 있나요?", a: "네. 작업 단위로 맡아 태산크루가 인력 관리와 결과까지 책임집니다." },
   { q: "초보자가 오면 어떡하죠?", a: "현장 난이도에 맞춰 경력자를 우선 배치합니다. 새로 오는 인력은 직무와 안전 교육을 마친 뒤 투입합니다." },
   { q: "근태와 현황은 어떻게 공유받나요?", a: "출퇴근 근태, 근무 만족도와 이슈 개선사항, 신규 채용과 배치 현황을 일일·주간·월간 리포트로 공유합니다." },
-  { q: "정식 등록된 업체인가요?", a: "지점별로 유료직업소개소 등록을 마치고 운영하고 있습니다. 등록증은 수상·인증 페이지에서 확인할 수 있습니다." },
+  { q: "정식 등록된 업체인가요?", a: "지점별로 유료직업소개소 등록을 마치고 운영하고 있습니다. 등록증은 메인 화면과 등록증 페이지에서 확인할 수 있습니다." },
 ];
 
 export const workerFaq: Faq[] = [
