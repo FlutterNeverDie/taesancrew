@@ -28,7 +28,6 @@
 | `about/greeting` | 대표 인사 | /about |
 | `about/focus` | 중점분야 요약 | /about |
 | `about/branches` | 지점안내 요약 | /about |
-| `about/history` | 연혁 | /about#history |
 | `business/hero` | 중점분야 상단 | /business 맨 위 |
 | `business/promises` | 약속하는 다섯 가지 | /business |
 | `business/services` | 서비스 분야 | /business |

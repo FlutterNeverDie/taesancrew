@@ -34,6 +34,7 @@ export type Branch = {
   legalName: string; // 사업자 정보에 쓰는 이름 ({brand} {legalName})
   address: string;
   landmark: string | null;
+  mapQuery?: string; // 지도 검색어. 없으면 도로명 주소(쉼표 앞)로 검색
   phone: string | null;
   bizNo: string | null; // 사업자등록번호
   agencyNo: string | null; // 유료직업소개소 등록번호
@@ -79,6 +80,7 @@ export const branches: Branch[] = [
     legalName: "천호점",
     address: "서울 강동구 천호대로 1024, 힐스테이트 천호역 젠트리스 지하 2층 242호 (성내동)",
     landmark: "천호역 6번 출구 1분",
+    mapQuery: "힐스테이트 천호역 젠트리스", // 도로명 주소로는 구글 지도가 위치를 못 찾음
     phone: "010-8141-0240",
     bizNo: "239-95-02048",
     agencyNo: "제2026-3240289-14-5-00011호",
@@ -189,7 +191,6 @@ export const nav: NavItem[] = [
     children: [
       { href: "/business", label: "중점분야" },
       { href: "/branches", label: "지점안내" },
-      { href: "/about#history", label: "연혁" },
     ],
   },
   { href: "/jobs", label: "일자리" },

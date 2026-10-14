@@ -7,7 +7,7 @@ ver1.0.0 배포 이후 남은 작업. 끝나면 체크하고, 다 끝난 항목�
 받은 파일은 `~/Documents/개인 서류 및 문서/태산/` 에 넣는다.
 
 - [ ] **지점별 대표 사진** (경기광주 본점, 성남 수진역점, 천호점)
-  - 넣을 곳: `src/areas/branches/list` 의 사무실 사진 자리
+  - 넣을 곳: 미정 (`src/areas/branches/list` 의 사진 자리는 위치 지도로 바뀜, 2026-10-14)
   - 파일: `public/images/branches/<gwangju|sujin|cheonho>.jpg` (가로 1200px 이하 JPG)
 - [ ] **상장 / 감사패 / 인증서**
   - 지금은 받은 게 없어 /awards 페이지와 메인에서 뺐음. 받으면 `src/app/awards/page.tsx`에 `AwardsAwards`를 다시 넣고 `src/areas/awards/awards` 의 `awards` 배열 `{ src, title, issuer, date }` 채우기
