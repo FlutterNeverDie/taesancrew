@@ -11,7 +11,7 @@ ver1.0.0 배포 이후 남은 작업. 끝나면 체크하고, 다 끝난 항목�
   - 등록번호: `src/lib/site.ts` 의 `branches[].agencyNo`
 
 ## 자료 받으면 넣기 (추가)
-- [ ] **현장 사진:** `content/photos/`에 `01-제목.jpg`처럼 넣으면 /about "현장 모습"에 올라감 (그 폴더 README.md). 사진이 없는 지금은 실제 사이트에서 섹션이 숨겨져 있음
+- [ ] **현장 사진:** `content/photos/`에 `01-제목.jpg`처럼 넣으면 /about "현장 모습"에 올라감 (그 폴더 README.md). 사진이 없는 지금은 섹션이 숨겨져 있음 (사진을 넣으면 자동으로 보임)
 - [x] 회사소개서 PDF (2026-10-15): 태산크루_회사소개서_v3.pdf(9쪽, 대표 이선우, 경기광주·성남·천호 총 3곳, 차별화 포인트 ② 지도는 OpenStreetMap)를 `public/files/taesan-company-profile.pdf`로 올림 (원본 수정용: 홍보물_제작/_원본(수정용)/회사소개서/수정본1.html)
 
 ## 기능
