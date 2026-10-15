@@ -347,6 +347,8 @@ export const ja: Dict = {
     title: "Taesan Crew のお知らせ",
     desc: "現場の話、企業向けインサイト、お仕事探しガイドをお届けします。",
     back: "お知らせ一覧へ",
+    shareTitle: "この記事をシェア",
+    moreTitle: "ほかのお知らせ",
     categories: { 공지: "お知らせ", "현장 소식": "現場ニュース", "기업 인사이트": "企業インサイト", "구직 가이드": "お仕事探しガイド" } as Record<string, string>,
   },
 

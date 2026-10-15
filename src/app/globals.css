@@ -3,21 +3,7 @@
  */
 @import "tailwindcss";
 
-/* 제목 글꼴 Paperlogy (무료 글꼴, 사이트에 직접 둔다). 사이트에서 쓰는 굵기만 */
-@font-face {
-  font-family: "Paperlogy";
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url("/fonts/Paperlogy-7Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Paperlogy";
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-  src: url("/fonts/Paperlogy-8ExtraBold.woff2") format("woff2");
-}
+/* 제목 글꼴 Paperlogy는 layout.tsx에서 next/font/local로 불러온다 (--font-paperlogy). 쓰는 글자만 남긴 파일: scripts/subset-fonts.mjs */
 
 /* 색·글꼴 토큰. 컴포넌트에서는 이 이름(bg-navy-900, text-ink 등)만 쓴다 */
 @theme {
@@ -41,7 +27,7 @@
   --color-paper: oklch(99.5% 0.002 260);
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --font-display: Paperlogy, "Pretendard Variable", Pretendard, sans-serif;
+  --font-display: var(--font-paperlogy), "Pretendard Variable", Pretendard, sans-serif;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -153,6 +139,13 @@ h2 {
     transform: translateY(16px);
   }
 }
+/* 첫 화면 제목용: 처음부터 보이는 채로(흐리게) 올라온다. 투명(0)에서 시작하면 브라우저가 "글씨가 늦게 떴다"고 재서 속도 점수가 떨어진다 */
+@keyframes rise-soft {
+  from {
+    opacity: 0.4;
+    transform: translateY(16px);
+  }
+}
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -187,6 +180,10 @@ h2 {
   /* 첫 화면: 순서대로 떠오르기 (지연은 style의 --d) */
   .rise {
     animation: rise 700ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+  .rise-soft {
+    animation: rise-soft 700ms var(--ease-out) both;
     animation-delay: var(--d, 0ms);
   }
 

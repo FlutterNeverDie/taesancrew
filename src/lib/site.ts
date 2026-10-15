@@ -94,7 +94,7 @@ export const branches: Branch[] = [
 // 회사소개서 "주요 고객사 현황". 로고는 회사소개서 PDF에서 뽑아 흰 여백을 잘라낸 것 (public/images/clients/*.webp)
 // 배열 순서 = 화면 순서. 앞에 둘 회사는 위로 올린다. logo가 없으면 이름을 글자로 보여준다
 // w, h = 로고 파일의 실제 픽셀 크기 (화면 크기 계산용, 파일을 바꾸면 같이 바꿀 것)
-// 올리브영·스타벅스·신상닷컴·소다는 로고 파일 없음 (스타벅스·신상닷컴·소다는 대표 확인 후 노출 확정)
+// 올리브영·스타벅스·신상닷컴·소다는 로고 파일 없이 이름 글자로 보여준다
 // nameEn: 다른 언어 화면에 보이는 이름 (없으면 name 그대로. LF·K2처럼 원래 영문인 곳은 생략)
 export type Client = { name: string; nameEn?: string; logo?: string; w?: number; h?: number };
 

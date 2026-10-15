@@ -4,7 +4,7 @@ import { pageMeta } from "@/i18n/meta";
 import { AwardsHero } from "@/areas/awards/hero";
 import { AwardsLicenses } from "@/areas/awards/licenses";
 
-// 수상·감사패(awards/awards)는 받은 게 생기면 다시 넣는다
+// 등록증 페이지 (수상·감사패는 쓰지 않기로 해서 영역을 지웠다, 2026-10-15)
 export const awardsMeta = (lang: Locale) => {
   const t = getDict(lang).meta;
   return pageMeta(lang, "/awards", t.awardsTitle, t.awardsDesc);

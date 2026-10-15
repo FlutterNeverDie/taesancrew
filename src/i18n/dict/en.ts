@@ -347,6 +347,8 @@ export const en: Dict = {
     title: "Taesan Crew News",
     desc: "Stories from the sites, business insights and job-seeking guides.",
     back: "Back to news",
+    shareTitle: "Share this post",
+    moreTitle: "More news",
     categories: { 공지: "Notice", "현장 소식": "Site News", "기업 인사이트": "Business Insights", "구직 가이드": "Job Seeker Guide" } as Record<string, string>,
   },
 

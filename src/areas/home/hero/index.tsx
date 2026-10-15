@@ -10,11 +10,11 @@ export function HomeHero({ lang }: { lang: Locale }) {
       <Container className="grid gap-12 py-14 md:py-20 lg:min-h-[min(calc(100svh-4rem),46rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16 xl:gap-24">
         <div className="min-w-0">
           {/* 검색엔진이 무슨 회사인지 알 수 있게 "인력사무소"를 제목 바로 위에 */}
-          <p className="rise mb-4 text-lg font-bold text-point md:text-xl">{t.eyebrow}</p>
+          <p className="rise-soft mb-4 text-lg font-bold text-point md:text-xl">{t.eyebrow}</p>
           <h1 className="text-[2.5rem] leading-[1.15] font-extrabold [overflow-wrap:anywhere] md:text-[3.75rem] xl:text-[5rem]">
-            {/* 첫 화면은 한 줄씩 떠오른다 (globals.css의 .rise, 지연은 --d) */}
+            {/* 첫 화면은 한 줄씩 떠오른다 (globals.css의 .rise-soft: 제목은 처음부터 보이게, 지연은 --d) */}
             {t.title.map((line, i) => (
-              <span key={i} className="rise block" style={{ "--d": `${i * 90}ms` } as CSSProperties}>
+              <span key={i} className="rise-soft block" style={{ "--d": `${i * 90}ms` } as CSSProperties}>
                 {line}
               </span>
             ))}

@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "fonts": "node scripts/subset-fonts.mjs",
+    "og": "tsx scripts/og-images.mts",
+    "prebuild": "node scripts/subset-fonts.mjs && tsx scripts/og-images.mts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -16,13 +19,17 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
+    "satori": "^0.57.2",
+    "subset-font": "^2.9.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "wrangler": "^4.86.0"
   }

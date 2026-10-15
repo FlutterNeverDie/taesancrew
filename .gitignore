@@ -20,6 +20,9 @@
 # production
 /build
 
+# 빌드 전에 만드는 페이지별 미리보기 이미지 (scripts/og-images.mts)
+/public/og/
+
 # misc
 .DS_Store
 *.pem

@@ -5,6 +5,7 @@ import { getPost } from "@/lib/posts";
 import { BlogHero } from "@/areas/blog/hero";
 import { BlogList } from "@/areas/blog/list";
 import { BlogPost } from "@/areas/blog/post";
+import { BlogPostMore } from "@/areas/blog/post-more";
 
 export const blogMeta = (lang: Locale) => {
   const t = getDict(lang).meta;
@@ -26,5 +27,10 @@ export const postMeta = (lang: Locale, slug: string) => {
 };
 
 export function PostView({ lang, slug }: { lang: Locale; slug: string }) {
-  return <BlogPost lang={lang} slug={slug} />;
+  return (
+    <>
+      <BlogPost lang={lang} slug={slug} />
+      <BlogPostMore lang={lang} slug={slug} />
+    </>
+  );
 }

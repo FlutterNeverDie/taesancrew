@@ -53,3 +53,7 @@ summary: 목록과 검색 결과에 보이는 한 줄 요약
 | web-design-guidelines | Vercel 웹 인터페이스 가이드라인 점검 | vercel-labs/agent-skills |
 
 디자인 토큰(색·글꼴)은 `src/app/globals.css`의 `@theme` 블록에만 둔다. 색은 남색(회사소개서) + 안전 노랑(채용 전단, 배차판·전화 버튼에만).
+
+## 빌드 전에 자동으로 하는 일 (`npm run build` → prebuild)
+- `scripts/subset-fonts.mjs`: 제목 글꼴(Paperlogy)을 사이트에서 쓰는 글자만 남겨 `src/app/fonts/`에 만든다 (원본은 `fonts-src/`). dev 서버만 켜 둘 땐 `npm run fonts`
+- `scripts/og-images.mts`: 한국어 페이지별 카톡 미리보기 이미지를 `public/og/`에 만든다 (git에 안 올림). 따로 만들 땐 `npm run og`

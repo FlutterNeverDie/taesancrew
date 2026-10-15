@@ -347,6 +347,8 @@ export const id: Dict = {
     title: "Berita Taesan Crew",
     desc: "Kabar dari lapangan, wawasan untuk perusahaan, dan panduan mencari kerja.",
     back: "Kembali ke daftar berita",
+    shareTitle: "Bagikan artikel ini",
+    moreTitle: "Berita lainnya",
     categories: { 공지: "Pengumuman", "현장 소식": "Kabar Lapangan", "기업 인사이트": "Wawasan Perusahaan", "구직 가이드": "Panduan Cari Kerja" } as Record<string, string>,
   },
 

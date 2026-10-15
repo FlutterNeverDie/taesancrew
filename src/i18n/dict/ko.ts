@@ -355,6 +355,8 @@ export const ko = {
     title: "태산크루 소식",
     desc: "현장 이야기, 기업 인사이트, 구직 가이드를 전합니다.",
     back: "소식 목록으로",
+    shareTitle: "이 글 공유하기",
+    moreTitle: "다른 소식",
     categories: { 공지: "공지", "현장 소식": "현장 소식", "기업 인사이트": "기업 인사이트", "구직 가이드": "구직 가이드" } as Record<string, string>,
   },
 

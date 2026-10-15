@@ -51,7 +51,6 @@
 | `faq/columns` | FAQ 본문 | /faq |
 | `faq/cta` | FAQ 하단 안내 | /faq |
 | `awards/hero` | 등록증 페이지 상단 | /awards |
-| `awards/awards` | 수상·감사패 (지금은 페이지에서 뺌) | /awards |
 | `awards/licenses` | 유료직업소개소 등록증 | /awards |
 | `branches/hero` | 지점안내 상단 | /branches |
 | `branches/list` | 지점 상세 | /branches |
@@ -64,5 +63,6 @@
 | `blog/hero` | 소식 상단 | /blog |
 | `blog/list` | 소식 목록 | /blog |
 | `blog/post` | 소식 글 본문 | /blog/<slug> |
+| `blog/post-more` | 소식 글 아래 공유 버튼 + 다른 소식 3개 | /blog/<slug> |
 | `privacy/body` | 개인정보처리방침 | /privacy |
 | `visa/body` | 비자별 근무 안내 | /visa |

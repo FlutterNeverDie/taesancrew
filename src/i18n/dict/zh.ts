@@ -347,6 +347,8 @@ export const zh: Dict = {
     title: "Taesan Crew 新闻",
     desc: "分享现场故事、企业洞察和求职指南。",
     back: "返回新闻列表",
+    shareTitle: "分享这篇文章",
+    moreTitle: "更多消息",
     categories: { 공지: "公告", "현장 소식": "现场消息", "기업 인사이트": "企业洞察", "구직 가이드": "求职指南" } as Record<string, string>,
   },
 

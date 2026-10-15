@@ -4,7 +4,7 @@ import { branches } from "@/lib/site";
 import { ZoomImage } from "@/components/Lightbox";
 import { brandName, branchText, fmt, getDict, lp, type Locale } from "@/i18n";
 
-// 메인의 등록증 미리보기 (예전 "수상과 인증" 자리). 수상·감사패를 받으면 다시 같이 보여준다
+// 메인의 등록증 미리보기 (예전 "수상과 인증" 자리)
 export function HomeAwards({ lang }: { lang: Locale }) {
   const d = getDict(lang);
   const t = d.home;

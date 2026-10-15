@@ -9,7 +9,7 @@ export function BlogPost({ lang, slug }: { lang: Locale; slug: string }) {
   const post = getPost(slug, lang);
 
   return (
-    <article className="py-14 md:py-20">
+    <article className="pt-14 pb-12 md:pt-20 md:pb-14">
       {/* 읽은 만큼 차는 막대 (globals.css의 .read-progress) */}
       <div aria-hidden className="read-progress fixed inset-x-0 top-16 z-30 h-1 bg-point" />
       <Container className="max-w-3xl">

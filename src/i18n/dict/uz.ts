@@ -347,6 +347,8 @@ export const uz: Dict = {
     title: "Taesan Crew yangiliklari",
     desc: "Ish joylaridan xabarlar, kompaniyalar uchun foydali maʼlumotlar va ish izlovchilar uchun qoʻllanmalar.",
     back: "Yangiliklar roʻyxatiga",
+    shareTitle: "Ushbu maqolani ulashing",
+    moreTitle: "Boshqa yangiliklar",
     categories: { 공지: "Eʼlon", "현장 소식": "Ish joyidan xabarlar", "기업 인사이트": "Kompaniyalar uchun", "구직 가이드": "Ish izlovchilar uchun qoʻllanma" } as Record<string, string>,
   },
 

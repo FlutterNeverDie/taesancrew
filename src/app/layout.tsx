@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import { company } from "@/lib/site";
 import { localeInfo } from "@/i18n/config";
@@ -21,6 +22,18 @@ export const metadata: Metadata = {
   },
 };
 
+// 제목 글꼴 Paperlogy: 사이트에서 쓰는 글자만 남긴 파일 (빌드 전에 scripts/subset-fonts.mjs가 만든다)
+// next/font가 미리 받기(preload)와 파일 이름 해시를 맡는다. 글꼴이 오기 전에는 본문 글꼴로 보였다가 바뀐다(swap)
+const paperlogy = localFont({
+  src: [
+    { path: "./fonts/Paperlogy-7Bold.woff2", weight: "700" },
+    { path: "./fonts/Paperlogy-8ExtraBold.woff2", weight: "800" },
+  ],
+  variable: "--font-paperlogy",
+  display: "swap",
+  fallback: ["Pretendard Variable", "Pretendard", "sans-serif"],
+});
+
 export const viewport: Viewport = {
   themeColor: "#011a4a",
   colorScheme: "light",
@@ -38,7 +51,7 @@ const langScript = `(function(){var m=${JSON.stringify(
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="ko" className={`${paperlogy.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: hostScript }} />
         <script dangerouslySetInnerHTML={{ __html: langScript }} />
@@ -48,9 +61,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
-        {/* 제목 글꼴 Paperlogy는 쓰는 두 굵기(700·800)만 사이트에 직접 넣었다 (public/fonts, globals.css의 @font-face).
-            외부 CSS를 한 번 더 받는 단계가 없어져 첫 화면이 빨리 뜬다 */}
-        <link rel="preload" href="/fonts/Paperlogy-8ExtraBold.woff2" as="font" type="font/woff2" crossOrigin="" />
       </head>
       {/* 머리글·바닥글·연락 버튼은 언어별 레이아웃의 SiteChrome에서 그린다 */}
       <body className="flex min-h-full flex-col pb-16 lg:pb-0">{children}</body>

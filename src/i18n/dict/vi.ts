@@ -347,6 +347,8 @@ export const vi: Dict = {
     title: "Tin tức Taesan Crew",
     desc: "Chia sẻ chuyện hiện trường, góc nhìn cho doanh nghiệp và hướng dẫn tìm việc.",
     back: "Về danh sách tin tức",
+    shareTitle: "Chia sẻ bài viết này",
+    moreTitle: "Tin khác",
     categories: { 공지: "Thông báo", "현장 소식": "Tin hiện trường", "기업 인사이트": "Góc nhìn doanh nghiệp", "구직 가이드": "Hướng dẫn tìm việc" } as Record<string, string>,
   },
 
