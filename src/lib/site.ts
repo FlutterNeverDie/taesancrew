@@ -19,6 +19,9 @@ export const company = {
   mainPhone: "010-5801-2036",
   officePhone: "031-769-1035",
   fax: "031-769-1036",
+  // 회사소개서 PDF (public/files/ 안의 파일 경로, 예: "/files/taesan-company-profile.pdf"). null이면 실제 사이트에서는 버튼이 안 보인다
+  // (로컬 개발 서버에서만 "준비 중" 버튼으로 자리를 보여준다. shared/brochure-button)
+  brochure: "/files/taesan-company-profile.pdf" as string | null,
 };
 
 // 화면에 보이는 문구(강조 숫자, 강점, 서비스, 질문, 문자 양식 등)는 src/i18n/dict/ko.ts (언어별 사전)

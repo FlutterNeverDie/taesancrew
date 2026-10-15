@@ -10,7 +10,7 @@ Here are the working conditions people ask about most before they start.
 ## Working conditions
 
 - **Pay**: Same-day or next-day pay
-- **Overtime pay**: Overtime is paid at 1.5 times
+- **Overtime pay**: Overtime is paid separately
 - **Meals**: Free lunch
 - **Commute**: Shuttle to work and back from the meeting point
 - **Bonus**: Bonus if you have a Class 1 driver's license

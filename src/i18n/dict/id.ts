@@ -16,6 +16,8 @@ export const id: Dict = {
     mapTitle: "Peta lokasi {name}",
     licenseAlt: "Sertifikat registrasi usaha penempatan kerja berbayar {name}",
     skip: "Langsung ke konten utama",
+    brochure: "Unduh profil perusahaan",
+    brochurePreparing: "Profil perusahaan segera tersedia",
   },
 
   nav: {
@@ -113,7 +115,7 @@ export const id: Dict = {
     { q: "Bagaimana cara mendaftar?", a: "Kirim SMS ke nomor cabang yang paling mudah untuk Anda, berisi nama, tanggal lahir, tempat tinggal, meeting point bus yang diinginkan, tanggal bisa mulai, dan hari kerja yang diinginkan. Di halaman Lowongan, tekan 'Kirim SMS' untuk membuka SMS yang sudah terisi formatnya." },
     { q: "Boleh kerja satu hari saja?", a: "Boleh. Satu hari, jangka pendek, atau jangka menengah-panjang semuanya bisa. Yang mau kerja akhir pekan saja juga silakan hubungi kami." },
     { q: "Kapan gaji dibayar?", a: "Tergantung lokasi kerja, gaji dibayar hari itu juga atau keesokan harinya. Tanyakan ke cabang untuk info pastinya." },
-    { q: "Kalau lembur, ada uang lembur?", a: "Ada. Lembur dibayar 1,5 kali." },
+    { q: "Kalau lembur, ada uang lembur?", a: "Ada. Uang lembur dibayar terpisah. Ketentuannya berbeda di tiap lokasi kerja, jadi cabang akan menjelaskannya saat Anda mendaftar." },
     { q: "Orang asing boleh?", a: "Tergantung visa. Pemegang F-2 (tinggal), F-5 (tinggal tetap) dan F-6 (imigran pernikahan) bisa melakukan sebagian besar pekerjaan. Untuk F-4 (warga keturunan Korea di luar negeri), perlu dicek sesuai jenis pekerjaan. Lihat panduan visa untuk detailnya dan tanyakan ke cabang. Anda harus bisa berbicara bahasa Korea sehari-hari.", link: "Panduan visa", href: "/visa" },
     { q: "Apakah kerjanya bongkar muat?", a: "Banyak lokasi kerja yang tidak ada bongkar muat. Isi pekerjaan tertulis di setiap lowongan." },
     { q: "Saya harus ke cabang mana?", a: "Di mana pun Anda tinggal, hubungi cabang yang paling mudah dijangkau. Kalau bingung, telepon kantor pusat." },
@@ -167,7 +169,7 @@ export const id: Dict = {
       perks: ["Bus antar-jemput Stasiun Sujin ↔ gudang logistik", "Makan siang disediakan", "Pemula bisa · berpengalaman diutamakan", "Orang asing bisa", "Diutamakan yang bisa menyetir Starex", "Akhir pekan bisa kerja di gudang logistik lain"],
     },
     "cheonho-logistics": {
-      title: "Kerja Gudang Logistik", tasks: "Pekerjaan gudang logistik", hours: "09:00 ~ 18:00 (lembur dibayar 1,5 kali)", days: "", pay: "Kerja Senin~Kamis dibayar besoknya, kerja Jumat~Sabtu dibayar Senin minggu berikutnya",
+      title: "Kerja Gudang Logistik", tasks: "Pekerjaan gudang logistik", hours: "09:00 ~ 18:00 (lembur dibayar terpisah)", days: "", pay: "Kerja Senin~Kamis dibayar besoknya, kerja Jumat~Sabtu dibayar Senin minggu berikutnya",
       meet: "Hillstate Cheonho Station Gentris (Stasiun Cheonho (천호역) pintu keluar 6)",
       perks: ["Bus antar-jemput dari Stasiun Cheonho", "Makan siang gratis", "Insentif jika punya SIM Kelas 1", "Boleh datang bersama teman", "Pemula disambut", "Bisa daftar hari ini"],
     },
@@ -182,7 +184,7 @@ export const id: Dict = {
       perks: ["Bus antar-jemput Stasiun Cheonho → Icheon cold-storage logistics center", "Makan siang disediakan", "Pemula bisa · berpengalaman diutamakan", "Orang asing bisa (F-2, F-5, F-6; F-4 tergantung pekerjaan)", "Insentif harian untuk yang bisa menyetir", "Akhir pekan bisa kerja di gudang logistik lain"],
     },
     "cheonho-musinsa": {
-      title: "Kerja Gudang Logistik Musinsa", tasks: "Pekerjaan gudang logistik", hours: "09:00 ~ 18:00 (lembur dibayar 1,5 kali)", days: "", pay: "Dibayar keesokan harinya",
+      title: "Kerja Gudang Logistik Musinsa", tasks: "Pekerjaan gudang logistik", hours: "09:00 ~ 18:00 (lembur dibayar terpisah)", days: "", pay: "Dibayar keesokan harinya",
       meet: "Kumpul di Stasiun Cheonho (천호역)",
       perks: ["Bus antar-jemput dari Stasiun Cheonho", "Makan siang disediakan", "Insentif jika punya SIM Kelas 1", "Pemula bisa", "Jangka pendek · menengah-panjang disambut"],
     },
@@ -230,6 +232,9 @@ export const id: Dict = {
     title: ["Di hari yang dibutuhkan,", "kami kirim orang yang dibutuhkan"],
     desc: "Perusahaan spesialis pengelolaan tenaga kerja yang tanggap terhadap perubahan pasar.",
     ceoAlt: "Pemilik Taesan Recruit & Taesan Crew",
+    // 현장 사진 (about/photos). 사진과 제목은 content/photos/ 폴더 (파일 이름이 제목)
+    photosTitle: "Suasana di lokasi kerja",
+    photosDesc: "Lihat foto lokasi kerja Taesan Crew.",
     greetingTitle: "Tenaga kerja adalah daya saing perusahaan",
     greeting: [
       "Berbekal pengalaman lebih dari 20 tahun di dunia logistik, Taesan Crew mengelola langsung cabang di Gwangju (Gyeonggi), Seongnam, dan Seoul bagian timur, serta menempatkan tenaga kerja dengan cepat melalui database tenaga kerja yang kami bangun dan kelola sendiri.",
@@ -270,10 +275,25 @@ export const id: Dict = {
     sendLabel: "Isi SMS",
     phoneApply: "Bisa juga daftar lewat telepon",
     koreanNote: "Anda harus bisa berbicara bahasa Korea sehari-hari untuk bekerja.",
+    // 출근하는 날 하루 흐름 (jobs/day). 사실은 소식 글 "물류센터 일, 처음이라면"과 근무 조건에 있는 것만
+    dayTitle: "Begini hari kerja Anda",
+    dayDesc: "Pemula juga tidak apa-apa. Kita bertemu di meeting point, berangkat bersama, lalu mulai kerja setelah pelatihan keselamatan.",
+    day: [
+      { title: "Kumpul", desc: "Setiap cabang punya meeting point sendiri. Contoh: Stasiun Sujin (수진역) pintu keluar 3, Stasiun Cheonho (천호역) pintu keluar 6" },
+      { title: "Naik bus antar-jemput", desc: "Berangkat bersama dengan bus antar-jemput ke gudang logistik" },
+      { title: "Pelatihan keselamatan", desc: "Yang baru pertama kali datang ikut pelatihan keselamatan dulu, lalu mulai kerja" },
+      { title: "Kerja", desc: "Banyak pekerjaan yang tidak sulit, seperti packing, picking, inspeksi, inbound dan outbound" },
+      { title: "Makan siang", desc: "Makan siang gratis" },
+      { title: "Pulang", desc: "Setelah kerja selesai, kembali ke stasiun dengan bus" },
+      { title: "Gaji", desc: "Dibayar hari itu atau besoknya (cek ke cabang), lembur dibayar terpisah" },
+    ],
+    bringTitle: "Yang perlu dibawa",
+    bring: ["Kartu identitas", "Pakaian nyaman dan sepatu olahraga (sepatu safety, tergantung lokasi)"],
+    bringNote: "Bisa sedikit berbeda di tiap lokasi, jadi tanyakan lagi ke cabang saat mendaftar.",
     conditionsTitle: "Kondisi kerja",
     conditions: [
       { label: "Pekerjaan", items: ["Packing, picking, inspeksi, sorting", "Banyak lokasi tanpa bongkar muat"] },
-      { label: "Gaji", items: ["Dibayar hari itu atau besoknya (cek ke cabang)", "Lembur dibayar 1,5 kali", "Insentif jika punya SIM Kelas 1"] },
+      { label: "Gaji", items: ["Dibayar hari itu atau besoknya (cek ke cabang)", "Lembur dibayar terpisah", "Insentif jika punya SIM Kelas 1"] },
       { label: "Makan", items: ["Makan siang gratis"] },
       { label: "Transportasi", items: ["Bus antar-jemput dari stasiun"] },
       { label: "Siapa saja", items: ["Pemula bisa, berpengalaman diutamakan", "Orang asing bisa (F-2, F-5, F-6; F-4 tergantung pekerjaan)", "Bisa daftar bersama teman"] },

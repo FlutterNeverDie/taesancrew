@@ -10,7 +10,7 @@ Ishni boshlashdan oldin eng koʻp soʻraladigan ish sharoitlarini jamladik.
 ## Ish sharoitlari
 
 - **Ish haqi**: Shu kuni yoki ertasi kuni toʻlanadi
-- **Qoʻshimcha ish haqi**: Qoʻshimcha ish uchun 1.5 barobar haq toʻlanadi
+- **Qoʻshimcha ish haqi**: Qoʻshimcha ish uchun alohida haq toʻlanadi
 - **Ovqat**: Tushlik bepul
 - **Borib-kelish**: Yigʻilish joyidan servis avtobusi bor
 - **Qoʻshimcha mukofot**: 1-toifa haydovchilik guvohnomasi boʻlsa, qoʻshimcha mukofot

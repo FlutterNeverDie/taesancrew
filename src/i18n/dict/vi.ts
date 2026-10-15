@@ -16,6 +16,8 @@ export const vi: Dict = {
     mapTitle: "Bản đồ {name}",
     licenseAlt: "Giấy đăng ký kinh doanh giới thiệu việc làm có thu phí - {name}",
     skip: "Bỏ qua, đến nội dung chính",
+    brochure: "Tải hồ sơ công ty",
+    brochurePreparing: "Hồ sơ công ty đang chuẩn bị",
   },
 
   nav: {
@@ -113,7 +115,7 @@ export const vi: Dict = {
     { q: "Ứng tuyển thế nào?", a: "Nhắn tin đến số của chi nhánh tiện cho bạn: họ tên, ngày sinh, nơi ở, điểm tập trung mong muốn, ngày có thể bắt đầu, ngày muốn làm trong tuần. Ở trang Việc làm, bấm 'Gửi tin nhắn' sẽ mở màn hình tin nhắn có sẵn mẫu." },
     { q: "Làm 1 ngày có được không?", a: "Được. Làm 1 ngày, ngắn hạn hay dài hạn đều được. Muốn chỉ làm cuối tuần cũng cứ liên hệ." },
     { q: "Khi nào nhận lương?", a: "Tùy hiện trường, trả trong ngày hoặc ngày hôm sau. Hỏi chi nhánh để biết chính xác." },
-    { q: "Làm thêm giờ có phụ cấp không?", a: "Có. Làm thêm giờ được trả 1,5 lần." },
+    { q: "Làm thêm giờ có phụ cấp không?", a: "Có. Làm thêm giờ được trả phụ cấp riêng. Cách tính khác nhau tùy hiện trường, nên chi nhánh sẽ hướng dẫn khi bạn ứng tuyển." },
     { q: "Người nước ngoài có làm được không?", a: "Tùy loại visa. F-2 (cư trú), F-5 (vĩnh trú), F-6 (kết hôn di trú) làm được hầu hết công việc. Với F-4 (kiều bào), cần kiểm tra tùy loại công việc. Xem hướng dẫn visa để biết thêm và hỏi chi nhánh. Cần giao tiếp được tiếng Hàn hằng ngày.", link: "Xem hướng dẫn visa", href: "/visa" },
     { q: "Có phải bốc xếp hàng không?", a: "Nhiều hiện trường không có bốc xếp. Mỗi tin tuyển dụng đều ghi rõ nội dung công việc." },
     { q: "Nên đến chi nhánh nào?", a: "Không quan trọng bạn sống ở đâu, cứ liên hệ chi nhánh bạn đi lại tiện nhất. Nếu không chắc, hãy gọi trụ sở chính." },
@@ -167,7 +169,7 @@ export const vi: Dict = {
       perks: ["Xe buýt đưa đón Ga Sujin ↔ kho", "Có bữa trưa", "Không cần kinh nghiệm · Ưu tiên người có kinh nghiệm", "Người nước ngoài được", "Ưu tiên người lái được xe Starex", "Cuối tuần có thể làm ở kho khác"],
     },
     "cheonho-logistics": {
-      title: "Việc làm kho logistics", tasks: "Công việc trong kho logistics", hours: "09:00 ~ 18:00 (làm thêm giờ trả 1,5 lần)", days: "", pay: "Làm thứ 2 ~ thứ 5: trả ngày hôm sau. Làm thứ 6 ~ thứ 7: trả thứ 2 tuần sau",
+      title: "Việc làm kho logistics", tasks: "Công việc trong kho logistics", hours: "09:00 ~ 18:00 (làm thêm giờ trả phụ cấp riêng)", days: "", pay: "Làm thứ 2 ~ thứ 5: trả ngày hôm sau. Làm thứ 6 ~ thứ 7: trả thứ 2 tuần sau",
       meet: "Hillstate Cheonho Station Gentris (힐스테이트 천호역 젠트리스) (Ga Cheonho cửa số 6)",
       perks: ["Xe đưa đón từ Ga Cheonho", "Bữa trưa miễn phí", "Có bằng lái hạng 1 (Hàn Quốc) được thưởng thêm", "Đi cùng bạn bè được", "Chào đón người mới", "Ứng tuyển trong ngày được"],
     },
@@ -182,7 +184,7 @@ export const vi: Dict = {
       perks: ["Xe đưa đón Ga Cheonho → kho lạnh Icheon", "Có bữa trưa", "Không cần kinh nghiệm · Ưu tiên người có kinh nghiệm", "Người nước ngoài được (F-2, F-5, F-6; F-4 tùy công việc)", "Người lái xe được thưởng thêm trong ngày", "Cuối tuần có thể làm ở kho khác"],
     },
     "cheonho-musinsa": {
-      title: "Việc làm kho logistics Musinsa", tasks: "Công việc trong kho logistics", hours: "09:00 ~ 18:00 (làm thêm giờ trả 1,5 lần)", days: "", pay: "Trả ngày hôm sau",
+      title: "Việc làm kho logistics Musinsa", tasks: "Công việc trong kho logistics", hours: "09:00 ~ 18:00 (làm thêm giờ trả phụ cấp riêng)", days: "", pay: "Trả ngày hôm sau",
       meet: "Tập trung tại Ga Cheonho (천호역)",
       perks: ["Xe đưa đón từ Ga Cheonho", "Có bữa trưa", "Có bằng lái hạng 1 (Hàn Quốc) được thưởng thêm", "Không cần kinh nghiệm", "Chào đón ngắn hạn · dài hạn"],
     },
@@ -230,6 +232,9 @@ export const vi: Dict = {
     title: ["Đúng ngày cần,", "chúng tôi giới thiệu đúng người"],
     desc: "Công ty chuyên về vận hành nhân lực và thuê ngoài, linh hoạt trước thị trường luôn thay đổi.",
     ceoAlt: "Giám đốc Taesan Recruit & Taesan Crew",
+    // 현장 사진 (about/photos). 사진과 제목은 content/photos/ 폴더 (파일 이름이 제목)
+    photosTitle: "Hình ảnh nơi làm việc",
+    photosDesc: "Xem ảnh những nơi Taesan Crew làm việc.",
     greetingTitle: "Nhân lực chính là sức cạnh tranh của doanh nghiệp",
     greeting: [
       "Dựa trên hơn 20 năm kinh nghiệm trong ngành logistics, Taesan Crew trực tiếp vận hành các chi nhánh tại Gwangju (Gyeonggi), Seongnam và phía đông Seoul, và bố trí nhân lực nhanh chóng nhờ cơ sở dữ liệu nhân lực do chính chúng tôi xây dựng và quản lý.",
@@ -270,10 +275,25 @@ export const vi: Dict = {
     sendLabel: "Nội dung cần gửi",
     phoneApply: "Bạn cũng có thể ứng tuyển qua điện thoại",
     koreanNote: "Cần giao tiếp được tiếng Hàn hằng ngày mới có thể làm việc.",
+    // 출근하는 날 하루 흐름 (jobs/day). 사실은 소식 글 "물류센터 일, 처음이라면"과 근무 조건에 있는 것만
+    dayTitle: "Một ngày đi làm diễn ra như thế này",
+    dayDesc: "Lần đầu cũng không sao. Gặp nhau ở điểm tập trung, cùng đi, được đào tạo an toàn rồi mới bắt đầu làm.",
+    day: [
+      { title: "Tập trung", desc: "Mỗi chi nhánh có điểm tập trung riêng. Ví dụ: Ga Sujin (수진역) cửa số 3, Ga Cheonho (천호역) cửa số 6" },
+      { title: "Đi xe đưa đón", desc: "Cùng đi xe buýt đưa đón đến kho logistics" },
+      { title: "Đào tạo an toàn", desc: "Người đến lần đầu được đào tạo an toàn rồi mới bắt đầu làm" },
+      { title: "Làm việc", desc: "Nhiều việc không khó như đóng gói, picking, kiểm hàng, nhập hàng, xuất hàng" },
+      { title: "Bữa trưa", desc: "Bữa trưa miễn phí" },
+      { title: "Tan ca", desc: "Làm xong, đi xe về lại ga" },
+      { title: "Lương", desc: "Trả trong ngày hoặc ngày hôm sau (hỏi từng chi nhánh), làm thêm giờ trả phụ cấp riêng" },
+    ],
+    bringTitle: "Cần mang theo",
+    bring: ["Giấy tờ tùy thân", "Quần áo thoải mái và giày thể thao (một số nơi cần giày bảo hộ)"],
+    bringNote: "Mỗi nơi có thể hơi khác, nên khi ứng tuyển hãy hỏi lại chi nhánh.",
     conditionsTitle: "Điều kiện làm việc",
     conditions: [
       { label: "Công việc", items: ["Đóng gói, picking, kiểm hàng, phân loại", "Nhiều nơi không có bốc xếp"] },
-      { label: "Lương", items: ["Trả trong ngày hoặc ngày hôm sau (hỏi từng chi nhánh)", "Làm thêm giờ trả 1,5 lần", "Có bằng lái hạng 1 (Hàn Quốc) được thưởng thêm"] },
+      { label: "Lương", items: ["Trả trong ngày hoặc ngày hôm sau (hỏi từng chi nhánh)", "Làm thêm giờ trả phụ cấp riêng", "Có bằng lái hạng 1 (Hàn Quốc) được thưởng thêm"] },
       { label: "Ăn uống", items: ["Bữa trưa miễn phí"] },
       { label: "Đi lại", items: ["Có xe đưa đón từ ga"] },
       { label: "Ai cũng được", items: ["Không cần kinh nghiệm, ưu tiên người có kinh nghiệm", "Người nước ngoài được (F-2, F-5, F-6; F-4 tùy công việc)", "Ứng tuyển cùng bạn bè được"] },

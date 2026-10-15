@@ -10,6 +10,10 @@ ver1.0.0 배포 이후 남은 작업. 끝나면 체크하고, 다 끝난 항목�
   - 등록증 사진: 대표 생년월일을 가린 사본을 `public/images/licenses/<slug>.webp`로 (`cwebp -q 85`) 넣고 `src/lib/site.ts`의 `branches[].licenseImage`에 경로 입력
   - 등록번호: `src/lib/site.ts` 의 `branches[].agencyNo`
 
+## 자료 받으면 넣기 (추가)
+- [ ] **현장 사진:** `content/photos/`에 `01-제목.jpg`처럼 넣으면 /about "현장 모습"에 올라감 (그 폴더 README.md). 사진이 없는 지금은 실제 사이트에서 섹션이 숨겨져 있음
+- [x] 회사소개서 PDF (2026-10-15): 태산크루_회사소개서_v2.pdf(9쪽, 대표 이선우, 경기광주 본점 + 직영 2곳, 차별화 포인트 ② 세 지역)를 `public/files/taesan-company-profile.pdf`로 올림 (원본 수정용: 홍보물_제작/_원본(수정용)/회사소개서/수정본1.html)
+
 ## 기능
 
 

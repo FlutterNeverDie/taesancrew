@@ -16,6 +16,8 @@ export const uz: Dict = {
     mapTitle: "{name} joylashuvi xaritada",
     licenseAlt: "{name} pullik ishga joylashtirish faoliyati roʻyxat guvohnomasi",
     skip: "Asosiy matnga oʻtish",
+    brochure: "Kompaniya taqdimotini yuklab olish",
+    brochurePreparing: "Kompaniya taqdimoti tayyorlanmoqda",
   },
 
   nav: {
@@ -113,7 +115,7 @@ export const uz: Dict = {
     { q: "Qanday ariza beraman?", a: "Qulay filial raqamiga SMS yuboring: ismingiz, tugʻilgan sanangiz, yashash joyingiz, istagan yigʻilish joyingiz (servis avtobusi uchun), ishni boshlash sanasi, istagan kunlaringiz. Ish oʻrinlari sahifasida «SMS yuborish» tugmasini bossangiz, shablon toʻldirilgan SMS oynasi ochiladi." },
     { q: "Faqat bir kun ishlasam boʻladimi?", a: "Ha. Bir kunlik, qisqa muddatli va uzoq muddatli - hammasi mumkin. Faqat dam olish kunlari ishlamoqchi boʻlsangiz ham yozing." },
     { q: "Ish haqi qachon beriladi?", a: "Ish joyiga qarab shu kuni yoki ertasi kuni toʻlanadi. Aniq maʼlumotni filialdan soʻrang." },
-    { q: "Qoʻshimcha ish uchun pul toʻlanadimi?", a: "Ha. Qoʻshimcha ish uchun 1.5 barobar haq toʻlanadi." },
+    { q: "Qoʻshimcha ish uchun pul toʻlanadimi?", a: "Ha. Qoʻshimcha ish uchun alohida haq toʻlanadi. Miqdori ish joyiga qarab farq qiladi, shuning uchun ariza berganingizda filial tushuntirib beradi." },
     { q: "Chet elliklar ham ishlay oladimi?", a: "Vizaga bogʻliq. F-2 (yashash), F-5 (doimiy yashash) va F-6 (nikoh migranti) egalari koʻp ishlarda ishlay oladi. F-4 (xorijdagi koreyslar) uchun ish turiga qarab tekshirish kerak. Batafsil maʼlumotni viza boʻyicha qoʻllanmadan koʻring va filialga murojaat qiling. Kundalik koreys tilida gaplasha olish kerak.", link: "Viza boʻyicha maʼlumot", href: "/visa" },
     { q: "Yuklash-tushirish ishimi?", a: "Koʻp ish joylarida yuklash-tushirish yoʻq. Har bir eʼlonda ish mazmuni yozilgan." },
     { q: "Qaysi filialga borishim kerak?", a: "Qayerda yashashingizdan qatʼi nazar, borib-kelish qulay boʻlgan filialga yozing. Bilmasangiz, bosh ofisga qoʻngʻiroq qiling." },
@@ -167,7 +169,7 @@ export const uz: Dict = {
       perks: ["Sujin bekati ↔ logistika markazi servis avtobusi", "Tushlik beriladi", "Tajribasiz ham boʻladi · tajribalilarga ustunlik", "Chet elliklar ham boʻladi", "Starex hayday oladiganlarga ustunlik", "Dam olish kunlari boshqa logistika markazida ishlash mumkin"],
     },
     "cheonho-logistics": {
-      title: "Logistika markazida ish", tasks: "Logistika markazi ishlari", hours: "09:00 ~ 18:00 (qoʻshimcha ish uchun 1.5 barobar haq)", days: "", pay: "Dushanba-Payshanba ishi ertasi kuni, Juma-Shanba ishi keyingi dushanba toʻlanadi",
+      title: "Logistika markazida ish", tasks: "Logistika markazi ishlari", hours: "09:00 ~ 18:00 (qoʻshimcha ish uchun alohida haq)", days: "", pay: "Dushanba-Payshanba ishi ertasi kuni, Juma-Shanba ishi keyingi dushanba toʻlanadi",
       meet: "Hillstate Cheonho Station Gentris (Cheonho bekati (천호역) 6-chiqish)",
       perks: ["Cheonho bekatidan servis avtobusi", "Tushlik bepul", "1-toifa haydovchilik guvohnomasi boʻlsa, qoʻshimcha mukofot", "Doʻstingiz bilan kelishingiz mumkin", "Tajribasizlarni kutamiz", "Shu kuni ariza berish mumkin"],
     },
@@ -182,7 +184,7 @@ export const uz: Dict = {
       perks: ["Cheonho bekati → Icheon sovutgichli logistika markazi servis avtobusi", "Tushlik beriladi", "Tajribasiz ham boʻladi · tajribalilarga ustunlik", "Chet elliklar ham boʻladi (F-2, F-5, F-6; F-4 ishga qarab)", "Mashina haydasangiz, shu kuni qoʻshimcha mukofot", "Dam olish kunlari boshqa logistika markazida ishlash mumkin"],
     },
     "cheonho-musinsa": {
-      title: "Musinsa logistika markazida ish", tasks: "Logistika markazi ishlari", hours: "09:00 ~ 18:00 (qoʻshimcha ish uchun 1.5 barobar haq)", days: "", pay: "Ertasi kuni toʻlanadi",
+      title: "Musinsa logistika markazida ish", tasks: "Logistika markazi ishlari", hours: "09:00 ~ 18:00 (qoʻshimcha ish uchun alohida haq)", days: "", pay: "Ertasi kuni toʻlanadi",
       meet: "Cheonho bekatida yigʻilish",
       perks: ["Cheonho bekatidan servis avtobusi", "Tushlik beriladi", "1-toifa haydovchilik guvohnomasi boʻlsa, qoʻshimcha mukofot", "Tajribasiz ham boʻladi", "Qisqa va uzoq muddatga ham kutamiz"],
     },
@@ -230,6 +232,9 @@ export const uz: Dict = {
     title: ["Kerakli kunda", "kerakli odamni yuboramiz"],
     desc: "Oʻzgaruvchan bozorga moslashuvchan javob beradigan, xodimlar bilan ishlash va autsorsing boʻyicha ixtisoslashgan kompaniya.",
     ceoAlt: "Taesan Recruit & Taesan Crew rahbari",
+    // 현장 사진 (about/photos). 사진과 제목은 content/photos/ 폴더 (파일 이름이 제목)
+    photosTitle: "Ish joylaridan lavhalar",
+    photosDesc: "Taesan Crew ishlaydigan joylarni suratlarda koʻrsatamiz.",
     greetingTitle: "Xodimlar - kompaniyaning raqobat kuchi",
     greeting: [
       "Taesan Crew logistika sohasida 20 yildan ortiq yigʻilgan tajriba asosida Gyeonggi viloyati Gwangju, Seongnam va Seulning sharqiy qismida oʻz filiallarini boshqaradi va oʻzi tuzib yuritadigan ishchilar bazasi orqali xodimlarni tez joylashtiradi.",
@@ -270,10 +275,25 @@ export const uz: Dict = {
     sendLabel: "Yuboriladigan maʼlumot",
     phoneApply: "Telefon orqali ham ariza bera olasiz",
     koreanNote: "Ishlash uchun kundalik koreys tilida gaplasha olish kerak.",
+    // 출근하는 날 하루 흐름 (jobs/day). 사실은 소식 글 "물류센터 일, 처음이라면"과 근무 조건에 있는 것만
+    dayTitle: "Ish kuni shunday oʻtadi",
+    dayDesc: "Birinchi marta boʻlsa ham boʻladi. Yigʻilish joyida uchrashib, birga borasiz va xavfsizlik oʻquvidan keyin ishni boshlaysiz.",
+    day: [
+      { title: "Yigʻilish", desc: "Har bir filialning oʻz yigʻilish joyi bor. Masalan: Sujin bekati (수진역) 3-chiqish, Cheonho bekati (천호역) 6-chiqish" },
+      { title: "Servis avtobusida borish", desc: "Servis avtobusida logistika markazigacha birga borasiz" },
+      { title: "Xavfsizlik oʻquvi", desc: "Birinchi marta kelganlar xavfsizlik oʻquvidan oʻtib, keyin ishni boshlaydi" },
+      { title: "Ish", desc: "Qadoqlash, terish, tekshirish, qabul qilish va joʻnatish kabi qiyin boʻlmagan ishlar koʻp" },
+      { title: "Tushlik", desc: "Tushlik bepul" },
+      { title: "Ishdan qaytish", desc: "Ish tugagach, avtobusda yana bekatga qaytasiz" },
+      { title: "Ish haqi", desc: "Shu kuni yoki ertasi kuni toʻlanadi (filialdan soʻrang), qoʻshimcha ish uchun alohida haq" },
+    ],
+    bringTitle: "Oʻzingiz bilan olib keling",
+    bring: ["Shaxsni tasdiqlovchi hujjat", "Qulay kiyim va krossovka (baʼzi ish joylarida xavfsizlik poyabzali)"],
+    bringNote: "Har bir ish joyida biroz farq qilishi mumkin, shuning uchun ariza berganda filialdan yana bir bor soʻrang.",
     conditionsTitle: "Ish sharoitlari",
     conditions: [
       { label: "Ish", items: ["Qadoqlash, terish, tekshirish, saralash", "Koʻp ish joylarida yuklash-tushirish yoʻq"] },
-      { label: "Ish haqi", items: ["Shu kuni yoki ertasi kuni toʻlanadi (filialdan soʻrang)", "Qoʻshimcha ish uchun 1.5 barobar haq", "1-toifa haydovchilik guvohnomasi boʻlsa, qoʻshimcha mukofot"] },
+      { label: "Ish haqi", items: ["Shu kuni yoki ertasi kuni toʻlanadi (filialdan soʻrang)", "Qoʻshimcha ish uchun alohida haq", "1-toifa haydovchilik guvohnomasi boʻlsa, qoʻshimcha mukofot"] },
       { label: "Ovqat", items: ["Tushlik bepul"] },
       { label: "Borib-kelish", items: ["Bekatdan servis avtobusi bor"] },
       { label: "Hamma uchun", items: ["Tajribasiz ham boʻladi, tajribalilarga ustunlik", "Chet elliklar ham boʻladi (F-2, F-5, F-6; F-4 ishga qarab)", "Doʻstingiz bilan birga ariza bera olasiz"] },

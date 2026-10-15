@@ -2,6 +2,7 @@ import { Container } from "@/components/ui";
 import { company, tel } from "@/lib/site";
 import { getDict, lp, type Locale } from "@/i18n";
 import { ContactForm as Form } from "./ContactForm";
+import { BrochureButton } from "@/areas/shared/brochure-button";
 
 export function ContactFormArea({ lang }: { lang: Locale }) {
   const d = getDict(lang);
@@ -15,6 +16,7 @@ export function ContactFormArea({ lang }: { lang: Locale }) {
             <p className="text-base font-bold text-navy-900/70">{t.mainPhone}</p>
             <p dir="ltr" className="mt-1 text-3xl font-extrabold text-navy-950">{company.mainPhone}</p>
           </a>
+          <BrochureButton lang={lang} />
           <div className="rounded-lg bg-navy-50 p-7 text-ink">
             <p>
               {t.office} <span dir="ltr">{company.officePhone}</span>

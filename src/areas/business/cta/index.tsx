@@ -1,6 +1,7 @@
 import { ButtonLink, Container } from "@/components/ui";
 import { company, tel } from "@/lib/site";
 import { getDict, lp, type Locale } from "@/i18n";
+import { BrochureButton } from "@/areas/shared/brochure-button";
 
 export function BusinessCta({ lang }: { lang: Locale }) {
   const t = getDict(lang).business;
@@ -13,6 +14,7 @@ export function BusinessCta({ lang }: { lang: Locale }) {
             <span dir="ltr">{company.mainPhone}</span>
           </ButtonLink>
           <ButtonLink href={lp(lang, "/contact")} variant="ghost">{t.ctaQuote}</ButtonLink>
+          <BrochureButton lang={lang} tone="dark" />
         </div>
       </Container>
     </section>

@@ -10,7 +10,7 @@ Berikut kondisi kerja yang paling sering ditanyakan sebelum mulai bekerja.
 ## Kondisi kerja
 
 - **Gaji**: Dibayar hari itu atau besoknya
-- **Uang lembur**: Lembur dibayar 1,5 kali
+- **Uang lembur**: Lembur dibayar terpisah
 - **Makan**: Makan siang gratis
 - **Transportasi**: Bus antar-jemput dari meeting point
 - **Insentif**: Insentif jika punya SIM Kelas 1

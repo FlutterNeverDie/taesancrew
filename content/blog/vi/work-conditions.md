@@ -10,7 +10,7 @@ Chúng tôi đã tổng hợp các điều kiện làm việc hay được hỏi
 ## Điều kiện làm việc
 
 - **Lương**: Trả trong ngày hoặc ngày hôm sau
-- **Phụ cấp làm thêm giờ**: Làm thêm giờ được trả 1,5 lần
+- **Phụ cấp làm thêm giờ**: Làm thêm giờ được trả phụ cấp riêng
 - **Ăn uống**: Bữa trưa miễn phí
 - **Đi lại**: Có xe đưa đón từ điểm tập trung
 - **Thưởng thêm**: Có bằng lái hạng 1 (Hàn Quốc) được thưởng thêm

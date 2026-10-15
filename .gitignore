@@ -22,6 +22,8 @@
 
 # 빌드 전에 만드는 페이지별 미리보기 이미지 (scripts/og-images.mts)
 /public/og/
+# 현장 사진 변환 결과 (원본은 content/photos/, scripts/field-photos.mjs)
+/public/images/field/
 
 # misc
 .DS_Store

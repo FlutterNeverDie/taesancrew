@@ -16,6 +16,8 @@ export const en: Dict = {
     mapTitle: "Map of {name}",
     licenseAlt: "{name} paid job placement business registration certificate",
     skip: "Skip to main content",
+    brochure: "Download company profile",
+    brochurePreparing: "Company profile coming soon",
   },
 
   nav: {
@@ -113,7 +115,7 @@ export const en: Dict = {
     { q: "How do I apply?", a: "Text your name, date of birth, where you live, preferred meeting point, start date and preferred days to any branch. On the Jobs page, tap 'Send text' to open a message with the form already filled in." },
     { q: "Can I work just one day?", a: "Yes. One day, short-term and long-term are all OK. If you only want to work weekends, contact us too." },
     { q: "When do I get paid?", a: "Same day or next day, depending on the site. Ask the branch for details." },
-    { q: "Is there extra pay for overtime?", a: "Yes. Overtime is paid at 1.5 times." },
+    { q: "Is there extra pay for overtime?", a: "Yes. Overtime pay is paid separately. The standard differs by site, so the branch will explain it when you apply." },
     { q: "Can foreigners apply?", a: "It depends on your visa. F-2 (residence), F-5 (permanent residence) and F-6 (marriage migrant) can do most jobs. For F-4 (overseas Korean), it depends on the type of work. See the visa guide for details and ask the branch. You need to be able to speak everyday Korean.", link: "Visa guide", href: "/visa" },
     { q: "Is it loading/unloading work?", a: "Many sites have no loading/unloading. Each job posting lists the work." },
     { q: "Which branch should I go to?", a: "Contact whichever branch is easiest for you to get to, no matter where you live. If you are not sure, call the head office." },
@@ -167,7 +169,7 @@ export const en: Dict = {
       perks: ["Shuttle bus: Sujin Station ↔ logistics center", "Lunch provided", "Beginners OK · experience preferred", "Foreigners OK", "Starex (van) drivers preferred", "Weekend work at other logistics centers available"],
     },
     "cheonho-logistics": {
-      title: "Logistics Center Job", tasks: "Logistics center work", hours: "09:00 ~ 18:00 (overtime paid 1.5×)", days: "", pay: "Mon-Thu work paid next day, Fri-Sat work paid next Monday",
+      title: "Logistics Center Job", tasks: "Logistics center work", hours: "09:00 ~ 18:00 (overtime paid separately)", days: "", pay: "Mon-Thu work paid next day, Fri-Sat work paid next Monday",
       meet: "Hillstate Cheonho Station Gentris (Cheonho Station Exit 6)",
       perks: ["Shuttle from Cheonho Station", "Free lunch", "Bonus for Class 1 driver's license holders", "Come with a friend", "Beginners welcome", "Same-day applications OK"],
     },
@@ -182,7 +184,7 @@ export const en: Dict = {
       perks: ["Shuttle: Cheonho Station → Icheon cold-storage logistics center", "Lunch provided", "Beginners OK · experience preferred", "Foreigners OK (F-2, F-5, F-6; F-4 depends on the work)", "Same-day bonus for drivers", "Weekend work at other logistics centers available"],
     },
     "cheonho-musinsa": {
-      title: "Musinsa Logistics Center Job", tasks: "Logistics center work", hours: "09:00 ~ 18:00 (overtime paid 1.5×)", days: "", pay: "Paid next day",
+      title: "Musinsa Logistics Center Job", tasks: "Logistics center work", hours: "09:00 ~ 18:00 (overtime paid separately)", days: "", pay: "Paid next day",
       meet: "Meet at Cheonho Station",
       perks: ["Shuttle from Cheonho Station", "Lunch provided", "Bonus for Class 1 driver's license holders", "Beginners OK", "Short-term · long-term welcome"],
     },
@@ -230,6 +232,9 @@ export const en: Dict = {
     title: ["On the day you need them,", "we send the people you need"],
     desc: "A workforce management and outsourcing company that adapts flexibly to a changing market.",
     ceoAlt: "President of Taesan Recruit & Taesan Crew",
+    // 현장 사진 (about/photos). 사진과 제목은 content/photos/ 폴더 (파일 이름이 제목)
+    photosTitle: "At the sites",
+    photosDesc: "Photos of the sites where Taesan Crew works.",
     greetingTitle: "People are a company's competitive edge",
     greeting: [
       "Built on more than 20 years of know-how in the logistics industry, Taesan Crew runs its own branches in Gwangju (Gyeonggi), Seongnam and eastern Seoul, and places workers quickly using a worker database we build and manage ourselves.",
@@ -270,10 +275,25 @@ export const en: Dict = {
     sendLabel: "What to send",
     phoneApply: "You can also apply by phone",
     koreanNote: "You need to be able to speak everyday Korean to work.",
+    // 출근하는 날 하루 흐름 (jobs/day). 사실은 소식 글 "물류센터 일, 처음이라면"과 근무 조건에 있는 것만
+    dayTitle: "Your work day, step by step",
+    dayDesc: "First time? That's fine. We meet at the meeting point, go together, and start work after safety training.",
+    day: [
+      { title: "Meet", desc: "Each branch has its own meeting point. e.g. Sujin Station (수진역) Exit 3, Cheonho Station (천호역) Exit 6" },
+      { title: "Ride the shuttle", desc: "Ride the commute shuttle together to the logistics center" },
+      { title: "Safety training", desc: "If it is your first time, you get safety training before you start work" },
+      { title: "Work", desc: "Much of the work is easy, like packing, picking, inspection, inbound and outbound" },
+      { title: "Lunch", desc: "Lunch is free" },
+      { title: "Go home", desc: "After work, the shuttle takes you back to the station" },
+      { title: "Pay", desc: "Same-day or next-day pay (check with each branch), overtime paid separately" },
+    ],
+    bringTitle: "What to bring",
+    bring: ["ID card", "Comfortable clothes and sneakers (safety shoes at some sites)"],
+    bringNote: "It may be a little different at each site, so ask the branch again when you apply.",
     conditionsTitle: "Working conditions",
     conditions: [
       { label: "Work", items: ["Packing, picking, inspection, sorting", "Many sites have no loading/unloading"] },
-      { label: "Pay", items: ["Same-day or next-day pay (check with each branch)", "Overtime paid 1.5×", "Bonus for Class 1 driver's license holders"] },
+      { label: "Pay", items: ["Same-day or next-day pay (check with each branch)", "Overtime paid separately", "Bonus for Class 1 driver's license holders"] },
       { label: "Meals", items: ["Free lunch"] },
       { label: "Commute", items: ["Shuttle from the station to work and back"] },
       { label: "Who can apply", items: ["Beginners OK, experience preferred", "Foreigners OK (F-2, F-5, F-6; F-4 depends on the work)", "Apply together with a friend"] },

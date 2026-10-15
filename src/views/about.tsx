@@ -7,6 +7,7 @@ import { StatsStrip } from "@/areas/shared/stats-strip";
 import { AboutSubnav } from "@/areas/shared/about-subnav";
 import { AboutFocus } from "@/areas/about/focus";
 import { AboutBranches } from "@/areas/about/branches";
+import { AboutPhotos } from "@/areas/about/photos";
 
 export const aboutMeta = (lang: Locale) => {
   const t = getDict(lang).meta;
@@ -20,6 +21,7 @@ export function AboutView({ lang }: { lang: Locale }) {
       <AboutSubnav lang={lang} current="about" />
       <AboutGreeting lang={lang} />
       <StatsStrip lang={lang} />
+      <AboutPhotos lang={lang} />
       <AboutFocus lang={lang} />
       <AboutBranches lang={lang} />
     </>

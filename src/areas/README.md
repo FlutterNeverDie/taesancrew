@@ -22,6 +22,7 @@
 | `shared/about-subnav` | 회사소개 탭 | 회사소개·중점분야·지점안내 페이지, 히어로 바로 아래 (스크롤 시 메뉴바 아래 고정) |
 | `shared/posting-card` | 채용 공고 카드(전단+글자) · 구글 채용 정보 | /jobs, 지점 페이지 |
 | `shared/sms-picker` | 문자 보내기 → 지점 고르기 창 | /jobs |
+| `shared/brochure-button` | 회사소개서 PDF 받기 버튼 (파일 정하기 전엔 실제 사이트에서 숨김) | /business, /contact |
 | `home/hero` | 메인 첫 화면 + 지점 안내판 | / 맨 위 |
 | `home/promises` | 도급사가 다시 찾는 이유 | / 숫자 줄 아래 |
 | `home/statement` | 약속 한 줄 | / |
@@ -31,6 +32,7 @@
 | `home/news` | 최근 소식 | / 맨 아래 |
 | `about/hero` | 회사소개 상단 | /about 맨 위 |
 | `about/greeting` | 대표 인사 | /about |
+| `about/photos` | 현장 사진 (content/photos/ 폴더, 파일 이름이 제목) | /about |
 | `about/focus` | 중점분야 요약 | /about |
 | `about/branches` | 지점안내 요약 | /about |
 | `business/hero` | 중점분야 상단 | /business 맨 위 |
@@ -42,6 +44,7 @@
 | `business/cta` | 상담 안내 | /business 맨 아래 |
 | `jobs/hero` | 일자리 첫 화면 | /jobs 맨 위 |
 | `jobs/conditions` | 근무 조건 | /jobs |
+| `jobs/day` | 출근하는 날 하루 흐름 + 준비물 | /jobs 근무 조건 아래 |
 | `jobs/branches` | 지점 연락처 | /jobs |
 | `jobs/postings` | 지금 모집 중인 공고 | /jobs |
 | `jobs/clients` | 이런 회사의 물류 현장에서 일해요 | /jobs |

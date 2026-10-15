@@ -33,3 +33,6 @@ export function GlobeIcon({ className = "h-5 w-5" }: P) {
 export function ChevronDownIcon({ className = "h-4 w-4" }: P) {
   return <svg {...base} className={className}><path d="m6 9 6 6 6-6" /></svg>;
 }
+export function DownloadIcon({ className = "h-5 w-5" }: P) {
+  return <svg {...base} className={className}><path d="M12 3v12m0 0-5-5m5 5 5-5" /><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" /></svg>;
+}
