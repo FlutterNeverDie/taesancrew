@@ -30,12 +30,17 @@ export function SectionTitle({ title, desc, light = false }: { title: ReactNode;
   );
 }
 
-export function PageHero({ title, desc }: { title: ReactNode; desc?: ReactNode }) {
+// action: 제목 오른쪽(휴대폰은 아래)에 둘 버튼 (예: 회사소개서 받기), children: 설명 아래에 붙일 것 (예: 신뢰 칩)
+export function PageHero({ title, desc, action, children }: { title: ReactNode; desc?: ReactNode; action?: ReactNode; children?: ReactNode }) {
   return (
-    <section className="on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20 xl:py-28">
-      <Container>
-        <h1 className="max-w-4xl text-[2rem] leading-tight font-extrabold md:text-5xl xl:text-6xl">{title}</h1>
-        {desc && <p className="mt-5 max-w-3xl text-lg leading-relaxed font-medium text-white/90 md:text-xl">{desc}</p>}
+    <section className="brand-mark on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20 xl:py-28">
+      <Container className={action ? "md:flex md:items-end md:justify-between md:gap-12" : ""}>
+        <div className="min-w-0">
+          <h1 className="max-w-4xl text-[2rem] leading-tight font-extrabold md:text-5xl xl:text-6xl">{title}</h1>
+          {desc && <p className="mt-5 max-w-3xl text-lg leading-relaxed font-medium text-white/90 md:text-xl">{desc}</p>}
+          {children}
+        </div>
+        {action && <div className="mt-8 shrink-0 md:mt-0">{action}</div>}
       </Container>
     </section>
   );

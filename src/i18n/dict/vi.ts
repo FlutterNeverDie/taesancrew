@@ -16,7 +16,7 @@ export const vi: Dict = {
     mapTitle: "Bản đồ {name}",
     licenseAlt: "Giấy đăng ký kinh doanh giới thiệu việc làm có thu phí - {name}",
     skip: "Bỏ qua, đến nội dung chính",
-    brochure: "Tải hồ sơ công ty",
+    brochure: "Hồ sơ công ty",
     brochurePreparing: "Hồ sơ công ty đang chuẩn bị",
   },
 

@@ -16,7 +16,7 @@ export const ar: Dict = {
     mapTitle: "خريطة موقع {name}",
     licenseAlt: "شهادة تسجيل مكتب التوظيف بأجر - {name}",
     skip: "الانتقال إلى المحتوى الرئيسي",
-    brochure: "تحميل ملف تعريف الشركة",
+    brochure: "ملف تعريف الشركة",
     brochurePreparing: "ملف تعريف الشركة قيد الإعداد",
   },
 

@@ -18,7 +18,7 @@ export const ko = {
     mapTitle: "{name} 위치 지도",
     licenseAlt: "{name} 유료직업소개사업 등록증",
     skip: "본문으로 건너뛰기",
-    brochure: "회사소개서 받기",
+    brochure: "회사소개서",
     brochurePreparing: "회사소개서 준비 중",
   },
 

@@ -63,6 +63,8 @@
 | `branch/others` | 지점 페이지 다른 지점 | /branches/<지점> |
 | `contact/hero` | 문의하기 상단 | /contact |
 | `contact/form` | 문의 폼 | /contact |
+| `contact/clients` | 문의 페이지 고객사 로고 줄 | /contact 폼 아래 |
+| `contact/faq` | 문의 페이지 기업 질문 3개 | /contact 맨 아래 |
 | `blog/hero` | 소식 상단 | /blog |
 | `blog/list` | 소식 목록 | /blog |
 | `blog/post` | 소식 글 본문 | /blog/<slug> |

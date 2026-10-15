@@ -16,7 +16,7 @@ export const th: Dict = {
     mapTitle: "แผนที่ {name}",
     licenseAlt: "ใบทะเบียนธุรกิจจัดหางานแบบมีค่าบริการของ {name}",
     skip: "ข้ามไปยังเนื้อหาหลัก",
-    brochure: "ดาวน์โหลดแนะนำบริษัท",
+    brochure: "เอกสารแนะนำบริษัท",
     brochurePreparing: "เอกสารแนะนำบริษัทกำลังเตรียม",
   },
 

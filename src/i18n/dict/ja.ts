@@ -16,7 +16,7 @@ export const ja: Dict = {
     mapTitle: "{name} 地図",
     licenseAlt: "{name} 有料職業紹介事業 登録証",
     skip: "本文へスキップ",
-    brochure: "会社案内をダウンロード",
+    brochure: "会社案内",
     brochurePreparing: "会社案内は準備中",
   },
 

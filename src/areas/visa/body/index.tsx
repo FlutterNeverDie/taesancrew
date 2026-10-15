@@ -13,7 +13,7 @@ export function VisaBody({ lang }: { lang: Locale }) {
   const t = getVisa(lang);
   return (
     <>
-      <section className="on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20">
+      <section className="brand-mark on-dark border-b-8 border-point bg-navy-900 py-14 text-white md:py-20">
         <Container>
           <p className="text-lg font-bold text-point">{t.eyebrow}</p>
           <h1 className="mt-3 text-[2.25rem] leading-tight font-extrabold md:text-5xl xl:text-6xl">

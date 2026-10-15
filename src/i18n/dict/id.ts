@@ -16,7 +16,7 @@ export const id: Dict = {
     mapTitle: "Peta lokasi {name}",
     licenseAlt: "Sertifikat registrasi usaha penempatan kerja berbayar {name}",
     skip: "Langsung ke konten utama",
-    brochure: "Unduh profil perusahaan",
+    brochure: "Profil perusahaan",
     brochurePreparing: "Profil perusahaan segera tersedia",
   },
 

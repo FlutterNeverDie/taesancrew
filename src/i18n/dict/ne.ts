@@ -16,7 +16,7 @@ export const ne: Dict = {
     mapTitle: "{name} को नक्सा",
     licenseAlt: "{name} को सशुल्क रोजगार प्लेसमेन्ट व्यवसाय दर्ता प्रमाणपत्र",
     skip: "मुख्य सामग्रीमा जानुहोस्",
-    brochure: "कम्पनी परिचय डाउनलोड",
+    brochure: "कम्पनी परिचय",
     brochurePreparing: "कम्पनी परिचय तयार हुँदैछ",
   },
 

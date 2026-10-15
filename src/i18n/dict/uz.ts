@@ -16,7 +16,7 @@ export const uz: Dict = {
     mapTitle: "{name} joylashuvi xaritada",
     licenseAlt: "{name} pullik ishga joylashtirish faoliyati roʻyxat guvohnomasi",
     skip: "Asosiy matnga oʻtish",
-    brochure: "Kompaniya taqdimotini yuklab olish",
+    brochure: "Kompaniya taqdimoti",
     brochurePreparing: "Kompaniya taqdimoti tayyorlanmoqda",
   },
 

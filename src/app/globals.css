@@ -69,6 +69,37 @@ h2 {
   text-wrap: balance;
 }
 
+/* 남색 첫 화면 뒤 브랜드 마크: 회사소개서 표지처럼 태산 심볼을 연하게 깐다 (글자 뒤, 오른쪽에 걸치게. 아랍어는 왼쪽) */
+.brand-mark {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline-end: -4rem;
+  top: 50%;
+  width: min(34rem, 85vw);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  background: url("/brand/taesan/symbol-white.svg") center / contain no-repeat;
+  opacity: 0.09;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .brand-mark::before { inset-inline-end: -3rem; opacity: 0.11; }
+}
+/* 메인처럼 오른쪽에 큰 상자가 있으면 왼쪽 아래에서 걸치게 */
+.brand-mark-start::before {
+  inset-inline-end: auto;
+  inset-inline-start: -7rem;
+  top: auto;
+  bottom: -9rem;
+  transform: none;
+}
+
 /* 키보드 포커스는 즉시, 항상 보이게 */
 :focus-visible {
   outline: 3px solid var(--color-navy-700);

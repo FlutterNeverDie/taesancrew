@@ -17,7 +17,7 @@ export function JobsHero({ lang }: { lang: Locale }) {
   }));
   if (lang !== "ko") fields.splice(2, 0, ...d.sms.extraFields.map((label) => ({ label })));
   return (
-    <section className="on-dark bg-navy-900 text-white">
+    <section className="brand-mark brand-mark-start on-dark bg-navy-900 text-white">
       <Container className="grid gap-10 py-14 md:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-20">
         <div className="min-w-0">
           <p className="text-lg font-bold text-point">{t.eyebrow}</p>

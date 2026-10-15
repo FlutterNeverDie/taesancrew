@@ -16,7 +16,7 @@ export const zh: Dict = {
     mapTitle: "{name} 位置地图",
     licenseAlt: "{name} 收费职业介绍业登记证",
     skip: "跳到正文",
-    brochure: "下载公司介绍",
+    brochure: "公司介绍",
     brochurePreparing: "公司介绍准备中",
   },
 

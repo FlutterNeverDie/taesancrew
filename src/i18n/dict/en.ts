@@ -16,7 +16,7 @@ export const en: Dict = {
     mapTitle: "Map of {name}",
     licenseAlt: "{name} paid job placement business registration certificate",
     skip: "Skip to main content",
-    brochure: "Download company profile",
+    brochure: "Company profile",
     brochurePreparing: "Company profile coming soon",
   },
 
